@@ -1,0 +1,47 @@
+name: Bind latest teacher portraits
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bind-latest-portraits.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  bind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Bind latest portraits
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+              'egri-monika': ('assets/egri_monika.webp', 'Egri Mónika portréja'),
+              'hupczik-andrea': ('assets/hupczik-andrea.webp', 'Hupczik Andrea portréja'),
+              'noszko-niki': ('assets/noszko_niki.webp', 'Noszkó Niki portréja'),
+          }
+
+          for aid, (src, alt) in replacements.items():
+              pattern = rf'(<article class="profile" id="{aid}"><div class="profile-head">)<figure class="portrait">.*?</figure>'
+              repl = rf'\1<figure class="portrait"><img src="{src}" alt="{alt}" loading="lazy" decoding="async"><span class="fallback">Portré helye</span></figure>'
+              s, n = re.subn(pattern, repl, s, count=1, flags=re.S)
+              if n != 1:
+                  raise SystemExit(f'{aid} portrait matches: {n}')
+
+          p.write_text(s, encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Portrait Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Bind latest teacher portraits"
+          git push
