@@ -1,0 +1,77 @@
+name: Place program buttons in profile head
+
+on:
+  push:
+    paths:
+      - '.github/workflows/place-program-buttons-in-profile-head.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Put linked programs directly under teacher intro
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          targets = {
+            'telenko-eva': [
+              ('Bécsi Magyar Óvoda | Baden','https://www.magyariskola.at/event-details/ovoda-baden-2026')
+            ],
+            'makfalvi-rita': [
+              ('Bécsi Magyar Óvoda | Baden','https://www.magyariskola.at/event-details/ovoda-baden-2026'),
+              ('Magyar Iskola Badenben','https://www.magyariskola.at/event-details/iskolabaden-2026')
+            ],
+            'varga-bernadette': [
+              ('Napraforgócskák','https://www.magyariskola.at/event-details/napraforgocskak-2026')
+            ]
+          }
+
+          for pid, links in targets.items():
+              m = re.search(rf'(<article class="profile" id="{re.escape(pid)}">.*?</article>)', s, re.S)
+              if not m:
+                  raise SystemExit(f'profile not found: {pid}')
+              article = m.group(1)
+
+              # Remove the later/stray block from previous patches.
+              article = re.sub(r'<div class="program-links">.*?</div>\s*</div>', '', article, flags=re.S)
+
+              programs = '<div class="programs">' + ''.join(
+                  f'<a href="{url}" target="_blank" rel="noopener">{label}</a>' for label, url in links
+              ) + '</div>'
+
+              # Replace existing programs block in the profile-title, or insert after role paragraph.
+              head = re.search(r'(<div class="profile-title">.*?</div>)</div>', article, re.S)
+              if not head:
+                  raise SystemExit(f'profile-title not found: {pid}')
+              profile_title = head.group(1)
+              if '<div class="programs">' in profile_title:
+                  profile_title = re.sub(r'<div class="programs">.*?</div>', programs, profile_title, count=1, flags=re.S)
+              else:
+                  role_end = profile_title.rfind('</p>')
+                  if role_end < 0:
+                      raise SystemExit(f'role paragraph not found: {pid}')
+                  role_end += 4
+                  profile_title = profile_title[:role_end] + programs + profile_title[role_end:]
+
+              article = article[:head.start(1)] + profile_title + article[head.end(1):]
+              s = s[:m.start()] + article + s[m.end():]
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Place linked program buttons in teacher profile heads"
+          git push
