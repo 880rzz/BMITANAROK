@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://tanarok.magyariskola.at/sitemap.xml
+
+# AI/LLM discovery
+# https://tanarok.magyariskola.at/llms.txt
+# https://tanarok.magyariskola.at/llms-full.txt
