@@ -1,0 +1,59 @@
+name: Bind Klara portrait and favicon
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bind-klara-favicon.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch Klara portrait and favicon
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          # Bind Dr. Trencsényi Klára DLA portrait.
+          pattern = r'(<article class="profile" id="trencsenyi-klara"><div class="profile-head">)<figure class="portrait">.*?</figure>'
+          repl = r'\1<figure class="portrait"><img src="assets/Trencsenyi_Klara_photo2024.webp" alt="Dr. Trencsényi Klára DLA portréja" loading="lazy" decoding="async"><span class="fallback">Portré helye</span></figure>'
+          s, n = re.subn(pattern, repl, s, count=1, flags=re.S)
+          if n != 1:
+              raise SystemExit(f'Trencsenyi portrait matches: {n}')
+
+          # Replace any single existing favicon tag with a cache-busted, browser-friendly set.
+          fav = '<link rel="icon" href="/bmi_blue_round_rgb_logo.svg?v=20260901-2" type="image/svg+xml" sizes="any">\n<link rel="shortcut icon" href="/bmi_blue_round_rgb_logo.svg?v=20260901-2" type="image/svg+xml">'
+          s, n = re.subn(r'<link rel="icon"[^>]*>', fav, s, count=1)
+          if n != 1:
+              raise SystemExit(f'index favicon matches: {n}')
+          p.write_text(s, encoding='utf-8')
+
+          for fn in ('adatvedelem.html','impresszum.html'):
+              q = Path(fn)
+              if not q.exists():
+                  continue
+              t = q.read_text(encoding='utf-8')
+              if re.search(r'<link rel="icon"[^>]*>', t):
+                  t = re.sub(r'<link rel="icon"[^>]*>', fav, t, count=1)
+              elif '</head>' in t:
+                  t = t.replace('</head>', fav + '\n</head>', 1)
+              q.write_text(t, encoding='utf-8')
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Site Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html adatvedelem.html impresszum.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Bind Trencsenyi Klara portrait and refresh favicon"
+          git push
