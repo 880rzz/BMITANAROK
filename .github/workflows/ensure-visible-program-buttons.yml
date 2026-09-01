@@ -1,0 +1,62 @@
+name: Ensure visible program buttons
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ensure-visible-program-buttons.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure teacher program buttons are visible
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          targets = {
+            'telenko-eva': [('Bécsi Magyar Óvoda | Baden','https://www.magyariskola.at/event-details/ovoda-baden-2026')],
+            'makfalvi-rita': [
+              ('Bécsi Magyar Óvoda | Baden','https://www.magyariskola.at/event-details/ovoda-baden-2026'),
+              ('Magyar Iskola Badenben','https://www.magyariskola.at/event-details/iskolabaden-2026')
+            ],
+            'varga-bernadette': [('Napraforgócskák','https://www.magyariskola.at/event-details/napraforgocskak-2026')]
+          }
+
+          for section_id, links in targets.items():
+              start = s.find(f'<article class="profile" id="{section_id}"')
+              if start < 0:
+                  raise SystemExit(f'missing profile {section_id}')
+              nxt = s.find('<article class="profile"', start + 20)
+              end = len(s) if nxt < 0 else nxt
+              block = s[start:end]
+              buttons = '<div class="program-links"><strong>Kapcsolódó foglalkozások</strong><div class="program-link-list">' + ''.join(
+                  f'<a class="btn ghost" href="{url}" target="_blank" rel="noopener">{name}</a>' for name,url in links
+              ) + '</div></div>'
+              if 'class="program-links"' in block:
+                  block = re.sub(r'<div class="program-links">.*?</div>\s*</div>', buttons, block, count=1, flags=re.S)
+              else:
+                  pos = block.rfind('</article>')
+                  if pos < 0:
+                      raise SystemExit(f'article close missing {section_id}')
+                  block = block[:pos] + buttons + block[pos:]
+              s = s[:start] + block + s[end:]
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Ensure visible program buttons on teacher profiles"
+          git push
