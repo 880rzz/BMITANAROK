@@ -1,0 +1,45 @@
+name: Enrich Noszko Dapin Fersztl profiles
+
+on:
+  push:
+    paths:
+      - '.github/workflows/enrich-noszko-dapin-fersztl.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update researched profiles
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          articles={
+          'noszko-niki': '''<article class="profile" id="noszko-niki"><div class="profile-head"><figure class="portrait"><span class="fallback" style="z-index:1">Fotó helye</span></figure><div class="profile-title"><div class="eyebrow">Pszichológus · gyermekpszichodráma-csoportvezető · óvodai foglalkozásvezető</div><h2>Noszkó Niki</h2><p class="role">Pszichológusként és gyermekpszichodráma-csoportvezetőként a játékot, a fantáziát és a biztonságos kiscsoportos teret használja arra, hogy a gyerekek könnyebben dolgozzák fel a hétköznapi feszültségeket és bátrabban kapcsolódjanak egymáshoz.</p><div class="programs"><a href="https://www.magyariskola.at/event-details/ovoda-2026" target="_blank" rel="noopener">Bécsi Magyar Óvoda</a><a href="https://www.magyariskola.at/event-details/sztoricsoport" target="_blank" rel="noopener">Sztoricsoport kisiskolásoknak</a></div></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>2007-ben végzett pszichológia szakon, 2011 óta foglalkozik pszichodrámával. A gyermekpszichodráma módszerét Kende B. Hanna szakmai hagyományához kapcsolódó képzésben sajátította el. A Bécsi Magyar Iskolában gyermekpszichodráma-bemutatókat és kiscsoportos foglalkozásokat vezetett, emellett a Bécsi Magyar Óvoda egyik foglalkozásvezetője.</p></section><section class="segment"><h3>A hozzá különösen közel álló területek</h3><p>A gyermekpszichodráma, a játék és a fantázia fejlesztő ereje, a szorongás és feszültség oldása, a társas kapcsolatok, az önbizalom, valamint az érzelmi biztonságot adó kiscsoportos munka.</p></section><section class="segment"><h3>Pedagógiai szemlélet</h3><p>A gyerekeknek nem kész történeteket ad, hanem olyan keretet teremt, amelyben idővel saját történeteik és szerepeik születhetnek meg. Fontosnak tartja a zárt, kis létszámú csoportot, mert az állandó közösség biztonságot ad, és lehetővé teszi, hogy a gyerekek egyre bátrabban hozzák be saját élményeiket. A szülőkkel való együttműködést a folyamat fontos részének tekinti.</p></section></div></article>''',
+          'dapin-hajnalka-judit': '''<article class="profile" id="dapin-hajnalka-judit"><div class="profile-head"><figure class="portrait"><span class="fallback" style="z-index:1">Fotó helye</span></figure><div class="profile-title"><div class="eyebrow">Zenetanár · zeneterapeuta · citerás</div><h2>Mag. Dapin Hajnalka Judit</h2><p class="role">A zenét egyszerre használja közösségi nyelvként, pedagógiai eszközként és terápiás közegként; a népzene, az ének és a citera természetesen kapcsolódik össze munkájában.</p><div class="programs"><a href="https://zenebona.magyariskola.at" target="_blank" rel="noopener">Zenebona</a></div></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>Zenetanár és zeneterapeuta. Zeneterápiás tanulmányait a bécsi Universität für Musik und darstellende Kunst Wien intézményben végezte, diplomamunkájában romániai kórházi ápolók számára szervezett preventív csoportos zeneterápiás folyamatot vizsgált a COVID–19-pandémia idején. Bécsi magyar kulturális programokon rendszeresen közreműködik énekkel és citerával; a Rólunk.at és az ORF is beszámolt ilyen szerepléseiről.</p></section><section class="segment"><h3>A hozzá különösen közel álló területek</h3><p>A zeneterápia, a magyar népzene, a citera, az ének, a közös muzsikálás és a zene közösségformáló ereje. Munkájában a zenei élmény nem teljesítménykényszer, hanem kapcsolódási lehetőség.</p></section><section class="segment"><h3>Pedagógiai szemlélet</h3><p>A zenei foglalkozásokon az együtt éneklés és zenélés élménye kerül előtérbe. Fontos számára, hogy a résztvevők a ritmust, dallamot és népzenei hagyományt saját tapasztalaton keresztül ismerjék meg, és a zene olyan biztonságos közeggé váljon, amelyben figyelni, kapcsolódni és önmagukat kifejezni is lehet.</p></section></div></article>''',
+          'fersztl-barnabas': '''<article class="profile" id="fersztl-barnabas"><div class="profile-head"><figure class="portrait"><img src="assets/fersztl-barnabas.jpg" alt="Fersztl Barnabás portréja" loading="lazy" decoding="async"><span class="fallback">Portré helye</span></figure><div class="profile-title"><div class="eyebrow">Sakkfoglalkozás-vezető · járműmérnök</div><h2>Fersztl Barnabás</h2><p class="role">Mérnöki rendszerszemléletét a sakk gyakorlati logikájával kapcsolja össze: a foglalkozásokon a figyelem, a tervezés és a következmények előrelátása kerül középpontba.</p><div class="programs"><a href="https://www.magyariskola.at/event-details/sakk-2026" target="_blank" rel="noopener">Sakk és Gondolkodásfejlesztés</a></div></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>A Széchenyi István Egyetemen járműmérnöki tanulmányokat végzett, és mechanikai tervezőmérnökként is dolgozott a járműipari kutatás-fejlesztésben. Az SZEnergy Team tagjaként részt vett a Shell Eco-marathon Urban Concept akkumulátoros-elektromos kategóriájának 2022-es győztes projektjében. Bécsben a Bécsi Magyar Iskola sakk- és gondolkodásfejlesztő foglalkozását vezeti.</p></section><section class="segment"><h3>A hozzá különösen közel álló területek</h3><p>A sakk, a stratégiai gondolkodás, a rendszerszemlélet, a problémamegoldás, a koncentráció, valamint a műszaki tervezésben és a játékban egyaránt fontos előrelátás.</p></section><section class="segment"><h3>Pedagógiai szemlélet</h3><p>A sakkot nem pusztán szabályok megtanulásaként kezeli. Feladványokkal, megnyitási helyzetekkel és valódi játszmákkal dolgozik, hogy a résztvevők megtanuljanak több lépéssel előre gondolkodni, döntéseket összehasonlítani és saját hibáikból következtetéseket levonni. A kis létszámú csoportot azért tartja fontosnak, mert így jut idő az egyéni figyelemre is.</p></section></div></article>'''
+          }
+          for aid,html in articles.items():
+              pattern=rf'<article class="profile" id="{re.escape(aid)}">.*?</article>'
+              s,n=re.subn(pattern,html,s,count=1,flags=re.S)
+              if n!=1:
+                  raise SystemExit(f'{aid}: {n} matches')
+          s=s.replace('<a class="teacher-card" href="#noszko-niki"><b>Noszkó Niki</b><span>Óvodai foglalkozások</span></a>','<a class="teacher-card" href="#noszko-niki"><b>Noszkó Niki</b><span>Pszichológia · gyermekpszichodráma · óvodai foglalkozások</span></a>')
+          s=s.replace('<a class="teacher-card" href="#dapin-hajnalka-judit"><b>Mag. Dapin Hajnalka Judit</b><span>Zenepedagógia · zeneterápia</span></a>','<a class="teacher-card" href="#dapin-hajnalka-judit"><b>Mag. Dapin Hajnalka Judit</b><span>Zenepedagógia · zeneterápia · citera</span></a>')
+          p.write_text(s,encoding='utf-8')
+      - name: Commit changes
+        run: |
+          git config user.name "BMI Teacher Research Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Enrich Noszko Dapin and Fersztl profiles from public sources"
+          git push
