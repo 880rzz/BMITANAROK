@@ -1,0 +1,98 @@
+name: Add verified press interviews
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-press-interviews.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add press interview cards
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          css=Path('styles.css')
+          c=css.read_text(encoding='utf-8')
+
+          press={
+            'bajka-kinga-csengele':[
+              ('Rólunk.at','Fabula bábtábor – Interjú Bajka Kinga Csengelével','https://rolunk.at/kultura/fabula-babtabor-interju-bajka-kinga-csengelevel/','Dráma, bábszínház, közös alkotás és a gyerekekkel való kapcsolódás.'),
+              ('ORF Magyarok','Óvodapedagógust keres a Bécsi Magyar Iskola – interjú Bajka Kinga Csengelével','https://volksgruppen.orf.at/magyarok/stories/3313675/','Alternatív pedagógia, Waldorf–Montessori szemlélet és élményközpontú óvodai munka.')
+            ],
+            'schneider-erzsebet':[
+              ('Rólunk.at','A kétnyelvűség ajándék','https://rolunk.at/magazin/a-ketnyelvuseg-ajandek/','Kétnyelvűség, fejlesztőpedagógia, differenciált magyaroktatás és több évtizedes pedagógiai tapasztalat.')
+            ],
+            'noszko-niki':[
+              ('Rólunk.at','Valóban ijesztő a pszichodráma vagy csak úgy hangzik?','https://rolunk.at/magazin/valoban-ijeszto-a-pszichodrama-vagy-csak-ugy-hangzik/','Gyermekpszichodráma, kiscsoportos módszer, játék és biztonságos érzelmi feldolgozás.')
+            ],
+            'korchma-zsombor':[
+              ('Rólunk.at','Kreatív Minecraft tábor Bécsben','https://rolunk.at/magazin/kreativ-minecraft-tabor-becsben/','Minecraft, történelem, építészet, tervezés és csapatmunka összekapcsolása a gyerekekkel.')
+            ],
+            'falusi-dora':[
+              ('Rólunk.at','„Nem tudom elképzelni, hogy a gyerekem ne tudja, ki volt József Attila”','https://rolunk.at/fiatalok/nem-tudom-elkepzelni-hogy-a-gyerekem-ne-tudja-ki-volt-jozsef-attila-uj-klub-gyerekeknek-becsben/','Magyar kultúra, történelmi és művészeti ismeretterjesztés gyerekeknek, a Fecske Klub szemlélete.')
+            ],
+            'egri-monika':[
+              ('Pagony','„Amikor egyedül vannak a könyvvel, valójában akkor sincsenek egyedül”','https://www.pagony.hu/cikkek/cirka-es-firka-egri-monika-illusztrator-interju-grafika-zseblampas-konyvek','Gyerekkönyv-illusztráció, vizuális történetmesélés és a különböző életkorok képi világa.'),
+              ('Író Cimborák','Interjú Egri Mónikával','https://irocimborak.blogspot.com/2017/04/interju-egri-monikaval.html','Írás, illusztráció, közös alkotás és a saját vizuális-irodalmi hang kialakulása.')
+            ],
+            'banhalmi-norbert':[
+              ('Rólunk.at','„A lehetetlen csupán egy szó”','https://rolunk.at/magazin/a-lehetetlen-csupan-egy-szo/','Fotográfiai pálya, közösségi munka, oktatás és a bécsi szakmai jelenlét.'),
+              ('Záridő Fotós Magazin','Művész az üzlet mögött – 1. rész: New York','https://zarido.hu/muvesz-az-uzlet-mogott-1-resz/','Nagy életútinterjú a fotográfiai pályáról, szakmai fordulópontokról és alkotói gondolkodásról.'),
+              ('Jazzy Rádió','Dr. Jazzy – Bánhalmi Norbert fotóművész','https://jazzy.hu/adasok/banhalmi-norbert-fotomuvesz','Rádiós beszélgetés fotográfiáról, alkotói szemléletről és a művészeti munka emberi oldaláról.')
+            ]
+          }
+
+          def block(items):
+              cards=[]
+              for medium,title,url,desc in items[:3]:
+                  cards.append(f'''<a class="press-card" href="{url}" target="_blank" rel="noopener external"><span class="press-medium">{medium}</span><strong>{title}</strong><span class="press-desc">{desc}</span><span class="press-open">Interjú megnyitása ↗</span></a>''')
+              return '<section class="press" aria-label="Válogatott szakmai sajtómegjelenések"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott szakmai interjúk</h3></div><div class="press-grid">'+''.join(cards)+'</div></section>'
+
+          for pid,items in press.items():
+              pat=re.compile(r'(<article class="profile" id="'+re.escape(pid)+r'".*?)(</article>)',re.S)
+              m=pat.search(s)
+              if not m:
+                  raise SystemExit(f'profile not found: {pid}')
+              article=m.group(1)
+              article=re.sub(r'<section class="press".*?</section>','',article,flags=re.S)
+              s=s[:m.start()]+article+block(items)+m.group(2)+s[m.end():]
+
+          marker='/* press-interviews-20260901 */'
+          if marker not in c:
+              c += '''\n/* press-interviews-20260901 */\n.press{margin-top:48px;padding-top:34px;border-top:1px solid var(--line)}.press-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}.press-head .eyebrow{margin:0}.press-head h3{margin:0;font-size:clamp(1.2rem,2vw,1.55rem);letter-spacing:-.025em}.press-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.press-card{display:flex;flex-direction:column;min-height:210px;padding:22px;border:1px solid var(--line);background:#fff;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.press-card:hover{transform:translateY(-2px);border-color:#aaa;box-shadow:0 10px 28px rgba(0,0,0,.06)}.press-medium{font-size:.76rem;font-weight:760;letter-spacing:.055em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.press-card strong{font-size:1rem;line-height:1.45}.press-desc{display:block;margin-top:12px;color:var(--muted);font-size:.9rem;line-height:1.65}.press-open{display:block;margin-top:auto;padding-top:18px;font-size:.84rem;font-weight:700}.press-card:focus-visible{outline:3px solid #000;outline-offset:3px}@media(max-width:900px){.press-grid{grid-template-columns:1fr 1fr}.press-head{align-items:start;flex-direction:column;gap:8px}}@media(max-width:640px){.press{margin-top:40px;padding-top:28px}.press-grid{grid-template-columns:1fr}.press-card{min-height:0;padding:20px}}@media(prefers-reduced-motion:reduce){.press-card{transition:none}.press-card:hover{transform:none}}\n'''
+
+          p.write_text(s,encoding='utf-8')
+          css.write_text(c,encoding='utf-8')
+          PY
+
+      - name: Validate press rules
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          ids=['bajka-kinga-csengele','schneider-erzsebet','noszko-niki','korchma-zsombor','falusi-dora','egri-monika','banhalmi-norbert']
+          for pid in ids:
+              m=re.search(r'<article class="profile" id="'+re.escape(pid)+r'".*?</article>',s,re.S)
+              assert m and 'class="press"' in m.group(0), pid
+              assert m.group(0).count('class="press-card"') <= 3, pid
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Press Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html styles.css
+          git diff --cached --quiet && exit 0
+          git commit -m "Add verified professional interviews to teacher profiles"
+          git push
