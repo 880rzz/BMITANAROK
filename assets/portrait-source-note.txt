@@ -1,0 +1,1 @@
+Teacher portraits in assets/*-20260901.png are lossless 1:1 crops made from the user-provided originals. No resizing was applied; square dimensions equal the shorter side of each source image. PNG encoding is used to avoid additional lossy compression.
