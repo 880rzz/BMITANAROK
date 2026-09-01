@@ -1,0 +1,142 @@
+name: Add verified professional materials
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-professional-materials.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add professional materials to teacher profiles
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          import html
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          # Broaden the existing editorial label: the section now contains both interviews
+          # and carefully selected professional materials.
+          s = s.replace('Válogatott szakmai interjúk', 'Válogatott szakmai anyagok és interjúk')
+          s = s.replace('<span class="eyebrow">Sajtómegjelenések</span>', '<span class="eyebrow">Sajtó és szakmai anyagok</span>')
+
+          materials = {
+            'sipos-tibor': [
+              ('Rólunk.at', 'Tíz éves a bécsi Napraforgócskák', 'https://rolunk.at/fiatalok/tiz-eves-a-becsi-napraforgocskak-fotokon-szovegben-mozgokepen/', 'Interjú a gyermek-néptáncoktatásról, utánpótlásról és arról, hogyan lehet a gyerekekkel megszerettetni a néptáncot.', 'Interjú megnyitása ↗'),
+            ],
+            'orban-dalma': [
+              ('Rólunk.at', 'Túrót ettem, nem ordát, ezért nőttem ekkorát!', 'https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/', 'Riport-interjú a gyermek-néptánctábor módszertanáról, a csoporthoz igazított tanításról, ismétlésről és továbbhaladásról.', 'Szakmai anyag megnyitása ↗'),
+            ],
+            'veres-tamas': [
+              ('Rólunk.at', 'Túrót ettem, nem ordát, ezért nőttem ekkorát!', 'https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/', 'Szakmai riport a gyermek-néptánctáborról és a foglalkozásvezetők közös pedagógiai munkájáról.', 'Szakmai anyag megnyitása ↗'),
+              ('Napraforgók', 'A Napraforgók vezetősége', 'https://www.napraforgok.at/vezetoseg', 'Elsődleges szakmai bemutatkozás a néptáncos és népzenei közösség vezetőiről, szerepeikről és tevékenységükről.', 'Szakmai profil megnyitása ↗'),
+            ],
+            'varga-bernadette': [
+              ('Napraforgók', 'A Napraforgók vezetősége', 'https://www.napraforgok.at/vezetoseg', 'Elsődleges szakmai bemutatkozás a Napraforgók vezetőiről, a gyermekcsoport munkájáról és a népzenei-néptáncos közösségről.', 'Szakmai profil megnyitása ↗'),
+            ],
+            'hierholcz-anna': [
+              ('ORF Magyarok', 'Humoros musicallel készülnek a BMI diákjai', 'https://volksgruppen.orf.at/magyarok/stories/3325447/', 'Hierholcz Anna a saját musical készítéséről, a gyerekek bevonásáról, a kreativitásról és a színpadi készségek fejlesztéséről beszél.', 'Interjú megnyitása ↗'),
+            ],
+            'boronkai-gabriella': [
+              ('ORF Magyarok', 'Ovistorna a Bécsi Magyar Iskolában', 'https://volksgruppen.orf.at/v2/magyarok/stories/2979033/index.html', 'Boronkai Gabriella az óvodáskori mozgásfejlesztés fizikai és mentális céljairól, koordinációról, egyensúlyról és együttműködésről beszél.', 'Szakmai anyag megnyitása ↗'),
+              ('Rólunk.at', 'Mesés Világ – kétnyelvű tábor és élménypedagógia', 'https://rolunk.at/fiatalok/nyari-taborok-meses-vilag/', 'Szakmai riport a kétnyelvű gyerekekkel végzett kreatív pedagógiai munkáról és a figyelem fenntartásának módszereiről.', 'Szakmai anyag megnyitása ↗'),
+            ],
+            'dapin-hajnalka-judit': [
+              ('Rólunk.at', 'Pajzán népmesék Bécsben', 'https://rolunk.at/aktualis/pajzan-nepmesek-becsben/', 'Dapin Hajnalka Judit a népdalválasztásról, a zenei gondolkodásról és a népzenei anyag előadói szerepéről nyilatkozik.', 'Szakmai anyag megnyitása ↗'),
+            ],
+            'horanyi-bori': [
+              ('Bécsi Magyar Iskola', 'FÓKUSZ-CSOPORT', 'https://www.magyariskola.at/event-details/fokuszcsoport-2026', 'A foglalkozás hivatalos szakmai leírása: fókuszált fejlesztés, pedagógiai célok és Horányi Bori foglalkozásvezetői munkája.', 'Foglalkozás szakmai leírása ↗'),
+            ],
+            'makfalvi-rita': [
+              ('Bécsi Magyar Iskola', 'Magyar Iskola Badenben', 'https://www.magyariskola.at/event-details/iskolabaden-2026', 'A Meixner-módszert és a Mesezene élménypedagógiát ötvöző magyar nyelvi foglalkozás részletes szakmai bemutatása.', 'Foglalkozás szakmai leírása ↗'),
+            ],
+            'hupczik-andrea': [
+              ('Bécsi Magyar Iskola', 'Együtt dobban Bécs', 'https://www.magyariskola.at/event-details/oromzene-2026', 'A közös dobolásra, éneklésre és generációkon átívelő közösségi élményre épülő program részletes szakmai leírása.', 'Foglalkozás szakmai leírása ↗'),
+            ],
+            'pecze-adam': [
+              ('Bécsi Magyar Musical Társulat', 'Zongora és zeneszerzés – Pecze Ádám', 'https://www.musicaltarsulat.at/', 'A musicaltársulat hivatalos szakmai oldala Pecze Ádám zongora- és zeneszerzési szerepével, valamint a gyermekcsoport alkotói munkájával.', 'Szakmai oldal megnyitása ↗'),
+            ],
+          }
+
+          def card(item):
+              medium, title, url, desc, cta = item
+              return (
+                  f'<a class="press-card" href="{html.escape(url, quote=True)}" target="_blank" rel="noopener external">'
+                  f'<span class="press-medium">{html.escape(medium)}</span>'
+                  f'<strong>{html.escape(title)}</strong>'
+                  f'<span class="press-desc">{html.escape(desc)}</span>'
+                  f'<span class="press-open">{html.escape(cta)}</span></a>'
+              )
+
+          def update_article(match):
+              article = match.group(0)
+              anchor = match.group(1)
+              if anchor not in materials:
+                  return article
+
+              items = materials[anchor]
+              press = re.search(r'<section class="press".*?</section>', article, re.S)
+              if press:
+                  block = press.group(0)
+                  existing_media = set(re.findall(r'<span class="press-medium">(.*?)</span>', block, re.S))
+                  existing_urls = set(re.findall(r'<a class="press-card" href="([^"]+)"', block))
+                  existing_cards = re.findall(r'<a class="press-card".*?</a>', block, re.S)
+                  new_cards = []
+                  for item in items:
+                      medium, _, url, _, _ = item
+                      # Preserve the existing editorial rule: max. 3 cards/profile,
+                      # and the same medium appears only once on a profile.
+                      if medium in existing_media or url in existing_urls:
+                          continue
+                      if len(existing_cards) + len(new_cards) >= 3:
+                          break
+                      new_cards.append(card(item))
+                      existing_media.add(medium)
+                      existing_urls.add(url)
+                  if new_cards:
+                      block = block.replace('</div></section>', ''.join(new_cards) + '</div></section>', 1)
+                      article = article[:press.start()] + block + article[press.end():]
+              else:
+                  chosen = []
+                  used_media = set()
+                  for item in items:
+                      if item[0] in used_media:
+                          continue
+                      chosen.append(item)
+                      used_media.add(item[0])
+                      if len(chosen) == 3:
+                          break
+                  if chosen:
+                      block = (
+                          '<section class="press" aria-label="Válogatott szakmai sajtómegjelenések és szakmai anyagok">'
+                          '<div class="press-head"><span class="eyebrow">Sajtó és szakmai anyagok</span>'
+                          '<h3>Válogatott szakmai anyagok és interjúk</h3></div>'
+                          '<div class="press-grid">' + ''.join(card(x) for x in chosen) + '</div></section>'
+                      )
+                      article = article[:-10] + block + '</article>'
+              return article
+
+          pattern = re.compile(r'<article class="profile" id="([^"]+)">.*?</article>', re.S)
+          s = pattern.sub(update_article, s)
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit changes
+        run: |
+          git config user.name "BMI Professional Sources Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add verified professional materials to teacher profiles"
+          git push
