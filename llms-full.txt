@@ -1,0 +1,39 @@
+# Bécsi Magyar Iskola – teacher directory (2026/2027)
+Canonical: https://tanarok.magyariskola.at/
+
+This static site is a human-readable and machine-readable directory of teachers and activity leaders connected to the current Bécsi Magyar Iskola / BMI program ecosystem. Teacher profiles follow the same editorial structure:
+1. professional background and most important experience;
+2. fields particularly close to the teacher;
+3. pedagogical approach and what matters in work with children.
+
+Current verified teacher/program relations include, among others:
+- Bajka Kinga Csengele — Bécsi Magyar Óvoda, Varázsceruza, Kicsi Svung.
+- Horányi Bori — Borsófőzde, Alapozó Terápia, FÓKUSZ-CSOPORT.
+- Schneider Erzsébet — Hungarian language programs in Aspern and Seestadt.
+- Makfalvi Rita — Magyar Iskola Badenben.
+- Fersztl Barnabás — Sakk és Gondolkodásfejlesztés.
+- Kiss Ágnes — Hungarian language and culture groups at Schwedenplatz.
+- Boronkai Gabriella — RAJZTÁBLA.
+- Korchma Zsombor — BÉCS-CRAFT.
+- Hierholcz Anna and Pecze Ádám — MaMUT Musical Studio.
+- Dr. Trencsényi Klára DLA — Filmes Műhely.
+- Falusi Dóra — Fecske Klub.
+- Hupczik Andrea — Világfa Sárkányai and related drumming program.
+- Varga Bernadette and Veres Tamás — Napraforgócskák.
+- Bánhalmi Norbert and Balogh Dávid — VIPACH Felnőtt Fotóklub.
+- Sipos Tibor and Orbán Dalma — adult beginner folk dance.
+- Egri Mónika — ReKreáció.
+- Mag. Dapin Hajnalka Judit — Zenebona.
+
+Privacy principle: only information necessary for professional presentation is published. Private residential addresses, birth dates and unrelated CV fields are intentionally excluded. Missing professional biographies are not inferred or fabricated.
+
+Authoritative related sources:
+https://programvalaszto.magyariskola.at/
+https://www.magyariskola.at/
+https://tanarok.magyariskola.at/adatvedelem.html
+https://tanarok.magyariskola.at/impresszum.html
+
+Organization: Bécsi Magyar Iskola / Wiener Ungarische Schule
+Operator/publisher: Zentralverband Ungarischer Vereine und Organisationen in Österreich, ZVR 079797621
+Address: Schwedenplatz 2., A-1010 Wien; entrance Laurenzerberg 5, 1st floor, doors 8–9
+Contact: office@magyariskola.at | +43 650 3312 090
