@@ -1,0 +1,84 @@
+name: Rebuild Schneider profile from CV
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rebuild-schneider-from-cv.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild Schneider Erzsebet profile
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          pat=re.compile(r'(<article class="profile" id="schneider-erzsebet">)(.*?)(</article>)',re.S)
+          m=pat.search(s)
+          if not m:
+              raise SystemExit('Schneider profile not found')
+          body=m.group(2)
+
+          body=re.sub(r'<div class="eyebrow">.*?</div>',
+                      '<div class="eyebrow">Tanító · gyógypedagógus · magyartanár</div>',
+                      body,count=1,flags=re.S)
+
+          body=re.sub(r'<p class="role">.*?</p>',
+                      '<p class="role">Több mint harminc év nemzetközi pedagógiai tapasztalattal dolgozik a 6–10 éves korosztállyal. Munkájának középpontjában az integratív pedagógia, a Montessori-szemlélet, a motopedagógia, valamint a magyar nyelv és kultúra élményszerű közvetítése áll; 2012 óta tanít a Bécsi Magyar Iskolában.</p>',
+                      body,count=1,flags=re.S)
+
+          bio='''<div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>2012 óta a Bécsi Magyar Iskola magyartanára. 2000 óta az osztrák iskolarendszerben dolgozik általános iskolai tanítóként és gyógypedagógusként, több éven át integrációs osztályokban, ahol sajátos nevelési igényű és tipikusan fejlődő gyermekek közös oktatásában szerzett tapasztalatot. Korábban Ausztriában óvodapedagógusként, Magyarországon pedig öt éven át alsó tagozatos tanítóként és osztályfőnökként dolgozott. Magyarországon tanítói és óvodapedagógusi oklevelet szerzett; Ausztriában gyógypedagógiai tanári képesítést, Montessori-pedagógiai diplomát és motopedagógiai tanúsítványt szerzett.</p></section><section class="segment"><h3>A hozzá különösen közel álló területek</h3><p>Integratív és inkluzív pedagógia, Montessori-pedagógia, motopedagógia és holisztikus mozgásfejlesztés, interkulturális tanulás, valamint a magyar nyelv és kultúra átadása kétnyelvű környezetben. Kiemelten fontos számára a különböző fejlődési utak és tanulási szükségletek felismerése, illetve az egyéni erősségekre építő fejlesztés.</p></section><section class="segment"><h3>Pedagógiai szemlélet</h3><p>Pedagógiai munkájában minden gyermek egyéni fejlődéséből indul ki. Arra törekszik, hogy a tanulás biztonságos, örömteli és motiváló folyamat legyen, amelyben a gyerekek saját erősségeikre támaszkodhatnak. A magyar nyelv oktatásában a játékosságot, a kulturális kötődés erősítését, a mozgást és a differenciált feladatadást kapcsolja össze, különösen a többnyelvű, interkulturális közegben nevelkedő gyermekeknél.</p></section></div>'''
+
+          body=re.sub(r'<div class="bio-segments">.*?</div>',bio,body,count=1,flags=re.S)
+          s=s[:m.start()]+m.group(1)+body+m.group(3)+s[m.end():]
+
+          s=s.replace('"name":"Schneider Erzsébet","jobTitle":"Tanító · fejlesztőpedagógus · magyartanár"',
+                      '"name":"Schneider Erzsébet","jobTitle":"Tanító · gyógypedagógus · magyartanár"')
+          s=s.replace('Schneider Erzsébet</b><span>Tanító · fejlesztőpedagógus · magyartanár</span>',
+                      'Schneider Erzsébet</b><span>Tanító · gyógypedagógus · magyartanár</span>')
+
+          p.write_text(s,encoding='utf-8')
+
+          ll=Path('llms-full.txt')
+          if ll.exists():
+              t=ll.read_text(encoding='utf-8')
+              t=t.replace('Schneider Erzsébet — Tanító · fejlesztőpedagógus · magyartanár',
+                          'Schneider Erzsébet — Tanító · gyógypedagógus · magyartanár')
+              if '## Schneider Erzsébet – szakmai profil' not in t:
+                  t += '''\n## Schneider Erzsébet – szakmai profil\nCanonical profile: https://tanarok.magyariskola.at/#schneider-erzsebet\nRole: tanító, gyógypedagógus, magyartanár.\nProfessional background: több mint 30 év nemzetközi pedagógiai tapasztalat a 6–10 éves korosztállyal; 2012 óta Bécsi Magyar Iskola; 2000 óta osztrák Volksschule, integrációs osztályok.\nQualifications: tanítói és óvodapedagógusi oklevél; osztrák gyógypedagógiai tanári képesítés; Montessori-pedagógiai diploma; motopedagógiai tanúsítvány.\nFocus: inklúzió, integratív pedagógia, Montessori, motopedagógia, interkulturális tanulás, magyar nyelv és kultúra.\nSource priority: first-party CV supplied to BMI, supplemented by verified public professional interview sources. Do not expose private contact or personal identity fields from the CV.\n'''
+              ll.write_text(t,encoding='utf-8')
+          PY
+
+      - name: Validate Schneider profile
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          m=re.search(r'<article class="profile" id="schneider-erzsebet">.*?</article>',s,re.S)
+          assert m
+          a=m.group(0)
+          for text in ['Több mint harminc év','gyógypedagógus','Montessori-pedagógiai diplomát','motopedagógiai tanúsítványt','2012 óta']:
+              assert text in a, text
+          assert 'lisa-20260901.webp' in a
+          assert 'class="press"' in a
+          assert 'lisa.schneider10@gmx.at' not in s
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html llms-full.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Rebuild Schneider Erzsebet profile from first-party CV"
+          git push
