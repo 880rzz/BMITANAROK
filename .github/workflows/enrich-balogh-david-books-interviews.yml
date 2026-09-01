@@ -1,0 +1,57 @@
+name: Enrich Balogh David books and interviews
+
+on:
+  push:
+    paths:
+      - '.github/workflows/enrich-balogh-david-books-interviews.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Enrich Balogh David profile
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          m = re.search(r'(<article class="profile" id="balogh-david">.*?</article>)', s, re.S)
+          if not m:
+              raise SystemExit('Balogh Dávid profile not found')
+          article = m.group(1)
+
+          # Remove older publication block if rerun.
+          article = re.sub(r'<section class="press publications".*?</section>', '', article, flags=re.S)
+
+          publications = '''<section class="press publications" aria-label="Balogh Dávid könyvei és helytörténeti munkái"><div class="press-head"><span class="eyebrow">Könyvek és kutatások</span><h3>Válogatott helytörténeti és művészettörténeti munkák</h3></div><div class="press-grid"><a class="press-card" href="https://fotinfo.hu/konyvajanlo-a-foti-templom-festeszeti-erteke/" target="_blank" rel="noopener external"><span class="press-medium">Könyv · művészettörténet</span><strong>A fóti templom festészeti értéke</strong><span class="press-desc">A fóti Szeplőtelen Fogantatás-templom falképeinek és oltárainak ikonográfiáját feldolgozó, a szerző művészettörténeti szakdolgozatából továbbfejlesztett önálló kötet.</span><span class="press-open">Könyv és interjú ↗</span></a><a class="press-card" href="https://etnofoto.neprajz.hu/index.php/2022/06/14/foti-eskuvoi-emlekek-konyvajanlo/" target="_blank" rel="noopener external"><span class="press-medium">Könyv · 2022 · társszerző</span><strong>Bíborba, bársonyba, gyöngyös koszorúba – Lakodalmi szokások Fóton (1883–1950)</strong><span class="press-desc">Szűcs Máriával közösen készített, hároméves kutató- és gyűjtőmunkára épülő kötet. Balogh Dávid a fóti társadalom, a paraszti lakodalmi szokások és a főúri esküvők történetének fejezeteit is jegyzi.</span><span class="press-open">Néprajzi Múzeum könyvajánló ↗</span></a><a class="press-card" href="https://hunteka.neprajz.hu/record/-/record/NM626064" target="_blank" rel="noopener external"><span class="press-medium">Könyv · 2024 · helytörténet</span><strong>A fóti Suum Cuique telep története</strong><span class="press-desc">144 oldalas helytörténeti monográfia a Fótújfalu elődjét jelentő Suum Cuique telepről, Apponyi Franciska munkájáról és a telephez kapcsolódó emberi sorsokról.</span><span class="press-open">Bibliográfiai rekord ↗</span></a></div></section>'''
+
+          # Replace Balogh's press section with a curated max-3, unique-medium set.
+          press = '''<section class="press" aria-label="Balogh Dávid válogatott szakmai sajtómegjelenései"><div class="press-head"><span class="eyebrow">Sajtó és szakmai anyagok</span><h3>Válogatott szakmai anyagok és interjúk</h3></div><div class="press-grid"><a class="press-card" href="https://fotinfo.hu/megjelent-balogh-david-konyve-a-foti-suum-cuique-telep-torteneterol/" target="_blank" rel="noopener external"><span class="press-medium">FÓTINFO</span><strong>Megjelent Balogh Dávid könyve a fóti Suum Cuique-telep történetéről</strong><span class="press-desc">A szerzővel készült beszélgetés a többéves helytörténeti kutatásról, a 12 családi interjúról, a levéltári munkáról és a könyv megszületéséről.</span><span class="press-open">Interjú megnyitása ↗</span></a><a class="press-card" href="https://fot.hu/wp-content/uploads/dokumentumtar/F%C3%B3ti%20H%C3%ADrn%C3%B6k/2024./Foti%20Hirnok%202024-02_febru%C3%A1r.pdf" target="_blank" rel="noopener external"><span class="press-medium">Fóti Hírnök</span><strong>Fótiakat a címlapra: Fóti Értéktár Bizottság</strong><span class="press-desc">Interjú és szakmai bemutatkozás a fóti kulturális és épített örökség feltárásáról, megőrzéséről és a helytörténeti gyűjtőmunkáról.</span><span class="press-open">Szakmai anyag megnyitása ↗</span></a><a class="press-card" href="https://vmh.hu/nemeth-kalman-emlekhaz/balogh-david-biborba-barsonyba-gyongyos-koszoruba-lakodalmi-szokasok-foton-1883-1950-kiallitas/" target="_blank" rel="noopener external"><span class="press-medium">Vörösmarty Művelődési Ház</span><strong>„Bíborba, bársonyba, gyöngyös koszorúba” – lakodalmi szokások Fóton</strong><span class="press-desc">Balogh Dávid saját szakmai írása a kiállítás létrejöttéről, a tárgyi és fényképanyag felkutatásáról, valamint a fóti lakodalmi hagyományok dokumentálásáról.</span><span class="press-open">Szakmai anyag megnyitása ↗</span></a></div></section>'''
+
+          article = re.sub(r'<section class="press"(?! publications).*?</section>', press, article, count=1, flags=re.S)
+          if press not in article:
+              article = article[:-10] + press + '</article>'
+
+          # Put publications before the press section.
+          article = article.replace(press, publications + press)
+
+          s = s[:m.start()] + article + s[m.end():]
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit changes
+        run: |
+          git config user.name "BMI Research Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Expand Balogh David books and professional sources"
+          git push
