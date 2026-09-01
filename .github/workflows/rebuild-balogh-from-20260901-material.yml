@@ -1,0 +1,52 @@
+name: Rebuild Balogh Dávid from supplied professional material
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rebuild-balogh-from-20260901-material.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild Balogh Dávid profile while preserving books and press
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          m = re.search(r'<article class="profile" id="balogh-david">.*?</article>', s, re.S)
+          if not m:
+              raise SystemExit('Balogh Dávid profile not found')
+          old = m.group(0)
+
+          # Preserve already curated publication and editorial press sections.
+          extras = ''.join(re.findall(r'<section class="press(?: publications)?".*?</section>', old, re.S))
+
+          rebuilt = '''<article class="profile" id="balogh-david"><div class="profile-head"><figure class="portrait"><span class="fallback" aria-hidden="true">BD</span><img src="assets/balogh_david.webp" alt="Balogh Dávid művészettörténész-muzeológus és fotográfiai foglalkozásvezető portréja" loading="lazy" decoding="async"></figure><div class="profile-title"><div class="eyebrow">Művészettörténész · muzeológus · fotográfiai foglalkozásvezető</div><h2>Balogh Dávid</h2><p class="role">A fotográfiát történeti, vizuális és kulturális összefüggéseiben értelmezi. Előadásaiban egy-egy fotográfus vagy korszak munkásságát történeti háttér, technika, érzelmi hatás és művészeti jelentés felől is vizsgálja, és külön figyelmet fordít a festészet és a fotográfia kapcsolatára.</p></div></div><div class="bio-segments"><section><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>Az ELTE Bölcsészettudományi Karán okleveles művészettörténészként végzett, ahol magyar és egyetemes fotótörténetet is tanult. Főállású művészettörténészként a fóti Németh Kálmán Emlékház vezetője, emellett Fót történetéhez, néprajzához és művészettörténetéhez kapcsolódó helytörténeti kutatásokat végez.</p><p>Az elmúlt években számos fotótörténeti, képzőművészeti és helytörténeti kiállítást rendezett, illetve nyitott meg Magyarországon és külföldön, többek között New Yorkban és Bécsben. Kovács István amatőr fotográfus életművét digitalizálta és rendszerezte, majd kutatásának eredményeit a <strong>Fót krónikása</strong> című kiállításon mutatta be. Legutóbbi szakmai feladatai között szerepelt dr. Fogarasi Klára néprajzos-fotótörténész <strong>Örök emlékül 2.</strong> című kiállításának megnyitása a budapesti Titok Galériában. Több Fóthoz kapcsolódó könyv és kiadvány szerzője, illetve szerkesztője.</p></section><section><h3>A hozzá különösen közel álló területek</h3><p>Kutatási eredményeinek közérthető és szakmailag pontos interpretálását kiemelt feladatnak tekinti. Könyvekben, kiállításokban, várostörténeti sétákon, útibeszámolókban, hely- és művészettörténeti előadásokban, valamint cikkekben és tanulmányokban dolgozza fel és osztja meg a feltárt összefüggéseket.</p><p>Különösen közel áll hozzá a fotótörténet, a helytörténet, a vizuális kultúra, a festészet és fotográfia kapcsolata, valamint az archív fotóanyagok rendszerezése és értelmezése.</p></section><section><h3>Pedagógiai szemlélet</h3><p>Előadásain azt tartja fontosnak, hogy a hallgatók ne elszigetelt képeket vagy technikai megoldásokat lássanak, hanem összefüggésekben gondolkodjanak: felismerjék, hogy egy-egy irányzat, műfaj vagy fotográfiai szemlélet milyen történeti és művészeti közegben alakult ki, és mely alkotók milyen újításokat hoztak.</p><p>A fotóklubban a képelemzéshez történeti és művészettörténeti nézőpontot ad. Az előadássorozat célja, hogy a résztvevők a fotográfia sokféle megközelítésén keresztül ne csak technikailag fényképezzenek egyre tudatosabban, hanem idővel saját, következetesebb vizuális nyelvet is kialakítsanak.</p></section></div>''' + extras + '</article>'
+
+          s = s[:m.start()] + rebuilt + s[m.end():]
+
+          # Keep schema title precise and aligned with the supplied professional material.
+          s = s.replace('"@id":"https://tanarok.magyariskola.at/#balogh-david","name":"Balogh Dávid","jobTitle":"Művészettörténész · muzeológus"', '"@id":"https://tanarok.magyariskola.at/#balogh-david","name":"Balogh Dávid","jobTitle":"Művészettörténész · muzeológus · fotográfiai foglalkozásvezető"')
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit changes
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Rebuild Balogh Dávid profile from supplied professional material"
+          git push
