@@ -1,0 +1,95 @@
+name: Add more verified global interviews
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-more-global-interviews.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add additional verified interview cards
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          press={
+            'fersztl-barnabas':[
+              ('AutóPro','Ismét a versenypályára készül a SZEnergy Team','https://hungexpo.hu/wp-content/uploads/autopro-majus-compressed.pdf','Interjú a versenyautó mérnöki fejlesztéséről, mérési rendszerekről, gördülési ellenállásról és saját tervezésű műszaki megoldásokról.')
+            ],
+            'kiss-agnes':[
+              ('Rólunk.at','12 éve ingázik Bezenyéről Bécsbe, hogy magyarul tanítsa a gyerekeket','https://rolunk.at/kultura/12-eve-ingazik-bezenyerol-becsbe-hogy-magyarul-tanitsa-a-gyerekeket/','Nagy portrébeszélgetés pedagógusi pályájáról, magyar nyelvoktatásról, kétnyelvű gyerekekről és a bécsi tanítás tapasztalatairól.')
+            ],
+            'trencsenyi-klara':[
+              ('Filmhu','Reményvasút: „A történetek mennek tovább”','https://magyar.film.hu/filmhu/magazin/remenyvasut','Személyes szakmai interjú dokumentumfilmes módszerről, gyereksorsokról, filmezési etikáról és történetépítésről.'),
+              ('24.hu','Reményvasút: egy film arról, hogy veszett nehéz ma gyereknek lenni','https://24.hu/kultura/2016/05/08/remenyvasut-egy-film-arrol-hogy-veszett-nehez-ma-gyereknek-lenni/','Rendezői interjú a dokumentumfilm készítéséről, a szereplő gyerekekkel való munkáról és a felnőtté válás filmes megközelítéséről.')
+            ],
+            'balogh-david':[
+              ('FÓTINFO','A fóti templom festészeti értéke – interjú Balogh Dáviddal','https://fotinfo.hu/konyvajanlo-a-foti-templom-festeszeti-erteke/','Szakmai interjú művészettörténeti kutatásról, ikonográfiáról, helyi örökségről és a múzeumi-kutatói munka hátteréről.')
+            ]
+          }
+
+          def block(items):
+              cards=[]
+              for medium,title,url,desc in items[:3]:
+                  cards.append(f'''<a class="press-card" href="{url}" target="_blank" rel="noopener external"><span class="press-medium">{medium}</span><strong>{title}</strong><span class="press-desc">{desc}</span><span class="press-open">Interjú megnyitása ↗</span></a>''')
+              return '<section class="press" aria-label="Válogatott szakmai sajtómegjelenések"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott szakmai interjúk</h3></div><div class="press-grid">'+''.join(cards)+'</div></section>'
+
+          for pid,items in press.items():
+              pat=re.compile(r'(<article class="profile" id="'+re.escape(pid)+r'".*?)(</article>)',re.S)
+              m=pat.search(s)
+              if not m:
+                  raise SystemExit(f'profile not found: {pid}')
+              article=m.group(1)
+              existing=re.search(r'<section class="press".*?</section>',article,re.S)
+              if existing:
+                  # Keep prior verified cards, add only new media, maximum three cards total.
+                  current=existing.group(0)
+                  media=set(re.findall(r'<span class="press-medium">(.*?)</span>',current,re.S))
+                  cards=re.findall(r'<a class="press-card".*?</a>',current,re.S)
+                  for medium,title,url,desc in items:
+                      if medium in media or len(cards)>=3:
+                          continue
+                      cards.append(f'''<a class="press-card" href="{url}" target="_blank" rel="noopener external"><span class="press-medium">{medium}</span><strong>{title}</strong><span class="press-desc">{desc}</span><span class="press-open">Interjú megnyitása ↗</span></a>''')
+                      media.add(medium)
+                  new='<section class="press" aria-label="Válogatott szakmai sajtómegjelenések"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott szakmai interjúk</h3></div><div class="press-grid">'+''.join(cards[:3])+'</div></section>'
+                  article=article[:existing.start()]+new+article[existing.end():]
+              else:
+                  article=article+block(items)
+              s=s[:m.start()]+article+m.group(2)+s[m.end():]
+
+          p.write_text(s,encoding='utf-8')
+          PY
+
+      - name: Validate interview constraints
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path('index.html').read_text(encoding='utf-8')
+          for pid in ['fersztl-barnabas','kiss-agnes','trencsenyi-klara','balogh-david']:
+              m=re.search(r'<article class="profile" id="'+re.escape(pid)+r'".*?</article>',s,re.S)
+              assert m and 'class="press"' in m.group(0), pid
+              cards=m.group(0).count('class="press-card"')
+              assert 1 <= cards <= 3, (pid,cards)
+              media=re.findall(r'<span class="press-medium">(.*?)</span>',m.group(0),re.S)
+              assert len(media)==len(set(media)), (pid,media)
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Press Research Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add further verified international teacher interviews"
+          git push
