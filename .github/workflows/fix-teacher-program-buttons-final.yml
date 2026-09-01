@@ -1,0 +1,96 @@
+name: Fix teacher program buttons final
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-teacher-program-buttons-final.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Put program buttons in the existing visible programs block
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          targets = {
+              'telenko-eva': [
+                  ('Bécsi Magyar Óvoda | Baden', 'https://www.magyariskola.at/event-details/ovoda-baden-2026'),
+              ],
+              'makfalvi-rita': [
+                  ('Bécsi Magyar Óvoda | Baden', 'https://www.magyariskola.at/event-details/ovoda-baden-2026'),
+                  ('Magyar Iskola Badenben', 'https://www.magyariskola.at/event-details/iskolabaden-2026'),
+              ],
+              'varga-bernadette': [
+                  ('Napraforgócskák', 'https://www.magyariskola.at/event-details/napraforgocskak-2026'),
+              ],
+          }
+
+          for profile_id, links in targets.items():
+              start = s.find(f'<article class="profile" id="{profile_id}"')
+              if start < 0:
+                  raise SystemExit(f'profile not found: {profile_id}')
+              next_article = s.find('<article class="profile"', start + 20)
+              end = len(s) if next_article < 0 else next_article
+              article = s[start:end]
+
+              # Remove any prior experimental program-links block from this profile.
+              article = re.sub(r'<div class="program-links">.*?</div>\s*</div>', '', article, flags=re.S)
+
+              # Build the same .programs structure already used successfully by other teachers.
+              programs = '<div class="programs">' + ''.join(
+                  f'<a href="{url}" target="_blank" rel="noopener">{label}</a>'
+                  for label, url in links
+              ) + '</div>'
+
+              # Replace an existing .programs block if present in the profile head.
+              if '<div class="programs">' in article:
+                  article = re.sub(r'<div class="programs">.*?</div>', programs, article, count=1, flags=re.S)
+              else:
+                  # Insert directly after the role paragraph, inside profile-title, where buttons are visible.
+                  m = re.search(r'(<p class="role">.*?</p>)', article, flags=re.S)
+                  if not m:
+                      raise SystemExit(f'role paragraph not found: {profile_id}')
+                  article = article[:m.end()] + programs + article[m.end():]
+
+              s = s[:start] + article + s[end:]
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Verify buttons exist in all three profiles
+        shell: python
+        run: |
+          from pathlib import Path
+          s = Path('index.html').read_text(encoding='utf-8')
+          checks = {
+              'telenko-eva': ['Bécsi Magyar Óvoda | Baden'],
+              'makfalvi-rita': ['Bécsi Magyar Óvoda | Baden', 'Magyar Iskola Badenben'],
+              'varga-bernadette': ['Napraforgócskák'],
+          }
+          for pid, labels in checks.items():
+              start = s.find(f'<article class="profile" id="{pid}"')
+              nxt = s.find('<article class="profile"', start + 20)
+              block = s[start: len(s) if nxt < 0 else nxt]
+              if '<div class="programs">' not in block:
+                  raise SystemExit(f'missing programs block: {pid}')
+              for label in labels:
+                  if label not in block:
+                      raise SystemExit(f'missing {label} in {pid}')
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix visible program buttons for Telenko Rita and Bernadette"
+          git push
