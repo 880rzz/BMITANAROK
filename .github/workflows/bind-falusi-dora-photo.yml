@@ -1,0 +1,38 @@
+name: Bind Falusi Dora portrait
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bind-falusi-dora-photo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  bind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Bind Falusi Dora portrait
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          pattern=r'(<article class="profile" id="falusi-dora"><div class="profile-head">)<figure class="portrait">.*?</figure>'
+          repl=r'\1<figure class="portrait"><img src="assets/falusi_dora.webp" alt="Falusi Dóra portréja" loading="lazy" decoding="async"><span class="fallback">Portré helye</span></figure>'
+          s,n=re.subn(pattern,repl,s,count=1,flags=re.S)
+          if n!=1:
+              raise SystemExit(f'falusi-dora portrait matches: {n}')
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Research Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Bind Falusi Dora portrait from assets"
+          git push
