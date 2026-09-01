@@ -1,0 +1,34 @@
+name: Sync Programvalaszto favicon markup
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sync-programvalaszto-favicon-markup.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Match Programvalaszto favicon markup exactly
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          exact = '<link rel="icon" href="bmi_blue_round_rgb_logo.svg" type="image/svg+xml">'
+          for name in ['index.html','impresszum.html','adatvedelem.html']:
+              p = Path(name)
+              s = p.read_text(encoding='utf-8')
+              s = re.sub(r'<link rel="icon"[^>]*>\s*<link rel="shortcut icon"[^>]*>', exact, s, count=1)
+              p.write_text(s, encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Identity Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html impresszum.html adatvedelem.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Match Programvalaszto favicon markup exactly"
+          git push
