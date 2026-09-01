@@ -1,0 +1,90 @@
+name: Refine press-only sources and add Bánhalmi books
+
+on:
+  push:
+    paths:
+      - '.github/workflows/refine-press-only-and-banhalmi-books.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Keep editorial press only and enrich Bánhalmi profile
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          # Editorial rule: this block is press/media only. Official event and
+          # organisation profile pages are useful as sources, but do not belong
+          # in the visible press section.
+          s = s.replace('Sajtó és szakmai anyagok', 'Sajtómegjelenések')
+          s = s.replace('Válogatott szakmai anyagok és interjúk', 'Válogatott sajtóanyagok és interjúk')
+          s = s.replace('aria-label="Válogatott szakmai sajtómegjelenések és szakmai anyagok"', 'aria-label="Válogatott sajtómegjelenések és interjúk"')
+
+          non_press_markers = (
+              'https://www.magyariskola.at/event-details/',
+              'https://www.napraforgok.at/vezetoseg',
+              'https://www.musicaltarsulat.at/',
+          )
+
+          def clean_article(match):
+              article = match.group(0)
+              press = re.search(r'<section class="press"(?! publications).*?</section>', article, re.S)
+              if not press:
+                  return article
+              block = press.group(0)
+              cards = re.findall(r'<a class="press-card".*?</a>', block, re.S)
+              kept = [c for c in cards if not any(marker in c for marker in non_press_markers)]
+              if not kept:
+                  article = article[:press.start()] + article[press.end():]
+                  return article
+              grid = re.search(r'(<div class="press-grid">).*?(</div></section>)', block, re.S)
+              if grid:
+                  block = block[:grid.start()] + grid.group(1) + ''.join(kept) + grid.group(2) + block[grid.end():]
+                  article = article[:press.start()] + block + article[press.end():]
+              return article
+
+          s = re.sub(r'<article class="profile" id="[^"]+">.*?</article>', clean_article, s, flags=re.S)
+
+          # Rebuild Bánhalmi Norbert's editorial block from verified press only.
+          m = re.search(r'<article class="profile" id="banhalmi-norbert">.*?</article>', s, re.S)
+          if not m:
+              raise SystemExit('Bánhalmi Norbert profile not found')
+          article = m.group(0)
+
+          # Remove prior non-publication books block if this workflow is rerun.
+          article = re.sub(r'<section class="press publications" aria-label="Bánhalmi Norbert könyvei">.*?</section>', '', article, flags=re.S)
+
+          books = '''<section class="press publications" aria-label="Bánhalmi Norbert könyvei"><div class="press-head"><span class="eyebrow">Könyvek</span><h3>Fotográfiai könyvek és társművészeti kiadványok</h3></div><div class="press-grid"><a class="press-card" href="https://www.banhalmi.art/hu/" target="_blank" rel="noopener external"><span class="press-medium">Könyv · 2017</span><strong>Ébredés — az Új kezdet!</strong><span class="press-desc">Dr. Dank Magdolnával, Elek Erikával és Dr. Csernus Imrével létrehozott fotográfiai kötet tizenkét nő újrakezdéséről nőgyógyászati daganatos betegség után. ISBN 978-963-12-8663-2.</span><span class="press-open">Könyv megnyitása ↗</span></a><a class="press-card" href="https://www.banhalmi.art/hu/" target="_blank" rel="noopener external"><span class="press-medium">Könyv · 2017</span><strong>Szösszenetek</strong><span class="press-desc">Vincent & Vincent, Kovács Olga, Telekes Péter és Bánhalmi Norbert közös, irodalmat, fotográfiát és mozgóképet összekapcsoló kiadványa. ISBN 978-615-00-0053-4.</span><span class="press-open">Könyv megnyitása ↗</span></a><a class="press-card" href="https://www.banhalmi.art/books/book-anovilaga.html" target="_blank" rel="noopener external"><span class="press-medium">Könyv · 2018</span><strong>A Nő világa</strong><span class="press-desc">Vámos Miklós, Lénárt Éva és Bánhalmi Norbert közös kötete a női élet kilenc átmenetéről, portrékkal, személyes történetekkel és irodalmi szövegekkel. ISBN 978-615-00-1829-4.</span><span class="press-open">Könyv megnyitása ↗</span></a></div></section>'''
+
+          press = '''<section class="press" aria-label="Bánhalmi Norbert válogatott sajtómegjelenései"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott sajtóanyagok és interjúk</h3></div><div class="press-grid"><a class="press-card" href="https://she.life.hu/nofilter/2017/03/banhalmi-norbert-profi-fotos-interju-modell-belso-szepseg-szepnek-latni-magad" target="_blank" rel="noopener external"><span class="press-medium">SHE / Life.hu</span><strong>A férfi, aki a külsődet nézi, de a lelkedet látja</strong><span class="press-desc">Nagyinterjú a portréfotózás pszichológiájáról, az ember és a kamera közötti bizalomról, valamint Bánhalmi Norbert fotográfiai szemléletéről.</span><span class="press-open">Interjú megnyitása ↗</span></a><a class="press-card" href="https://zarido.hu/muvesz-az-uzlet-mogott-1-resz/" target="_blank" rel="noopener external"><span class="press-medium">Záridő Fotós Magazin</span><strong>Művész az üzlet mögött – New York</strong><span class="press-desc">Életútinterjú a fotográfiai pályáról, a New York-i alkotói fordulatról, kiállításokról és a művészeti gondolkodás kialakulásáról.</span><span class="press-open">Interjú megnyitása ↗</span></a><a class="press-card" href="https://www.youtube.com/watch?v=cv4ylqkvNo4" target="_blank" rel="noopener external"><span class="press-medium">Petőfi TV</span><strong>Digitális fotókiállítás Tihanyban</strong><span class="press-desc">Televíziós sajtóanyag a Rege Galéria digitális kiállítási modelljéről, a jubileumi fotókiállításról és Bánhalmi Norbert kiállítási szemléletéről.</span><span class="press-open">Sajtóanyag megnyitása ↗</span></a></div></section>'''
+
+          old_press = re.search(r'<section class="press"(?! publications).*?</section>', article, re.S)
+          if old_press:
+              article = article[:old_press.start()] + article[old_press.end():]
+
+          insert_at = article.rfind('</article>')
+          article = article[:insert_at] + books + press + article[insert_at:]
+          s = s[:m.start()] + article + s[m.end():]
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit changes
+        run: |
+          git config user.name "BMI Press Curator"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Keep press sections editorial and add Bánhalmi books"
+          git push
