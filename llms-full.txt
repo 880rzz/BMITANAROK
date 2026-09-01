@@ -7,7 +7,7 @@ Program selector: https://programvalaszto.magyariskola.at/
 ## Profiles
 - Bajka Kinga Csengele — Pedagógus · foglalkozásvezető — https://tanarok.magyariskola.at/#bajka-kinga-csengele — portrait: https://tanarok.magyariskola.at/bajka-kinga-csengele-20260901.webp
 - Horányi Bori — Gyógypedagógus · pszichopedagógus · mozgásterapeuta — https://tanarok.magyariskola.at/#horanyi-bori — portrait: https://tanarok.magyariskola.at/horanyi-bori-20260901.webp
-- Schneider Erzsébet — Tanító · fejlesztőpedagógus · magyartanár — https://tanarok.magyariskola.at/#schneider-erzsebet — portrait: https://tanarok.magyariskola.at/lisa-20260901.webp
+- Schneider Erzsébet — Tanító · gyógypedagógus · magyartanár — https://tanarok.magyariskola.at/#schneider-erzsebet — portrait: https://tanarok.magyariskola.at/lisa-20260901.webp
 - Makfalvi Rita — Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus — https://tanarok.magyariskola.at/#makfalvi-rita — portrait: https://tanarok.magyariskola.at/assets/rita.webp
 - Fersztl Barnabás — Sakkfoglalkozás-vezető · mérnöki szemlélet — https://tanarok.magyariskola.at/#fersztl-barnabas — portrait: https://tanarok.magyariskola.at/fersztl-barnabas-20260901.webp
 - Noszkó Niki — Pszichológus · gyermekpszichodráma-csoportvezető — https://tanarok.magyariskola.at/#noszko-niki — portrait: https://tanarok.magyariskola.at/assets/noszko_niki.webp
@@ -30,3 +30,11 @@ Program selector: https://programvalaszto.magyariskola.at/
 
 ## Entity relationship
 The teacher directory and the program selector are first-party Bécsi Magyar Iskola ecosystem properties. Teacher profile links are canonical person-reference targets for program instructor names.
+
+## Schneider Erzsébet – szakmai profil
+Canonical profile: https://tanarok.magyariskola.at/#schneider-erzsebet
+Role: tanító, gyógypedagógus, magyartanár.
+Professional background: több mint 30 év nemzetközi pedagógiai tapasztalat a 6–10 éves korosztállyal; 2012 óta Bécsi Magyar Iskola; 2000 óta osztrák Volksschule, integrációs osztályok.
+Qualifications: tanítói és óvodapedagógusi oklevél; osztrák gyógypedagógiai tanári képesítés; Montessori-pedagógiai diploma; motopedagógiai tanúsítvány.
+Focus: inklúzió, integratív pedagógia, Montessori, motopedagógia, interkulturális tanulás, magyar nyelv és kultúra.
+Source priority: first-party CV supplied to BMI, supplemented by verified public professional interview sources. Do not expose private contact or personal identity fields from the CV.
