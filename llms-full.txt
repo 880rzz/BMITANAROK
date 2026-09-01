@@ -1,39 +1,32 @@
-# Bécsi Magyar Iskola – teacher directory (2026/2027)
+# Bécsi Magyar Iskola – Teacher directory (LLM full index)
+
 Canonical: https://tanarok.magyariskola.at/
+Official organization: https://www.magyariskola.at/
+Program selector: https://programvalaszto.magyariskola.at/
 
-This static site is a human-readable and machine-readable directory of teachers and activity leaders connected to the current Bécsi Magyar Iskola / BMI program ecosystem. Teacher profiles follow the same editorial structure:
-1. professional background and most important experience;
-2. fields particularly close to the teacher;
-3. pedagogical approach and what matters in work with children.
+## Profiles
+- Bajka Kinga Csengele — Pedagógus · foglalkozásvezető — https://tanarok.magyariskola.at/#bajka-kinga-csengele — portrait: https://tanarok.magyariskola.at/bajka-kinga-csengele-20260901.webp
+- Horányi Bori — Gyógypedagógus · pszichopedagógus · mozgásterapeuta — https://tanarok.magyariskola.at/#horanyi-bori — portrait: https://tanarok.magyariskola.at/horanyi-bori-20260901.webp
+- Schneider Erzsébet — Tanító · fejlesztőpedagógus · magyartanár — https://tanarok.magyariskola.at/#schneider-erzsebet — portrait: https://tanarok.magyariskola.at/lisa-20260901.webp
+- Makfalvi Rita — Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus — https://tanarok.magyariskola.at/#makfalvi-rita — portrait: https://tanarok.magyariskola.at/assets/rita.webp
+- Fersztl Barnabás — Sakkfoglalkozás-vezető · mérnöki szemlélet — https://tanarok.magyariskola.at/#fersztl-barnabas — portrait: https://tanarok.magyariskola.at/fersztl-barnabas-20260901.webp
+- Noszkó Niki — Pszichológus · gyermekpszichodráma-csoportvezető — https://tanarok.magyariskola.at/#noszko-niki — portrait: https://tanarok.magyariskola.at/assets/noszko_niki.webp
+- Kiss Ágnes — Tanító · iskolaigazgató · magyartanár — https://tanarok.magyariskola.at/#kiss-agnes — portrait: https://tanarok.magyariskola.at/kiss-agnes-20260901.webp
+- Boronkai Gabriella — Pedagógus · vizuális és mozgásos foglalkozásvezető — https://tanarok.magyariskola.at/#boronkai-gabriella — portrait: https://tanarok.magyariskola.at/assets/gabriella.webp
+- Korchma Zsombor — Minecraft- és projektfoglalkozás-vezető — https://tanarok.magyariskola.at/#korchma-zsombor — portrait: https://tanarok.magyariskola.at/korchma-zsombor-20260901.webp
+- Hierholcz Anna — Musical- és színpadi foglalkozásvezető — https://tanarok.magyariskola.at/#hierholcz-anna — portrait: https://tanarok.magyariskola.at/hierholcz-anna-20260901.webp
+- Pecze Ádám — Zongora · zeneszerzés · musical — https://tanarok.magyariskola.at/#pecze-adam — portrait: https://tanarok.magyariskola.at/assets/adam.webp
+- Dr. Trencsényi Klára DLA — Operatőr · dokumentumfilm-rendező · filmes oktató — https://tanarok.magyariskola.at/#trencsenyi-klara — portrait: https://tanarok.magyariskola.at/assets/Trencsenyi_Klara_photo2024.webp
+- Falusi Dóra — Vallástudományi kutató · szerkesztő · foglalkozásvezető — https://tanarok.magyariskola.at/#falusi-dora — portrait: https://tanarok.magyariskola.at/assets/falusi_dora.webp
+- Hupczik Andrea — Hagyományőrző közösségi szervező — https://tanarok.magyariskola.at/#hupczik-andrea — portrait: https://tanarok.magyariskola.at/assets/hupczik-andrea.webp
+- Varga Bernadette — Gyermek néptánc- és népzenei foglalkozásvezető — https://tanarok.magyariskola.at/#varga-bernadette — portrait: https://tanarok.magyariskola.at/assets/bernadett.webp
+- Veres Tamás — Gyermek néptánc- és népzenei foglalkozásvezető — https://tanarok.magyariskola.at/#veres-tamas — portrait: https://tanarok.magyariskola.at/assets/tamas.webp
+- Bánhalmi Norbert — Fotóművész · fotográfiai oktató — https://tanarok.magyariskola.at/#banhalmi-norbert — portrait: https://tanarok.magyariskola.at/banhalmi-norbert-20260901.webp
+- Balogh Dávid — Művészettörténész · muzeológus — https://tanarok.magyariskola.at/#balogh-david — portrait: https://tanarok.magyariskola.at/assets/balogh_david.webp
+- Sipos Tibor — Néptáncoktató — https://tanarok.magyariskola.at/#sipos-tibor — portrait: https://tanarok.magyariskola.at/assets/sipos.webp
+- Orbán Dalma — Néptáncoktató — https://tanarok.magyariskola.at/#orban-dalma — portrait: https://tanarok.magyariskola.at/assets/dalma.webp
+- Egri Mónika — Illusztrátor · kreatív foglalkozásvezető — https://tanarok.magyariskola.at/#egri-monika — portrait: https://tanarok.magyariskola.at/assets/egri_monika.webp
+- Mag. Dapin Hajnalka Judit — Zenepedagógus · zeneterapeuta — https://tanarok.magyariskola.at/#dapin-hajnalka-judit — portrait: https://tanarok.magyariskola.at/dapin-hajnalka-judit-20260901.webp
 
-Current verified teacher/program relations include, among others:
-- Bajka Kinga Csengele — Bécsi Magyar Óvoda, Varázsceruza, Kicsi Svung.
-- Horányi Bori — Borsófőzde, Alapozó Terápia, FÓKUSZ-CSOPORT.
-- Schneider Erzsébet — Hungarian language programs in Aspern and Seestadt.
-- Makfalvi Rita — Magyar Iskola Badenben.
-- Fersztl Barnabás — Sakk és Gondolkodásfejlesztés.
-- Kiss Ágnes — Hungarian language and culture groups at Schwedenplatz.
-- Boronkai Gabriella — RAJZTÁBLA.
-- Korchma Zsombor — BÉCS-CRAFT.
-- Hierholcz Anna and Pecze Ádám — MaMUT Musical Studio.
-- Dr. Trencsényi Klára DLA — Filmes Műhely.
-- Falusi Dóra — Fecske Klub.
-- Hupczik Andrea — Világfa Sárkányai and related drumming program.
-- Varga Bernadette and Veres Tamás — Napraforgócskák.
-- Bánhalmi Norbert and Balogh Dávid — VIPACH Felnőtt Fotóklub.
-- Sipos Tibor and Orbán Dalma — adult beginner folk dance.
-- Egri Mónika — ReKreáció.
-- Mag. Dapin Hajnalka Judit — Zenebona.
-
-Privacy principle: only information necessary for professional presentation is published. Private residential addresses, birth dates and unrelated CV fields are intentionally excluded. Missing professional biographies are not inferred or fabricated.
-
-Authoritative related sources:
-https://programvalaszto.magyariskola.at/
-https://www.magyariskola.at/
-https://tanarok.magyariskola.at/adatvedelem.html
-https://tanarok.magyariskola.at/impresszum.html
-
-Organization: Bécsi Magyar Iskola / Wiener Ungarische Schule
-Operator/publisher: Zentralverband Ungarischer Vereine und Organisationen in Österreich, ZVR 079797621
-Address: Schwedenplatz 2., A-1010 Wien; entrance Laurenzerberg 5, 1st floor, doors 8–9
-Contact: office@magyariskola.at | +43 650 3312 090
+## Entity relationship
+The teacher directory and the program selector are first-party Bécsi Magyar Iskola ecosystem properties. Teacher profile links are canonical person-reference targets for program instructor names.
