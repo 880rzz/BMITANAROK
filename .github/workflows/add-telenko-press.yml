@@ -1,0 +1,37 @@
+name: Add Telenkó Éva editorial press
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-telenko-press.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add verified editorial coverage
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          m=re.search(r'(<article class="profile" id="telenko-eva">.*?</article>)',s,re.S)
+          if not m: raise SystemExit('Telenko profile missing')
+          a=m.group(1)
+          if 'press-telenko-20260901' not in a:
+            press='''<section class="press" id="press-telenko-20260901" aria-label="Válogatott szakmai sajtómegjelenések"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott szakmai sajtóanyagok</h3></div><div class="press-grid"><a class="press-card" href="https://volksgruppen.orf.at/magyarok/stories/3111883/" target="_blank" rel="noopener"><span class="press-medium">ORF Magyarok</span><strong>Lelemények táborában a magyar gyerekek</strong><span class="press-desc">Szerkesztőségi riport a BMI gyermekprogramjáról, amely Telenkó Évát táborvezető pedagógusként és a gyermekek jógás-mozgásos foglalkozásainak vezetőjeként mutatja be.</span><span class="press-open">Sajtóanyag megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/kultura/fabula-babtabor-interju-bajka-kinga-csengelevel/" target="_blank" rel="noopener"><span class="press-medium">Rólunk.at</span><strong>Fabula bábtábor – Interjú Bajka Kinga Csengelével</strong><span class="press-desc">A Fabula Bábtábor szakmai hátterét bemutató szerkesztőségi interjú, amely Telenkó Évát Bajka Kinga Csengele társfoglalkozásvezetőjeként nevezi meg.</span><span class="press-open">Sajtóanyag megnyitása ↗</span></a></div></section>'''
+            a=a[:-10]+press+'</article>'
+            s=s[:m.start()]+a+s[m.end():]
+            p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add editorial coverage to Telenko Eva profile"
+          git push
