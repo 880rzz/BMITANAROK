@@ -1,0 +1,51 @@
+name: Bind five new teacher portraits
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bind-five-new-portraits.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  bind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Bind portraits
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          replacements = {
+              'balogh-david': ('assets/balogh_david.webp', 'Balogh Dávid portréja'),
+              'varga-bernadette': ('assets/bernadett.webp', 'Varga Bernadette portréja'),
+              'orban-dalma': ('assets/dalma.webp', 'Orbán Dalma portréja'),
+              'sipos-tibor': ('assets/sipos.webp', 'Sipos Tibor portréja'),
+              'veres-tamas': ('assets/tamas.webp', 'Veres Tamás portréja'),
+          }
+
+          for anchor, (src, alt) in replacements.items():
+              pattern = rf'(<article class="profile" id="{anchor}"><div class="profile-head">)<figure class="portrait">.*?</figure>'
+              repl = rf'\1<figure class="portrait"><img src="{src}" alt="{alt}" loading="lazy" decoding="async"><span class="fallback">Portré helye</span></figure>'
+              s, n = re.subn(pattern, repl, s, count=1, flags=re.S)
+              if n != 1:
+                  raise SystemExit(f'{anchor} portrait matches: {n}')
+
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Portrait Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Bind five new teacher portraits"
+          git push
