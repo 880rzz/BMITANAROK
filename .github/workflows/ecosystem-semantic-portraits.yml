@@ -1,0 +1,95 @@
+name: Normalize portraits and BMI ecosystem
+on:
+  push:
+    paths:
+      - '.github/workflows/ecosystem-semantic-portraits.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Normalize semantic portraits and metadata
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, json
+
+          teachers = [
+            ('bajka-kinga-csengele','Bajka Kinga Csengele','bajka-kinga-csengele-20260901.webp','Pedagógus · foglalkozásvezető'),
+            ('horanyi-bori','Horányi Bori','horanyi-bori-20260901.webp','Gyógypedagógus · pszichopedagógus · mozgásterapeuta'),
+            ('schneider-erzsebet','Schneider Erzsébet','lisa-20260901.webp','Tanító · fejlesztőpedagógus · magyartanár'),
+            ('makfalvi-rita','Makfalvi Rita','assets/rita.webp','Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus'),
+            ('fersztl-barnabas','Fersztl Barnabás','fersztl-barnabas-20260901.webp','Sakkfoglalkozás-vezető · mérnöki szemlélet'),
+            ('noszko-niki','Noszkó Niki','assets/noszko_niki.webp','Pszichológus · gyermekpszichodráma-csoportvezető'),
+            ('kiss-agnes','Kiss Ágnes','kiss-agnes-20260901.webp','Tanító · iskolaigazgató · magyartanár'),
+            ('boronkai-gabriella','Boronkai Gabriella','assets/gabriella.webp','Pedagógus · vizuális és mozgásos foglalkozásvezető'),
+            ('korchma-zsombor','Korchma Zsombor','korchma-zsombor-20260901.webp','Minecraft- és projektfoglalkozás-vezető'),
+            ('hierholcz-anna','Hierholcz Anna','hierholcz-anna-20260901.webp','Musical- és színpadi foglalkozásvezető'),
+            ('pecze-adam','Pecze Ádám','assets/adam.webp','Zongora · zeneszerzés · musical'),
+            ('trencsenyi-klara','Dr. Trencsényi Klára DLA','assets/Trencsenyi_Klara_photo2024.webp','Operatőr · dokumentumfilm-rendező · filmes oktató'),
+            ('falusi-dora','Falusi Dóra','assets/falusi_dora.webp','Vallástudományi kutató · szerkesztő · foglalkozásvezető'),
+            ('hupczik-andrea','Hupczik Andrea','assets/hupczik-andrea.webp','Hagyományőrző közösségi szervező'),
+            ('varga-bernadette','Varga Bernadette','assets/bernadett.webp','Gyermek néptánc- és népzenei foglalkozásvezető'),
+            ('veres-tamas','Veres Tamás','assets/tamas.webp','Gyermek néptánc- és népzenei foglalkozásvezető'),
+            ('banhalmi-norbert','Bánhalmi Norbert','banhalmi-norbert-20260901.webp','Fotóművész · fotográfiai oktató'),
+            ('balogh-david','Balogh Dávid','assets/balogh_david.webp','Művészettörténész · muzeológus'),
+            ('sipos-tibor','Sipos Tibor','assets/sipos.webp','Néptáncoktató'),
+            ('orban-dalma','Orbán Dalma','assets/dalma.webp','Néptáncoktató'),
+            ('egri-monika','Egri Mónika','assets/egri_monika.webp','Illusztrátor · kreatív foglalkozásvezető'),
+            ('dapin-hajnalka-judit','Mag. Dapin Hajnalka Judit','dapin-hajnalka-judit-20260901.webp','Zenepedagógus · zeneterapeuta'),
+          ]
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          for aid,name,img,title in teachers:
+              if not Path(img).exists():
+                  raise SystemExit(f'Missing portrait file for {name}: {img}')
+              pat=rf'(<article class="profile" id="{re.escape(aid)}"><div class="profile-head">)<figure class="portrait">.*?</figure>'
+              repl=rf'\1<figure class="portrait"><img src="{img}" alt="{name} portréja" loading="lazy" decoding="async"><span class="fallback">Portré helye</span></figure>'
+              s,n=re.subn(pat,repl,s,count=1,flags=re.S)
+              if n!=1:
+                  raise SystemExit(f'Profile portrait match failed for {aid}: {n}')
+
+          # Strong cross-site ecosystem hints.
+          if 'rel="related" href="https://programvalaszto.magyariskola.at/"' not in s:
+              s=s.replace('<link rel="canonical" href="https://tanarok.magyariskola.at/">', '<link rel="canonical" href="https://tanarok.magyariskola.at/">\n<link rel="related" href="https://programvalaszto.magyariskola.at/">\n<link rel="home" href="https://www.magyariskola.at/">')
+
+          graph=[
+            {"@type":"EducationalOrganization","@id":"https://www.magyariskola.at/#org","name":"Bécsi Magyar Iskola","alternateName":["BMI","Wiener Ungarische Schule"],"url":"https://www.magyariskola.at/","email":"office@magyariskola.at","telephone":"+43 650 3312 090","address":{"@type":"PostalAddress","streetAddress":"Schwedenplatz 2","postalCode":"1010","addressLocality":"Wien","addressCountry":"AT"},"areaServed":[{"@type":"City","name":"Wien"},{"@type":"City","name":"Baden bei Wien"},{"@type":"Country","name":"Austria"}],"subjectOf":[{"@id":"https://tanarok.magyariskola.at/#page"},{"@id":"https://programvalaszto.magyariskola.at/#page"}]},
+            {"@type":"WebSite","@id":"https://tanarok.magyariskola.at/#website","url":"https://tanarok.magyariskola.at/","name":"Bécsi Magyar Iskola – Tanáraink","inLanguage":"hu","publisher":{"@id":"https://www.magyariskola.at/#org"},"isPartOf":{"@id":"https://www.magyariskola.at/#org"}},
+            {"@type":"CollectionPage","@id":"https://tanarok.magyariskola.at/#page","url":"https://tanarok.magyariskola.at/","name":"Tanáraink és foglalkozásvezetőink","description":"A Bécsi Magyar Iskola tanárainak és foglalkozásvezetőinek szakmai profiljai, pedagógiai szemlélete és kapcsolódó 2026/27-es programjai.","inLanguage":"hu","isPartOf":{"@id":"https://tanarok.magyariskola.at/#website"},"about":{"@id":"https://www.magyariskola.at/#org"},"relatedLink":["https://programvalaszto.magyariskola.at/","https://www.magyariskola.at/"]},
+            {"@type":"ItemList","@id":"https://tanarok.magyariskola.at/#teachers","name":"Bécsi Magyar Iskola tanárai és foglalkozásvezetői","numberOfItems":len(teachers),"itemListElement":[{"@type":"ListItem","position":i+1,"item":{"@id":f"https://tanarok.magyariskola.at/#{aid}"}} for i,(aid,_,_,_) in enumerate(teachers)]},
+          ]
+          for aid,name,img,title in teachers:
+              graph.append({"@type":"Person","@id":f"https://tanarok.magyariskola.at/#{aid}","name":name,"jobTitle":title,"url":f"https://tanarok.magyariskola.at/#{aid}","image":f"https://tanarok.magyariskola.at/{img}","affiliation":{"@id":"https://www.magyariskola.at/#org"},"worksFor":{"@id":"https://www.magyariskola.at/#org"}})
+          schema=json.dumps({"@context":"https://schema.org","@graph":graph},ensure_ascii=False,separators=(',',':'))
+          s,n=re.subn(r'<script type="application/ld\+json">.*?</script>',f'<script type="application/ld+json">{schema}</script>',s,count=1,flags=re.S)
+          if n!=1: raise SystemExit('JSON-LD replacement failed')
+          p.write_text(s,encoding='utf-8')
+
+          css=Path('styles.css')
+          c=css.read_text(encoding='utf-8')
+          # Remove obsolete CSS background-image portrait workaround and hiding rules.
+          start=c.find('.profile-with-webp .portrait img{display:none}')
+          end=c.find('.role{', start) if start!=-1 else -1
+          if start!=-1 and end!=-1:
+              c=c[:start]+c[end:]
+          css.write_text(c,encoding='utf-8')
+
+          Path('llms.txt').write_text('''# Bécsi Magyar Iskola – Tanáraink\n\nCanonical teacher directory: https://tanarok.magyariskola.at/\nOfficial school: https://www.magyariskola.at/\nProgram selector: https://programvalaszto.magyariskola.at/\n\nThis site contains the verified public professional profiles of the Bécsi Magyar Iskola teachers and activity leaders for the 2026/27 school year. Each teacher has a stable fragment URL of the form https://tanarok.magyariskola.at/#profile-id.\n\nUse the teacher directory for person/professional-background questions and the program selector for current program, age, schedule, location and fee questions.\n''',encoding='utf-8')
+
+          lines=['# Bécsi Magyar Iskola – Teacher directory (LLM full index)','', 'Canonical: https://tanarok.magyariskola.at/','Official organization: https://www.magyariskola.at/','Program selector: https://programvalaszto.magyariskola.at/','','## Profiles']
+          for aid,name,img,title in teachers:
+              lines.append(f'- {name} — {title} — https://tanarok.magyariskola.at/#{aid} — portrait: https://tanarok.magyariskola.at/{img}')
+          lines += ['','## Entity relationship','The teacher directory and the program selector are first-party Bécsi Magyar Iskola ecosystem properties. Teacher profile links are canonical person-reference targets for program instructor names.']
+          Path('llms-full.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "BMI Ecosystem Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html styles.css llms.txt llms-full.txt
+          git commit -m "Normalize portraits and connect teacher directory ecosystem" || exit 0
+          git push
