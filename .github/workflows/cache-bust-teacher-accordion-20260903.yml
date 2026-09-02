@@ -1,0 +1,37 @@
+name: Cache bust teacher accordion assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cache-bust-teacher-accordion-20260903.yml'
+      - 'teacher-search.css'
+      - 'teacher-search.js'
+
+permissions:
+  contents: write
+
+jobs:
+  cache-bust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update asset cache keys
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          s=re.sub(r'teacher-search\.css\?v=[^"\']+', 'teacher-search.css?v=20260903-single-marker-v1', s)
+          s=re.sub(r'teacher-search\.js\?v=[^"\']+', 'teacher-search.js?v=20260903-single-marker-v1', s)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit cache bust
+        run: |
+          git config user.name "BMI Teacher UI Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Bust teacher accordion asset cache"
+          git push
