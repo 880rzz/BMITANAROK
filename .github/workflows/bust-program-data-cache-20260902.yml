@@ -1,0 +1,44 @@
+name: Refresh teacher search program mapping cache 20260902
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bust-program-data-cache-20260902.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bump Program Selector registry cache key
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          import re
+          s,n=re.subn(
+              r'https://programvalaszto\.magyariskola\.at/data\.js\?v=[^"\']+',
+              'https://programvalaszto.magyariskola.at/data.js?v=20260902-teacher-map-v2',
+              s
+          )
+          if n < 1:
+              raise SystemExit('Program data.js script URL not found')
+          p.write_text(s,encoding='utf-8')
+          print(f'Updated {n} Program Selector data.js reference(s)')
+      - name: Verify teacher search dependencies
+        run: |
+          grep -Fq 'data.js?v=20260902-teacher-map-v2' index.html
+          grep -Fq 'zenebona-program.js' index.html
+          grep -Fq 'teacher-search.js' index.html
+      - name: Commit cache refresh
+        run: |
+          git config user.name "BMI Teacher Search Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh teacher search after program mapping repair"
+          git push
