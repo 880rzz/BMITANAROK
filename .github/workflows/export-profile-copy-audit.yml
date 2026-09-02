@@ -1,0 +1,30 @@
+name: Export profile copy audit
+on:
+  push:
+    paths:
+      - '.github/workflows/export-profile-copy-audit.yml'
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print profile copy as JSON
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, html, json
+          s=Path('index.html').read_text(encoding='utf-8')
+          out=[]
+          for m in re.finditer(r'<article class="profile" id="([^"]+)">(.*?)(?=<article class="profile" id=|</section>\s*</main>)',s,re.S):
+            pid,block=m.group(1),m.group(2)
+            name=re.search(r'<h2>(.*?)</h2>',block,re.S)
+            role=re.search(r'<p class="role">(.*?)</p>',block,re.S)
+            segs=[]
+            for sm in re.finditer(r'<section class="segment">\s*<h3>(.*?)</h3>\s*<p>(.*?)</p>\s*</section>',block,re.S):
+              clean=lambda x: html.unescape(re.sub(r'<[^>]+>','',x)).strip()
+              segs.append({'title':clean(sm.group(1)),'text':clean(sm.group(2))})
+            clean=lambda x: html.unescape(re.sub(r'<[^>]+>','',x)).strip() if x else ''
+            out.append({'id':pid,'name':clean(name.group(1) if name else ''),'role':clean(role.group(1) if role else ''),'segments':segs})
+          print(json.dumps(out,ensure_ascii=False,indent=2))
