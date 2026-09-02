@@ -1,0 +1,58 @@
+name: Teacher search anniversary and Judit correction 20260902
+on:
+  push:
+    paths:
+      - '.github/workflows/teacher-search-anniversary-judit-20260902.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch teacher directory
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          # Hero: human-readable home label and history CTA.
+          s=s.replace('>magyariskola.at</a>', '>Kezdőlap</a>')
+          finder='<a class="btn ghost" href="https://programvalaszto.magyariskola.at">Foglalkozást keresek</a>'
+          history='<a class="btn ghost" href="https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola" target="_blank" rel="noopener external">Iskolánk története</a>'
+          if finder in s and history not in s:
+              s=s.replace(finder, finder+history, 1)
+
+          # Judit's confirmed correction.
+          old='A zenei és terápiás területek végül a zeneterápiában értek össze számomra; ezt 2025 óta a Bécsi Zeneművészeti Egyetemen tanultam.'
+          new='A zenei és terápiás területek végül a zeneterápiában értek össze számomra; 2017 óta tanultam zeneterápiát a Bécsi Zeneművészeti Egyetemen, ahol 2025-ben szereztem meg a diplomámat.'
+          if old in s:
+              s=s.replace(old,new,1)
+
+          # School identity: founded 1987, 40th anniversary in 2027.
+          org='"@type":"EducationalOrganization","@id":"https://www.magyariskola.at/#org","name":"Bécsi Magyar Iskola"'
+          org2='"@type":"EducationalOrganization","@id":"https://www.magyariskola.at/#org","name":"Bécsi Magyar Iskola","foundingDate":"1987","description":"A Bécsi Magyar Iskolát 1987-ben alapították; 2027-ben ünnepli fennállásának 40. évfordulóját."'
+          if org in s and '"foundingDate":"1987"' not in s:
+              s=s.replace(org,org2,1)
+          if 'https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola' not in s.split('</script>',1)[0]:
+              s=s.replace('"sameAs":[', '"sameAs":["https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola",', 1) if '"sameAs":[' in s else s
+
+          # Search UI dependencies: use Programválasztó as live canonical program-data source.
+          css='<link rel="stylesheet" href="teacher-search.css?v=20260902-1">'
+          if css not in s:
+              s=s.replace('</head>', css+'\n</head>',1)
+          scripts='''<script src="https://programvalaszto.magyariskola.at/data.js?v=20260902" defer></script>\n<script src="https://programvalaszto.magyariskola.at/area-icons.js?v=20260902" defer></script>\n<script src="teacher-search.js?v=20260902-1" defer></script>'''
+          if 'teacher-search.js?v=20260902-1' not in s:
+              s=s.replace('</body>', scripts+'\n</body>',1)
+
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Ecosystem Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add intelligent teacher search and 40th anniversary identity"
+          git push
