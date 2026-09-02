@@ -1,0 +1,542 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.magyariskola.at/#school",
+      "name": "Bécsi Magyar Iskola",
+      "description": "Kiegészítő magyar oktatási és közösségi platform Bécsben és környékén; nem hagyományos nappali közoktatási iskola.",
+      "url": "https://www.magyariskola.at/"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://tanarok.magyariskola.at/#teachers",
+      "name": "BMI tanárok és foglalkozásvezetők",
+      "numberOfItems": 25,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#bajka-kinga-csengele"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#horanyi-bori"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#schneider-erzsebet"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#makfalvi-rita"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#fersztl-barnabas"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#noszko-niki"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#kiss-agnes"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#boronkai-gabriella"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#korchma-zsombor"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#hierholcz-anna"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#pecze-adam"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#trencsenyi-klara"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#falusi-dora"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#hupczik-andrea"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#telenko-eva"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#varga-bernadette"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#veres-tamas"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#banhalmi-norbert"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#balogh-david"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#sipos-tibor"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#orban-dalma"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#egri-monika"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#dapin-hajnalka-judit"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#pohl-balazs"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#poser-piroska-ildiko"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#bajka-kinga-csengele",
+      "name": "Bajka Kinga Csengele",
+      "jobTitle": "Pedagógus · foglalkozásvezető",
+      "description": "Waldorf-pedagógiai háttérrel dolgozom alkotóként és drámafoglalkozás-vezetőként; a SVUNG – Bécsi Magyar Színkör alapító tagja vagyok, és rendszeresen szervezek kreatív programokat, táborokat.",
+      "url": "https://tanarok.magyariskola.at/#bajka-kinga-csengele",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/ovoda-2026",
+        "https://www.magyariskola.at/event-details/varazsceruza-2026",
+        "https://www.magyariskola.at/event-details/kicsisvung-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#horanyi-bori",
+      "name": "Horányi Bori",
+      "jobTitle": "Gyógypedagógus · pszichopedagógus · mozgásterapeuta",
+      "description": "Integratív gyerekterápiás konzulensként dolgozom; alapozó-, homloklebeny- és dinamikus szenzoros integrációs terápiás tapasztalataimat mindig az adott gyermekhez és családhoz igazítom.",
+      "url": "https://tanarok.magyariskola.at/#horanyi-bori",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/borsofozde-2026",
+        "https://www.magyariskola.at/event-details/alapozoterapia-2026",
+        "https://www.magyariskola.at/event-details/fokuszcsoport-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#schneider-erzsebet",
+      "name": "Schneider Erzsébet",
+      "jobTitle": "Tanító · gyógypedagógus · magyartanár",
+      "description": "Több mint harminc éve dolgozom pedagógusként a 6–10 éves korosztállyal. Az integratív pedagógiát, a Montessori-szemléletet, a motopedagógiát és a magyar nyelv élményszerű átadását kapcsolom össze; 2012 óta tanítok a Bécsi Magyar Iskolában.",
+      "url": "https://tanarok.magyariskola.at/#schneider-erzsebet",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026",
+        "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#makfalvi-rita",
+      "name": "Makfalvi Rita",
+      "jobTitle": "Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus",
+      "description": "Óvodapedagógusként, tanítóként, nyelv- és beszédfejlesztő pedagógusként és meseterápiás foglalkozásvezetőként több évtizede dolgozom gyerekekkel.",
+      "url": "https://tanarok.magyariskola.at/#makfalvi-rita",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/ovoda-baden-2026",
+        "https://www.magyariskola.at/event-details/iskolabaden-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#fersztl-barnabas",
+      "name": "Fersztl Barnabás",
+      "jobTitle": "Sakkfoglalkozás-vezető · járműmérnök",
+      "description": "A mérnöki rendszerszemléletet a sakk gyakorlati logikájával kapcsolom össze. A foglalkozásaimon a figyelem, a tervezés és a következmények előrelátása kerül középpontba.",
+      "url": "https://tanarok.magyariskola.at/#fersztl-barnabas",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/sakk-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#noszko-niki",
+      "name": "Noszkó Niki",
+      "jobTitle": "Pszichológus · gyermekpszichodráma-csoportvezető · óvodai foglalkozásvezető",
+      "description": "Pszichológusként és gyermekpszichodráma-csoportvezetőként a játékot, a fantáziát és a biztonságos kiscsoportos teret használom arra, hogy a gyerekek könnyebben dolgozzák fel a feszültségeiket és bátrabban kapcsolódjanak egymáshoz.",
+      "url": "https://tanarok.magyariskola.at/#noszko-niki",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/ovoda-2026",
+        "https://www.magyariskola.at/event-details/sztoricsoport"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#kiss-agnes",
+      "name": "Kiss Ágnes",
+      "jobTitle": "Tanító · iskolaigazgató · magyartanár",
+      "description": "Több mint harminc éve vagyok pedagógus, 2025 óta egy magyarországi általános iskola igazgatója vagyok, és több mint egy évtizede járok Bécsbe magyar nyelvet tanítani.",
+      "url": "https://tanarok.magyariskola.at/#kiss-agnes",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1",
+        "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#boronkai-gabriella",
+      "name": "Boronkai Gabriella",
+      "jobTitle": "Pedagógus · vizuális nevelés · sport- és aerobic oktató",
+      "description": "A vizuális alkotást, a mozgást és a játékos készségfejlesztést természetesen kapcsolom össze a gyerekekkel végzett munkámban.",
+      "url": "https://tanarok.magyariskola.at/#boronkai-gabriella",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/rajztabla-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#korchma-zsombor",
+      "name": "Korchma Zsombor",
+      "jobTitle": "Újságíró · Minecraft-foglalkozásvezető",
+      "description": "A Minecraft világát történelemmel, építészettel, tervezéssel és csapatmunkával kapcsolom össze.",
+      "url": "https://tanarok.magyariskola.at/#korchma-zsombor",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/becscraft-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#hierholcz-anna",
+      "name": "Hierholcz Anna",
+      "jobTitle": "Musical foglalkozásvezető · közösségi szervező",
+      "description": "A musicalfoglalkozásokon a gyerekekkel közösen épített történeteket, a személyre szabott szerepeket és a zene–színház játékosságát helyezem a középpontba.",
+      "url": "https://tanarok.magyariskola.at/#hierholcz-anna",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/mammut-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#pecze-adam",
+      "name": "Pecze Ádám",
+      "jobTitle": "Zongora · zeneszerzés · musical-foglalkozásvezető",
+      "description": "A Bécsi Magyar Musical Társulatban a zongora és a zeneszerzés területét képviselem, és zenei oldalról kapcsolódom a gyerekek közös színpadi munkájához.",
+      "url": "https://tanarok.magyariskola.at/#pecze-adam",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/mammut-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#trencsenyi-klara",
+      "name": "Dr. Trencsényi Klára DLA",
+      "jobTitle": "DLA · operatőr · dokumentumfilm-rendező",
+      "description": "A dokumentumfilm eszközein keresztül tanítok figyelni, kérdezni, együtt dolgozni és történetet mesélni.",
+      "url": "https://tanarok.magyariskola.at/#trencsenyi-klara",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/filmesmuhely-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#falusi-dora",
+      "name": "Falusi Dóra",
+      "jobTitle": "Vallástudományi kutató · szerkesztő · foglalkozásvezető",
+      "description": "A történelmet, vallást, irodalmat, képzőművészetet és hétköznapi kultúrát egyetlen nagy, a gyerekekkel közösen felfedezhető történetté kapcsolom össze.",
+      "url": "https://tanarok.magyariskola.at/#falusi-dora",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/fecskeklub-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#hupczik-andrea",
+      "name": "Hupczik Andrea",
+      "jobTitle": "Informatikatanár · hagyományőrző közösségi szervező · bécsi kapcsolattartó",
+      "description": "Informatikatanár, hagyományőrző közösségi szervező és két fiúgyermek édesanyja vagyok. A magyar hagyományokat közösségi élménnyé szeretném tenni, miközben digitális és informatikai tudást is átadok.",
+      "url": "https://tanarok.magyariskola.at/#hupczik-andrea",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://taltosdob.magyariskola.at",
+        "https://www.magyariskola.at/event-details/oromzene-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#telenko-eva",
+      "name": "Telenkó Éva",
+      "jobTitle": "Mozgás- és képességfejlesztő · kisgyermeknevelő · gyermekjóga- és Brain Gym®-oktató",
+      "description": "Több mint tizenöt éve foglalkozom gyermekekkel a hat hónapos kortól a kisiskolás korig. A mozgást, a játékot és a közös felfedezést olyan alapnak tekintem, amelyen keresztül a gyerekek a saját képességeiket és érzéseiket is egyre tudatosabban ismerhetik meg.",
+      "url": "https://tanarok.magyariskola.at/#telenko-eva",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/ovoda-baden-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#varga-bernadette",
+      "name": "Varga Bernadette",
+      "jobTitle": "Dipl.-Ing. · gyermek-néptánc-foglalkozásvezető · Napraforgócskák",
+      "description": "A Napraforgócskák gyerektánccsoportot Veres Tamással vezetem. Külföldön született magyarként a magyar nyelv, néptánc, népzene és közösség továbbadását személyes ügyemnek tekintem; ezt a munkát mérnöki főállásom mellett önkéntesen végzem.",
+      "url": "https://tanarok.magyariskola.at/#varga-bernadette",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/napraforgocskak-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#veres-tamas",
+      "name": "Veres Tamás",
+      "jobTitle": "Néptánc-foglalkozásvezető · népzenész",
+      "description": "Hatéves korom óta néptáncolok, és a táncra ma is olyan élő közösségi nyelvként tekintek, amelyet gyerekekkel ugyanúgy örömmel lehet megszerettetni, mint felnőttekkel.",
+      "url": "https://tanarok.magyariskola.at/#veres-tamas",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#banhalmi-norbert",
+      "name": "Bánhalmi Norbert",
+      "jobTitle": "Fotóművész · alkalmazott fotográfus · kurátor · oktató",
+      "description": "Fotósként és oktatóként azt keresem, hogyan lesz a technikából saját látásmód, egy jól elkészített képből pedig valódi történet. Gyerekekkel és felnőttekkel egyaránt dolgozom; a fényképezést nem pusztán eszközhasználatként, hanem figyelemként és önkifejezésként tanítom.",
+      "url": "https://tanarok.magyariskola.at/#banhalmi-norbert",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/fotoklub-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#balogh-david",
+      "name": "Balogh Dávid",
+      "jobTitle": "Művészettörténész · muzeológus · fotográfiai foglalkozásvezető",
+      "description": "A fotográfiát történeti, vizuális és kulturális összefüggéseiben értelmezem. Előadásaimban egy-egy fotográfus vagy korszak munkásságát a történeti háttér, a technika, az érzelmi hatás és a művészeti jelentés felől is vizsgálom, külön figyelemmel a festészet és a fotográfia kapcsolatára.",
+      "url": "https://tanarok.magyariskola.at/#balogh-david",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#sipos-tibor",
+      "name": "Sipos Tibor",
+      "jobTitle": "Néptáncoktató · Napraforgók",
+      "description": "1988 óta része az életemnek a magyar néptánc. Számomra a tánc nem egyszerűen mozgás vagy hagyományőrzés: egy olyan közeg, amely egyszer már átsegített egy nehéz életszakaszon, azóta pedig közösséget, irányt és folyamatos felfedezést ad. Ma ezt az élményt szeretném továbbadni azoknak, akik most teszik meg az első lépéseiket.",
+      "url": "https://tanarok.magyariskola.at/#sipos-tibor",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://programvalaszto.magyariskola.at/foglalkozasok.html"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#orban-dalma",
+      "name": "Orbán Dalma",
+      "jobTitle": "Néptáncoktató · Napraforgók elnökhelyettese",
+      "description": "Gyerekkorom óta a Napraforgók közösségéhez tartozom; ma az egyesület elnökhelyettese és a kezdő csoport női táncoktatója vagyok.",
+      "url": "https://tanarok.magyariskola.at/#orban-dalma",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#egri-monika",
+      "name": "Egri Mónika",
+      "jobTitle": "Meseíró · illusztrátor · foglalkozásvezető",
+      "description": "Több évtizedes animációs és illusztrációs tapasztalatomat olyan alkotóműhelyekbe viszem át, ahol a résztvevők a saját képi megoldásaikat kereshetik.",
+      "url": "https://tanarok.magyariskola.at/#egri-monika",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/rekreacio-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#dapin-hajnalka-judit",
+      "name": "Mag. Dapin Hajnalka Judit",
+      "jobTitle": "Zenepedagógus · zeneterapeuta",
+      "description": "Harminc éve dolgozom pedagógusként. A zenetanításban, a csoportos zenei foglalkozásokban és a zeneterápiában ugyanaz érdekel: hogyan lehet valakihez úgy kapcsolódni, hogy a zene valóban az ő saját útját, fejlődését és belső erőforrásait szolgálja.",
+      "url": "https://tanarok.magyariskola.at/#dapin-hajnalka-judit",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#pohl-balazs",
+      "name": "Pohl Balázs",
+      "jobTitle": "Drámapedagógus · író-rendező · SVUNG művészeti vezető",
+      "description": "Számomra a színház és a pedagógia nem két külön pálya. A színészi tapasztalatot, a Waldorf-pedagógiát és a több évtizedes színpadi munkát úgy kapcsolom össze, hogy a fiatalok ne kész válaszokat kapjanak, hanem megtanuljanak jelen lenni, reagálni, kérdezni és együtt gondolkodni.",
+      "url": "https://tanarok.magyariskola.at/#pohl-balazs",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://www.magyariskola.at/event-details/gimisvung-2026"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#poser-piroska-ildiko",
+      "name": "Póser-Piroska Ildikó",
+      "jobTitle": "Csapatparancsnok · ifjúsági közösségi vezető · cserkészet",
+      "description": "A cserkészet számomra nem egy kívülről felvett vezetői szerep, hanem közösség, felelősség és életforma. Gyerekkorom óta része az életemnek, ma pedig csapatparancsnokként azon dolgozom, hogy a bécsi magyar fiatalok olyan közösséghez tartozzanak, ahol a magyar nyelv, az identitás, az önállóság és a másokért vállalt felelősség egyszerre tud erősödni.",
+      "url": "https://tanarok.magyariskola.at/#poser-piroska-ildiko",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "subjectOf": [
+        "https://programvalaszto.magyariskola.at/foglalkozasok.html#cserkeszet"
+      ]
+    }
+  ]
+}

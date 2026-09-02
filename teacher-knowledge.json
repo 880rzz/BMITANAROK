@@ -1,0 +1,1209 @@
+{
+  "schemaVersion": "2026-09-02-v1",
+  "canonical": "https://tanarok.magyariskola.at/",
+  "school": "https://www.magyariskola.at/#school",
+  "programSelector": "https://programvalaszto.magyariskola.at/",
+  "interpretationRules": [
+    "Each record represents a public BMI teacher or activity-leader profile, not necessarily an employee.",
+    "ProfessionalSections preserve the profile narrative so models can understand background, experience, achievements and teaching philosophy in context.",
+    "ProgramLinks connect people to current activities; current schedule/age/location facts must be resolved from the Program Selector or current Wix Event page.",
+    "Do not infer qualifications, awards, employers or achievements not stated in the profile or linked public source."
+  ],
+  "profiles": [
+    {
+      "id": "bajka-kinga-csengele",
+      "name": "Bajka Kinga Csengele",
+      "role": "Pedagógus · foglalkozásvezető",
+      "summary": "Waldorf-pedagógiai háttérrel dolgozom alkotóként és drámafoglalkozás-vezetőként; a SVUNG – Bécsi Magyar Színkör alapító tagja vagyok, és rendszeresen szervezek kreatív programokat, táborokat.",
+      "profileUrl": "https://tanarok.magyariskola.at/#bajka-kinga-csengele",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Sepsiszentgyörgyön Waldorf-iskolába jártam, majd Budapestre költözve a solymári Waldorf-tanárképzés négyéves nappali tagozatán szereztem diplomát. 2016 óta Bécsben élek, a SVUNG – Bécsi Magyar Színkör alapító tagjaként. A Bécsi Magyar Iskolában óvodai, dráma-, kreatív és tábori programokat vezetek; 2024-ben egy gyerekeknek szóló suliújság-műhelyben a sajtóműfajokkal és a közös szerkesztőségi munkával is megismertettem a résztvevőket."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A Waldorf-pedagógia, a színpadi önkifejezés, a kézműves és vizuális alkotás, a történetmesélés és azok a közösségi projektek állnak hozzám közel, amelyekben a gyerekek ötletei valóban alakítják a programot."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Fontos nekem a kíváncsiság, az önálló ötlet és a közös alkotás. A témákat is igyekszem a gyerekek érdeklődéséhez igazítani: nem egy előre gyártott „jó megoldást” szeretnék átadni, hanem olyan helyzeteket teremteni, ahol kérdezhetnek, próbálkozhatnak és együtt hozhatunk létre valamit."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Bécsi Magyar Óvoda",
+          "url": "https://www.magyariskola.at/event-details/ovoda-2026"
+        },
+        {
+          "label": "Varázsceruza",
+          "url": "https://www.magyariskola.at/event-details/varazsceruza-2026"
+        },
+        {
+          "label": "Kicsi Svung",
+          "url": "https://www.magyariskola.at/event-details/kicsisvung-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at Fabula bábtábor – Interjú Bajka Kinga Csengelével Dráma, bábszínház, közös alkotás és a gyerekekkel való kapcsolódás. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/kultura/fabula-babtabor-interju-bajka-kinga-csengelevel/"
+        },
+        {
+          "label": "ORF Magyarok Óvodapedagógust keres a Bécsi Magyar Iskola – interjú Bajka Kinga Csengelével Alternatív pedagógia, Waldorf–Montessori szemlélet és élményközpontú óvodai munka. Interjú megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/magyarok/stories/3313675/"
+        },
+        {
+          "label": "Rólunk.at Állat/barát kétnyelvű tábor a Bécsi Magyar Iskolában Riport a Bajka Kinga Csengele által vezetett kétnyelvű, kreatív és közösségépítő nyári táborról. Cikk megnyitása →",
+          "url": "https://rolunk.at/fiatalok/allat-barat-ketnyelvu-tabor-a-becsi-magyar-iskolaban/"
+        }
+      ]
+    },
+    {
+      "id": "horanyi-bori",
+      "name": "Horányi Bori",
+      "role": "Gyógypedagógus · pszichopedagógus · mozgásterapeuta",
+      "summary": "Integratív gyerekterápiás konzulensként dolgozom; alapozó-, homloklebeny- és dinamikus szenzoros integrációs terápiás tapasztalataimat mindig az adott gyermekhez és családhoz igazítom.",
+      "profileUrl": "https://tanarok.magyariskola.at/#horanyi-bori",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Egyetemi hallgatóként sérült babák bölcsődei integrációjával kezdtem dolgozni a Budapesti Korai Fejlesztő Központ fiatal csapatával. Már az egyetemi éveim alatt bekapcsolódtam az első magyarországi Ayres-terápia képzésbe. 2001 óta alapozó terapeutaként dolgozom; a Komplex Integratív Gyermekpszichoterápia képzést 2011 és 2015 között végeztem el."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A mozgás, a viselkedés, a tanulási képességek és a személyiségfejlődés összefüggései állnak hozzám a legközelebb. Fontos területem a szenzoros integráció, az alapozó és homloklebeny-terápia, valamint a figyelem, a tervezés, a szervezés és az érzelemszabályozás támogatása neuroaffirmatív szemléletben."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Abból indulok ki, hogy fejlődni biztonságos érzelmi térben és valódi kapcsolatban lehet. A neurológiai különbségeket az emberi sokféleség természetes részének tekintem, és mindig azt keresem, hogyan támogathatom a gyermeket, a felnőttet vagy a szülőt úgy, hogy közben megőrizhesse az önazonosságát."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Borsófőzde",
+          "url": "https://www.magyariskola.at/event-details/borsofozde-2026"
+        },
+        {
+          "label": "Alapozó Terápia",
+          "url": "https://www.magyariskola.at/event-details/alapozoterapia-2026"
+        },
+        {
+          "label": "FÓKUSZ-CSOPORT",
+          "url": "https://www.magyariskola.at/event-details/fokuszcsoport-2026"
+        }
+      ],
+      "publicSourceLinks": []
+    },
+    {
+      "id": "schneider-erzsebet",
+      "name": "Schneider Erzsébet",
+      "role": "Tanító · gyógypedagógus · magyartanár",
+      "summary": "Több mint harminc éve dolgozom pedagógusként a 6–10 éves korosztállyal. Az integratív pedagógiát, a Montessori-szemléletet, a motopedagógiát és a magyar nyelv élményszerű átadását kapcsolom össze; 2012 óta tanítok a Bécsi Magyar Iskolában.",
+      "profileUrl": "https://tanarok.magyariskola.at/#schneider-erzsebet",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "2012 óta vagyok a Bécsi Magyar Iskola magyartanára. 2000 óta az osztrák iskolarendszerben dolgozom általános iskolai tanítóként és gyógypedagógusként, több éven át integrációs osztályokban. Korábban Ausztriában óvodapedagógusként, Magyarországon pedig öt éven át alsó tagozatos tanítóként és osztályfőnökként dolgoztam. Magyarországon tanítói és óvodapedagógusi oklevelet szereztem; Ausztriában gyógypedagógiai tanári képesítést, Montessori-pedagógiai diplomát és motopedagógiai tanúsítványt."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "Az integratív és inkluzív pedagógia, a Montessori-pedagógia, a motopedagógia, az interkulturális tanulás és a magyar nyelv és kultúra átadása áll hozzám különösen közel. Kiemelten fontosnak tartom a különböző fejlődési utak felismerését és az egyéni erősségekre építő fejlesztést."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Mindig a gyermek egyéni fejlődéséből indulok ki. Arra törekszem, hogy a tanulás biztonságos, örömteli és motiváló folyamat legyen, amelyben a gyerekek a saját erősségeikre támaszkodhatnak. A magyar nyelv oktatásában a játékosságot, a kulturális kötődést, a mozgást és a differenciált feladatadást kapcsolom össze."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Magyar nyelv · Aspern",
+          "url": "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026"
+        },
+        {
+          "label": "Magyar nyelv · Seestadt",
+          "url": "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at A kétnyelvűség ajándék Kétnyelvűség, fejlesztőpedagógia, differenciált magyaroktatás és több évtizedes pedagógiai tapasztalat. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/magazin/a-ketnyelvuseg-ajandek/"
+        }
+      ]
+    },
+    {
+      "id": "makfalvi-rita",
+      "name": "Makfalvi Rita",
+      "role": "Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus",
+      "summary": "Óvodapedagógusként, tanítóként, nyelv- és beszédfejlesztő pedagógusként és meseterápiás foglalkozásvezetőként több évtizede dolgozom gyerekekkel.",
+      "profileUrl": "https://tanarok.magyariskola.at/#makfalvi-rita",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Óvodapedagógusként, tanítóként, nyelv- és beszédfejlesztő pedagógusként, valamint alkotó-fejlesztő meseterápiás foglalkozásvezetőként több évtizede dolgozom gyermekekkel."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "Az anyanyelvi nevelés, a beszéd- és szókincsfejlesztés, az olvasás megszerettetése, a Meixner-módszer, a Mesezene élménypedagógia és az alkotó-fejlesztő meseterápia áll hozzám különösen közel."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Biztonságos, elfogadó és inspiráló közeget szeretnék teremteni, ahol minden gyermek a saját tempójában haladhat, és a magyar nyelvhez pozitív élmények kapcsolódhatnak."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Bécsi Magyar Óvoda | Baden",
+          "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026"
+        },
+        {
+          "label": "Magyar Iskola Badenben",
+          "url": "https://www.magyariskola.at/event-details/iskolabaden-2026"
+        }
+      ],
+      "publicSourceLinks": []
+    },
+    {
+      "id": "fersztl-barnabas",
+      "name": "Fersztl Barnabás",
+      "role": "Sakkfoglalkozás-vezető · járműmérnök",
+      "summary": "A mérnöki rendszerszemléletet a sakk gyakorlati logikájával kapcsolom össze. A foglalkozásaimon a figyelem, a tervezés és a következmények előrelátása kerül középpontba.",
+      "profileUrl": "https://tanarok.magyariskola.at/#fersztl-barnabas",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "A Széchenyi István Egyetemen járműmérnöki tanulmányokat végeztem, majd mechanikai tervezőmérnökként dolgoztam járműipari kutatás-fejlesztésben. Az SZEnergy Team tagjaként részt vettem a Shell Eco-marathon Urban Concept akkumulátoros-elektromos kategóriájának 2022-es győztes projektjében. Bécsben a Bécsi Magyar Iskola sakk- és gondolkodásfejlesztő foglalkozását vezetem."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A sakk, a stratégiai gondolkodás, a rendszerszemlélet, a problémamegoldás, a koncentráció és az előrelátás áll hozzám közel."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A sakkra nem pusztán szabályok megtanulásaként tekintek. Feladványokkal, megnyitási helyzetekkel és valódi játszmákkal dolgozom, hogy a résztvevők több lépéssel előre tudjanak gondolkodni, döntéseket hasonlítsanak össze és a saját hibáikból is tanuljanak. A kis létszámú csoportot azért tartom fontosnak, mert így jut idő az egyéni figyelemre."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Sakk és Gondolkodásfejlesztés",
+          "url": "https://www.magyariskola.at/event-details/sakk-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "AutóPro Ismét a versenypályára készül a SZEnergy Team Interjú a versenyautó mérnöki fejlesztéséről, mérési rendszerekről, gördülési ellenállásról és saját tervezésű műszaki megoldásokról. Interjú megnyitása ↗",
+          "url": "https://hungexpo.hu/wp-content/uploads/autopro-majus-compressed.pdf"
+        }
+      ]
+    },
+    {
+      "id": "noszko-niki",
+      "name": "Noszkó Niki",
+      "role": "Pszichológus · gyermekpszichodráma-csoportvezető · óvodai foglalkozásvezető",
+      "summary": "Pszichológusként és gyermekpszichodráma-csoportvezetőként a játékot, a fantáziát és a biztonságos kiscsoportos teret használom arra, hogy a gyerekek könnyebben dolgozzák fel a feszültségeiket és bátrabban kapcsolódjanak egymáshoz.",
+      "profileUrl": "https://tanarok.magyariskola.at/#noszko-niki",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "2007-ben végeztem pszichológia szakon, 2011 óta foglalkozom pszichodrámával. A gyermekpszichodráma módszerét Kende B. Hanna szakmai hagyományához kapcsolódó képzésben sajátítottam el. A Bécsi Magyar Iskolában gyermekpszichodráma-bemutatókat és kiscsoportos foglalkozásokat vezettem, emellett a Bécsi Magyar Óvoda egyik foglalkozásvezetője vagyok."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A gyermekpszichodráma, a játék és a fantázia fejlesztő ereje, a szorongás és feszültség oldása, a társas kapcsolatok, az önbizalom és az érzelmi biztonságot adó kiscsoportos munka áll hozzám közel."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Nem kész történeteket adok a gyerekeknek, hanem olyan keretet teremtek, amelyben idővel a saját történeteik és szerepeik születhetnek meg. Fontosnak tartom a zárt, kis létszámú csoportot, mert az állandó közösség biztonságot ad. A szülőkkel való együttműködést is a folyamat fontos részének tekintem."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Bécsi Magyar Óvoda",
+          "url": "https://www.magyariskola.at/event-details/ovoda-2026"
+        },
+        {
+          "label": "Sztoricsoport kisiskolásoknak",
+          "url": "https://www.magyariskola.at/event-details/sztoricsoport"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at Valóban ijesztő a pszichodráma vagy csak úgy hangzik? Gyermekpszichodráma, kiscsoportos módszer, játék és biztonságos érzelmi feldolgozás. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/magazin/valoban-ijeszto-a-pszichodrama-vagy-csak-ugy-hangzik/"
+        }
+      ]
+    },
+    {
+      "id": "kiss-agnes",
+      "name": "Kiss Ágnes",
+      "role": "Tanító · iskolaigazgató · magyartanár",
+      "summary": "Több mint harminc éve vagyok pedagógus, 2025 óta egy magyarországi általános iskola igazgatója vagyok, és több mint egy évtizede járok Bécsbe magyar nyelvet tanítani.",
+      "profileUrl": "https://tanarok.magyariskola.at/#kiss-agnes",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "1992-ben végeztem a győri tanítóképző főiskolán, majd a bezenyei általános iskolában kezdtem dolgozni, ahol azóta is tanítok. Több mint három évtized alatt több generációt kísértem végig, 2025-ben pedig az iskola igazgatói feladataival is megbíztak. A Bécsi Magyar Iskolába több mint tíz éve járok rendszeresen magyar nyelvet tanítani."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A magyar nyelv szóbeli és írásbeli fejlesztése, az olvasás, a szókincs bővítése, az irodalmi szövegek és a különböző nyelvi szintű gyerekek differenciált támogatása áll hozzám közel."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Nem ugyanazt várom mindenkitől: figyelembe veszem az életkort, az írás-olvasás szintjét és azt is, mennyi magyar nyelv veszi körül a gyermeket a hétköznapokban. A kisebbeknél játékos, kreatív feladatokkal, a nagyobbaknál irodalmi szövegekkel és digitális felületekkel is dolgozom. A magyar nyelvre olyan otthonként tekintek, amelyet a diaszpórában különösen érdemes életben tartani."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Magyar nyelv · 6–10 év",
+          "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1"
+        },
+        {
+          "label": "Magyar nyelv · 10–14 év",
+          "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at 12 éve ingázik Bezenyéről Bécsbe, hogy magyarul tanítsa a gyerekeket Nagy portrébeszélgetés pedagógusi pályájáról, magyar nyelvoktatásról, kétnyelvű gyerekekről és a bécsi tanítás tapasztalatairól. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/kultura/12-eve-ingazik-bezenyerol-becsbe-hogy-magyarul-tanitsa-a-gyerekeket/"
+        }
+      ]
+    },
+    {
+      "id": "boronkai-gabriella",
+      "name": "Boronkai Gabriella",
+      "role": "Pedagógus · vizuális nevelés · sport- és aerobic oktató",
+      "summary": "A vizuális alkotást, a mozgást és a játékos készségfejlesztést természetesen kapcsolom össze a gyerekekkel végzett munkámban.",
+      "profileUrl": "https://tanarok.magyariskola.at/#boronkai-gabriella",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Pedagógus vagyok, emellett okleveles sport- és aerobic oktató. A Bécsi Magyar Iskolában évek óta vezetek gyermekfoglalkozásokat és nyári táborokat; a Mesés Világ Tábor egyik visszatérő vezetője vagyok, korábban pedig zenés, mozgásos Ovistornát is tartottam."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A rajz és vizuális nevelés, a mozgás, a koordináció, a koncentráció és az iskola-előkészítő készségek állnak hozzám közel. A Rajztáblában a kompozíció, az arányok, a fény–árnyék, a perspektíva és az eszközhasználat alapjait igyekszem hozzáférhetővé tenni."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A fejlesztést játékba, mesébe és alkotásba ágyazom. Fontosnak tartom, hogy a gyermek konkrét eszközöket kapjon ahhoz, amit meg szeretne jeleníteni, miközben a mozgásos és kreatív feladatok egyszerre támogatják a figyelmet, az együttműködést és az önkifejezést."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "RAJZTÁBLA",
+          "url": "https://www.magyariskola.at/event-details/rajztabla-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "ORF Magyarok Ovistorna a Bécsi Magyar Iskolában Boronkai Gabriella az óvodáskori mozgásfejlesztés fizikai és mentális céljairól, koordinációról, egyensúlyról és együttműködésről beszél. Szakmai anyag megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/v2/magyarok/stories/2979033/index.html"
+        },
+        {
+          "label": "Rólunk.at Mesés Világ – kétnyelvű tábor és élménypedagógia Szakmai riport a kétnyelvű gyerekekkel végzett kreatív pedagógiai munkáról és a figyelem fenntartásának módszereiről. Szakmai anyag megnyitása ↗",
+          "url": "https://rolunk.at/fiatalok/nyari-taborok-meses-vilag/"
+        }
+      ]
+    },
+    {
+      "id": "korchma-zsombor",
+      "name": "Korchma Zsombor",
+      "role": "Újságíró · Minecraft-foglalkozásvezető",
+      "summary": "A Minecraft világát történelemmel, építészettel, tervezéssel és csapatmunkával kapcsolom össze.",
+      "profileUrl": "https://tanarok.magyariskola.at/#korchma-zsombor",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Eredetileg újságíró vagyok, és korábban egy magyarországi magániskolában is dolgoztam. A Minecraft-alapú táborok ötlete a saját gyerekeim játékélményéből indult: azt kerestem, hogyan lehet a képernyőn töltött időt építő, közös és tanulással összekapcsolt tevékenységgé alakítani. Ebből többéves tábori és foglalkozásvezetői gyakorlat lett."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "Az építészet, a várostörténet, a térbeli gondolkodás, a mérés és tervezés, a digitális építés és a nagy léptékű közös projektek állnak hozzám közel. A gyerekekkel valós épületeket vizsgálunk meg, felmérjük és vázlatoljuk őket, majd együtt építjük újra a Minecraftban."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A játékot nem jutalomként, hanem tanulási környezetként használom. Egy konkrét közös célon dolgozunk, ezért természetesen jelenik meg a kutatás, a pontosság, a feladatmegosztás és az egymás munkájára építés. Azt szeretném, hogy a digitális világ ne elszigeteljen, hanem együttműködésre és kíváncsiságra adjon okot."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "BÉCS-CRAFT Workshop",
+          "url": "https://www.magyariskola.at/event-details/becscraft-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at Kreatív Minecraft tábor Bécsben Minecraft, történelem, építészet, tervezés és csapatmunka összekapcsolása a gyerekekkel. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/magazin/kreativ-minecraft-tabor-becsben/"
+        }
+      ]
+    },
+    {
+      "id": "hierholcz-anna",
+      "name": "Hierholcz Anna",
+      "role": "Musical foglalkozásvezető · közösségi szervező",
+      "summary": "A musicalfoglalkozásokon a gyerekekkel közösen épített történeteket, a személyre szabott szerepeket és a zene–színház játékosságát helyezem a középpontba.",
+      "profileUrl": "https://tanarok.magyariskola.at/#hierholcz-anna",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "A Bécsi Magyar Iskola musicalcsoportját vezetem. 2026-ban a csoport első saját előadásának, A Nagy Olümposzi Eposznak a történetét és cselekményét szerzőtársakkal közösen dolgoztam ki; a karakterek és a prózai váz kialakításában is részt vettem."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A musical, a dramaturgia, a közös történetalkotás, a szerepformálás és az a fajta színházi munka áll hozzám közel, ahol a próza, a zene, a humor és a gyerekek saját személyisége találkozik."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A szerepeket nem kész sablonként osztom ki: figyelembe veszem a gyerekek személyiségét és erősségeit is. Fontos nekem a beszélgetés, a karakterek megértése és az, hogy ne csak megtanuljunk egy előadást, hanem értsük is, mit és miért játszunk."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "MaMUT Musical Stúdió",
+          "url": "https://www.magyariskola.at/event-details/mammut-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "ORF Magyarok Humoros musicallel készülnek a BMI diákjai Hierholcz Anna a saját musical készítéséről, a gyerekek bevonásáról, a kreativitásról és a színpadi készségek fejlesztéséről beszél. Interjú megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/magyarok/stories/3325447/"
+        }
+      ]
+    },
+    {
+      "id": "pecze-adam",
+      "name": "Pecze Ádám",
+      "role": "Zongora · zeneszerzés · musical-foglalkozásvezető",
+      "summary": "A Bécsi Magyar Musical Társulatban a zongora és a zeneszerzés területét képviselem, és zenei oldalról kapcsolódom a gyerekek közös színpadi munkájához.",
+      "profileUrl": "https://tanarok.magyariskola.at/#pecze-adam",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "A Bécsi Magyar Musical Társulatban zongorával és zeneszerzéssel foglalkozom. A MaMUT Musical Stúdióban a zenei munka oldaláról veszek részt a közös alkotásban."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A zongora, a zeneszerzés, a musical zenei világa és az a folyamat áll hozzám közel, amelyben a dallam, a ritmus és a színpadi történet egymást erősíti."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Számomra a musicalműhelyben a zene nem különálló kíséret, hanem a közös előadás része. A zongorás és zeneszerzői munkával azt szeretném segíteni, hogy a gyerekek a ritmust, a dallamot, a szöveget és a színpadi jelenlétet egységben tapasztalják meg."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "MaMUT Musical Stúdió",
+          "url": "https://www.magyariskola.at/event-details/mammut-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Bécsi Magyar Musical Társulat",
+          "url": "https://www.musicaltarsulat.at/"
+        }
+      ]
+    },
+    {
+      "id": "trencsenyi-klara",
+      "name": "Dr. Trencsényi Klára DLA",
+      "role": "DLA · operatőr · dokumentumfilm-rendező",
+      "summary": "A dokumentumfilm eszközein keresztül tanítok figyelni, kérdezni, együtt dolgozni és történetet mesélni.",
+      "profileUrl": "https://tanarok.magyariskola.at/#trencsenyi-klara",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Operatőr és dokumentumfilm-rendező vagyok, és filmes workshopokat is vezetek fiataloknak. Bécsi foglalkozásaimon a résztvevőkkel kamerával, állvánnyal és különböző filmes szerepkörökkel dolgozunk, majd saját rövid történeteket építünk."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A dokumentumfilm, a vizuális történetmesélés, az interjúkészítés, a storyboard, a családi emlékezet és a személyes tárgyakon keresztül elmesélhető történetek állnak hozzám közel. Kutatási projektekben a migráció, a városi beilleszkedés és a családi tapasztalatok filmes megközelítésével is foglalkozom."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A filmezést csapatmunkaként tanítom. Bemelegítő és koncentrációs gyakorlatokkal indítok, majd a technikai tudást rögtön kreatív feladatokhoz kapcsolom. A célom nem pusztán egy videó elkészítése, hanem annak megtapasztalása, hogyan lesz megfigyelésből, kérdésből, emlékből és közös munkából történet."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Filmes Műhely",
+          "url": "https://www.magyariskola.at/event-details/filmesmuhely-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Filmhu Reményvasút: „A történetek mennek tovább” Személyes szakmai interjú dokumentumfilmes módszerről, gyereksorsokról, filmezési etikáról és történetépítésről. Interjú megnyitása ↗",
+          "url": "https://magyar.film.hu/filmhu/magazin/remenyvasut"
+        },
+        {
+          "label": "24.hu Reményvasút: egy film arról, hogy veszett nehéz ma gyereknek lenni Rendezői interjú a dokumentumfilm készítéséről, a szereplő gyerekekkel való munkáról és a felnőtté válás filmes megközelítéséről. Interjú megnyitása ↗",
+          "url": "https://24.hu/kultura/2016/05/08/remenyvasut-egy-film-arrol-hogy-veszett-nehez-ma-gyereknek-lenni/"
+        }
+      ]
+    },
+    {
+      "id": "falusi-dora",
+      "name": "Falusi Dóra",
+      "role": "Vallástudományi kutató · szerkesztő · foglalkozásvezető",
+      "summary": "A történelmet, vallást, irodalmat, képzőművészetet és hétköznapi kultúrát egyetlen nagy, a gyerekekkel közösen felfedezhető történetté kapcsolom össze.",
+      "profileUrl": "https://tanarok.magyariskola.at/#falusi-dora",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Vallástudományi kutató és szerkesztő vagyok, a Károli Gáspár Református Egyetem vallástudomány mesterszakán végeztem. Franciaországi és spanyolországi évek után 2021-ben Bécsben telepedtem le. A Fecske Klub alapítójaként gyermekeknek szóló kultúr- és tudománytörténeti programokat dolgozok ki és vezetek."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A magyar és európai kultúrtörténet, vallástörténet, irodalom, képzőművészet, építészet, néprajz és mitológia áll hozzám közel, főleg azok a pontok, ahol különböző korszakok és tudományterületek összekapcsolódnak."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Nálam nincs házi feladat, vizsga vagy tudásszintfelmérő. Sok képpel, rövid videóval, kérdéssel és beszélgetéssel dolgozom, majd kreatív feladatban dolgozzuk fel a témát. Arra bátorítom a gyerekeket, hogy kérdezzenek és saját véleményt fogalmazzanak meg; nem az adatok bemagolása a célom, hanem az összefüggések felismerése és a kultúrához való személyes kapcsolat."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Fecske Klub",
+          "url": "https://www.magyariskola.at/event-details/fecskeklub-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at „Nem tudom elképzelni, hogy a gyerekem ne tudja, ki volt József Attila” Magyar kultúra, történelmi és művészeti ismeretterjesztés gyerekeknek, a Fecske Klub szemlélete. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/fiatalok/nem-tudom-elkepzelni-hogy-a-gyerekem-ne-tudja-ki-volt-jozsef-attila-uj-klub-gyerekeknek-becsben/"
+        },
+        {
+          "label": "Rólunk.at Titkok nyomában – A boszorkányok titkai a Fecske Klubban Falusi Dóra interaktív kultúrtörténeti foglalkozása történelmi, tudománytörténeti, képzőművészeti és néprajzi összefüggésekkel. Cikk megnyitása →",
+          "url": "https://rolunk.at/fiatalok/titkok-nyomaban-a-boszorkanyok-titkai-a-fecske-klubban/"
+        }
+      ]
+    },
+    {
+      "id": "hupczik-andrea",
+      "name": "Hupczik Andrea",
+      "role": "Informatikatanár · hagyományőrző közösségi szervező · bécsi kapcsolattartó",
+      "summary": "Informatikatanár, hagyományőrző közösségi szervező és két fiúgyermek édesanyja vagyok. A magyar hagyományokat közösségi élménnyé szeretném tenni, miközben digitális és informatikai tudást is átadok.",
+      "profileUrl": "https://tanarok.magyariskola.at/#hupczik-andrea",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "A Regélő Fehér Táltos Hagyományőrző Egyesület bécsi kapcsolattartója vagyok, és a Bécsi Magyar Iskolához kapcsolódó dobos-hagyományőrző programok egyik helyi szervezőjeként dolgozom. Az Együtt dobban Bécs programban a 2007 óta működő hagyományőrző dobcsapat szakmai közösségét kapcsolom össze a bécsi résztvevőkkel."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A közösségi dobolás, az ének, a magyar mondavilág és hagyományőrzés, a generációk közötti kapcsolódás, valamint az informatika és digitális készségfejlesztés áll hozzám közel."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Fontos alapelvem, hogy nem kell előzetes zenei vagy dobos tudás. A résztvevők egymásra figyelve tanulnak ritmust tartani, vezetni és alkalmazkodni. A szülőket sem csak kísérőként látom: örülök, ha a gyerekekkel együtt ők is bekapcsolódnak."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Világfa Sárkányai",
+          "url": "https://taltosdob.magyariskola.at"
+        },
+        {
+          "label": "Együtt dobban Bécs",
+          "url": "https://www.magyariskola.at/event-details/oromzene-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Microsoft Office Specialist képzés",
+          "url": "https://mos.magyariskola.at"
+        }
+      ]
+    },
+    {
+      "id": "telenko-eva",
+      "name": "Telenkó Éva",
+      "role": "Mozgás- és képességfejlesztő · kisgyermeknevelő · gyermekjóga- és Brain Gym®-oktató",
+      "summary": "Több mint tizenöt éve foglalkozom gyermekekkel a hat hónapos kortól a kisiskolás korig. A mozgást, a játékot és a közös felfedezést olyan alapnak tekintem, amelyen keresztül a gyerekek a saját képességeiket és érzéseiket is egyre tudatosabban ismerhetik meg.",
+      "profileUrl": "https://tanarok.magyariskola.at/#telenko-eva",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Fejlesztőpedagógiai, mozgásfejlesztési és gyermekjóga területen tanultam, emellett Brain Gym®-oktatóként is dolgozom. Pedagógiai gondolkodásomra a Waldorf-szemlélet is hatással van. Magyarországon integrált bölcsődei és óvodai csoportban csoportvezetőként szereztem tapasztalatot, jelenleg egy badeni önkormányzati óvodában dolgozom. A Bécsi Magyar Iskolában hat éve tartok óvodás foglalkozásokat és táborokat."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A mozgás- és képességfejlesztés, a szabad és kreatív játék, a gyermekjóga, a Brain Gym® és a gyermekek érzelmi önkifejezésének támogatása áll hozzám különösen közel. Fontos nekem a Waldorf-pedagógia holisztikus szemlélete is."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A gyerekekkel való foglalkozásra mindenekelőtt kapcsolatként, játékként és közös felfedezésként tekintek. Olyan biztonságos és inspiráló közeget szeretnék teremteni, ahol a gyermek önmaga lehet, bátran próbálkozhat, örömmel mozoghat, és saját élményként élheti meg azt, hogy „meg tudom csinálni”."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Bécsi Magyar Óvoda | Baden",
+          "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "ORF Magyarok Lelemények táborában a magyar gyerekek Szerkesztőségi riport a BMI gyermekprogramjáról, amely Telenkó Évát táborvezető pedagógusként és a gyermekek jógás-mozgásos foglalkozásainak vezetőjeként mutatja be. Sajtóanyag megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/magyarok/stories/3111883/"
+        },
+        {
+          "label": "Rólunk.at Fabula bábtábor – Interjú Bajka Kinga Csengelével A Fabula Bábtábor szakmai hátterét bemutató szerkesztőségi interjú, amely Telenkó Évát Bajka Kinga Csengele társfoglalkozásvezetőjeként nevezi meg. Sajtóanyag megnyitása ↗",
+          "url": "https://rolunk.at/kultura/fabula-babtabor-interju-bajka-kinga-csengelevel/"
+        }
+      ]
+    },
+    {
+      "id": "varga-bernadette",
+      "name": "Varga Bernadette",
+      "role": "Dipl.-Ing. · gyermek-néptánc-foglalkozásvezető · Napraforgócskák",
+      "summary": "A Napraforgócskák gyerektánccsoportot Veres Tamással vezetem. Külföldön született magyarként a magyar nyelv, néptánc, népzene és közösség továbbadását személyes ügyemnek tekintem; ezt a munkát mérnöki főállásom mellett önkéntesen végzem.",
+      "profileUrl": "https://tanarok.magyariskola.at/#varga-bernadette",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "A TU Wien Bauingenieurwesen szakán végeztem, hivatalos titulussal Dipl.-Ing., és teljes állásban projektvezető statikusként dolgozom. A néptánc gyerekkorom óta része az életemnek: már óvodásként táncházakba jártam, később a cserkészetben sokat foglalkoztam gyerekekkel, és több vezetői képzést is elvégeztem. Az egyesületben intenzíven táncolok, és ennek természetes folytatásaként vezetem a Napraforgócskákat."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A gyerekekkel való foglalkozás, a néptánc, a népzene, a játékos oktatás és a közösségformálás áll hozzám a legközelebb. Fontos nekem, hogy a gyerekek magyar énekeket, népi játékokat és táncokat tanuljanak, miközben a nyelvhez és a közösséghez való kötődésük is erősödik."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Abból a személyes tapasztalatból indulok ki, hogy a hagyomány csak akkor marad élő, ha a következő generáció ténylegesen használja és megéli. A foglalkozásokon ezért a néptánc és a népzene mellett minden alkalommal helyet kap a játék is. Nem elsősorban fellépésre készítek: azt szeretném, hogy a magyar kulturális közeg természetes és örömteli élménnyé váljon."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Napraforgócskák",
+          "url": "https://www.magyariskola.at/event-details/napraforgocskak-2026"
+        }
+      ],
+      "publicSourceLinks": []
+    },
+    {
+      "id": "veres-tamas",
+      "name": "Veres Tamás",
+      "role": "Néptánc-foglalkozásvezető · népzenész",
+      "summary": "Hatéves korom óta néptáncolok, és a táncra ma is olyan élő közösségi nyelvként tekintek, amelyet gyerekekkel ugyanúgy örömmel lehet megszerettetni, mint felnőttekkel.",
+      "profileUrl": "https://tanarok.magyariskola.at/#veres-tamas",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Hatévesen kezdtem néptáncolni Gyöngyösön, a Tomory Gábor Néptánciskolában, amelynek egyetemista koromig tagja voltam. Bécsbe költözésem után csatlakoztam a Napraforgókhoz, majd 2023-tól Varga Bernadette-tel közösen átvettük a Napraforgócskák gyermekcsoport vezetését. A gyerekcsoport házi zenekarában ütőgardonon is játszom."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A magyar néptánc, a közösségi táncház, a gyermek-néptáncoktatás, a ritmus és az élő népzene áll hozzám közel. A tánc számomra nem időszakos hobbi, hanem olyan állandó közeg, amelyet új városban is ösztönösen kerestem."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Gyerekekkel játékos, közvetlen légkörben dolgozom. A próbákon a tánclépések mellett népdalok, játékok, csujjogatások és közös színpadi feladatok is helyet kapnak. Fontos nekem az egymásra figyelés és az, hogy a gyerekek a hagyományt ne kötelességként, hanem saját élményként vigyék tovább."
+          ]
+        }
+      ],
+      "programLinks": [],
+      "publicSourceLinks": [
+        {
+          "label": "Napraforgócskák",
+          "url": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak"
+        },
+        {
+          "label": "Rólunk.at Túrót ettem, nem ordát, ezért nőttem ekkorát! Szakmai riport a gyermek-néptánctáborról és a foglalkozásvezetők közös pedagógiai munkájáról. Szakmai anyag megnyitása ↗",
+          "url": "https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/"
+        }
+      ]
+    },
+    {
+      "id": "banhalmi-norbert",
+      "name": "Bánhalmi Norbert",
+      "role": "Fotóművész · alkalmazott fotográfus · kurátor · oktató",
+      "summary": "Fotósként és oktatóként azt keresem, hogyan lesz a technikából saját látásmód, egy jól elkészített képből pedig valódi történet. Gyerekekkel és felnőttekkel egyaránt dolgozom; a fényképezést nem pusztán eszközhasználatként, hanem figyelemként és önkifejezésként tanítom.",
+      "profileUrl": "https://tanarok.magyariskola.at/#banhalmi-norbert",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "1999 óta foglalkozom fotográfiával, de számomra a fényképezés soha nem csak szakma volt. Az informatika, a vizuális gondolkodás és az emberi történetek iránti érdeklődés végig együtt alakította a pályámat. 2005-ben informatikai mérnökként végeztem, majd a Magyar Honvédség Híradó és Informatikai Parancsnokságán dokumentációs feladatokon keresztül kerültem közel a professzionális képalkotáshoz. 2006-ban létrehoztam a HIPStudiót, később elvégeztem a New York Institute of Photography képzését, 2018-ban pedig alkalmazott fotográfusi képesítést szereztem. Ma Bécs és Budapest között dolgozom."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "Leginkább azok a helyzetek érdekelnek, amikor a kamera előtt valaki már nem szerepelni próbál, hanem egyszerűen jelen van. A portré mellett fontos számomra a társadalmi emlékezet, a diaszpóra, az identitás és az emberi méltóság kérdése. A fotográfiát természetesen kapcsolom össze a technológiával, a tartalomkészítéssel, a webbel és az AI eszközeivel – úgy, hogy közben az ember maradjon a középpontban."
+          ]
+        },
+        {
+          "heading": "Oktatói szemlélet",
+          "paragraphs": [
+            "Az óráimon nincs egyetlen „helyes” kép. Inkább azt keresem a résztvevőkkel együtt, hogy ki mit lát, mit akar elmondani, és ehhez milyen technikai döntések segítenek. A célom minden korosztálynál ugyanaz: önállóan gondolkodni, tudatosan használni az eszközöket, és olyan dolgot létrehozni, aminek személyes vagy közösségi értéke van."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "VIPACH Felnőtt Fotóklub",
+          "url": "https://www.magyariskola.at/event-details/fotoklub-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Könyv · 2017 Ébredés — az Új kezdet! Dr. Dank Magdolnával, Elek Erikával és Dr. Csernus Imrével létrehozott fotográfiai kötet tizenkét nő újrakezdéséről nőgyógyászati daganatos betegség után. ISBN 978-963-12-8663-2. Könyv megnyitása ↗",
+          "url": "https://www.banhalmi.art/hu/"
+        },
+        {
+          "label": "Könyv · 2017 Szösszenetek Vincent & Vincent, Kovács Olga, Telekes Péter és Bánhalmi Norbert közös, irodalmat, fotográfiát és mozgóképet összekapcsoló kiadványa. ISBN 978-615-00-0053-4. Könyv megnyitása ↗",
+          "url": "https://www.banhalmi.art/hu/"
+        },
+        {
+          "label": "Könyv · 2018 A Nő világa Vámos Miklós, Lénárt Éva és Bánhalmi Norbert közös kötete a női élet kilenc átmenetéről, portrékkal, személyes történetekkel és irodalmi szövegekkel. ISBN 978-615-00-1829-4. Könyv megnyitása ↗",
+          "url": "https://www.banhalmi.art/books/book-anovilaga.html"
+        },
+        {
+          "label": "SHE / Life.hu A férfi, aki a külsődet nézi, de a lelkedet látja Nagyinterjú a portréfotózás pszichológiájáról, az ember és a kamera közötti bizalomról, valamint Bánhalmi Norbert fotográfiai szemléletéről. Interjú megnyitása ↗",
+          "url": "https://she.life.hu/nofilter/2017/03/banhalmi-norbert-profi-fotos-interju-modell-belso-szepseg-szepnek-latni-magad"
+        },
+        {
+          "label": "Záridő Fotós Magazin Művész az üzlet mögött – New York Életútinterjú a fotográfiai pályáról, a New York-i alkotói fordulatról, kiállításokról és a művészeti gondolkodás kialakulásáról. Interjú megnyitása ↗",
+          "url": "https://zarido.hu/muvesz-az-uzlet-mogott-1-resz/"
+        },
+        {
+          "label": "Petőfi TV Digitális fotókiállítás Tihanyban Televíziós sajtóanyag a Rege Galéria digitális kiállítási modelljéről, a jubileumi fotókiállításról és Bánhalmi Norbert kiállítási szemléletéről. Sajtóanyag megnyitása ↗",
+          "url": "https://www.youtube.com/watch?v=cv4ylqkvNo4"
+        }
+      ]
+    },
+    {
+      "id": "balogh-david",
+      "name": "Balogh Dávid",
+      "role": "Művészettörténész · muzeológus · fotográfiai foglalkozásvezető",
+      "summary": "A fotográfiát történeti, vizuális és kulturális összefüggéseiben értelmezem. Előadásaimban egy-egy fotográfus vagy korszak munkásságát a történeti háttér, a technika, az érzelmi hatás és a művészeti jelentés felől is vizsgálom, külön figyelemmel a festészet és a fotográfia kapcsolatára.",
+      "profileUrl": "https://tanarok.magyariskola.at/#balogh-david",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Az ELTE Bölcsészettudományi Karán végeztem okleveles művészettörténészként, ahol magyar és egyetemes fotótörténetet is tanultam. Főállású művészettörténészként a fóti Németh Kálmán Emlékház vezetőjeként dolgozom, emellett Fót történetéhez, néprajzához és művészettörténetéhez kapcsolódó helytörténeti kutatásokat végzek.",
+            "Az elmúlt években számos fotótörténeti, képzőművészeti és helytörténeti kiállítást rendeztem, illetve nyitottam meg Magyarországon és külföldön, többek között New Yorkban és Bécsben. Kovács István amatőr fotográfus életművét digitalizáltam és rendszereztem, majd a kutatás eredményeit a Fót krónikása című kiállításon mutattam be. Legutóbbi szakmai feladataim között szerepelt dr. Fogarasi Klára néprajzos-fotótörténész Örök emlékül 2. című kiállításának megnyitása a budapesti Titok Galériában. Több Fóthoz kapcsolódó könyv és kiadvány szerzőjeként, illetve szerkesztőjeként is dolgozom."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A kutatási eredményeim közérthető és szakmailag pontos interpretálását kiemelt feladatomnak tekintem. Könyvekben, kiállításokban, várostörténeti sétákon, útibeszámolókban, hely- és művészettörténeti előadásokban, valamint cikkekben és tanulmányokban dolgozom fel és osztom meg a feltárt összefüggéseket.",
+            "Különösen közel áll hozzám a fotótörténet, a helytörténet, a vizuális kultúra, a festészet és fotográfia kapcsolata, valamint az archív fotóanyagok rendszerezése és értelmezése."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Az előadásaimon azt tartom fontosnak, hogy a hallgatók ne elszigetelt képeket vagy technikai megoldásokat lássanak, hanem összefüggésekben gondolkodjanak: felismerjék, hogy egy-egy irányzat, műfaj vagy fotográfiai szemlélet milyen történeti és művészeti közegben alakult ki, és mely alkotók milyen újításokat hoztak.",
+            "A fotóklubban a képelemzéshez történeti és művészettörténeti nézőpontot adok. Az előadássorozattal azt szeretném elérni, hogy a résztvevők a fotográfia sokféle megközelítésén keresztül ne csak technikailag fényképezzenek egyre tudatosabban, hanem idővel saját, következetesebb vizuális nyelvet is kialakítsanak."
+          ]
+        }
+      ],
+      "programLinks": [],
+      "publicSourceLinks": [
+        {
+          "label": "Könyv · művészettörténet A fóti templom festészeti értéke A fóti Szeplőtelen Fogantatás-templom falképeinek és oltárainak ikonográfiáját feldolgozó, a szerző művészettörténeti szakdolgozatából továbbfejlesztett önálló kötet. Könyv és interjú ↗",
+          "url": "https://fotinfo.hu/konyvajanlo-a-foti-templom-festeszeti-erteke/"
+        },
+        {
+          "label": "Könyv · 2022 · társszerző Bíborba, bársonyba, gyöngyös koszorúba – Lakodalmi szokások Fóton (1883–1950) Szűcs Máriával közösen készített, hároméves kutató- és gyűjtőmunkára épülő kötet. Balogh Dávid a fóti társadalom, a paraszti lakodalmi szokások és a főúri esküvők történetének fejezeteit is jegyzi. Néprajzi Múzeum könyvajánló ↗",
+          "url": "https://etnofoto.neprajz.hu/index.php/2022/06/14/foti-eskuvoi-emlekek-konyvajanlo/"
+        },
+        {
+          "label": "Könyv · 2024 · helytörténet A fóti Suum Cuique telep története 144 oldalas helytörténeti monográfia a Fótújfalu elődjét jelentő Suum Cuique telepről, Apponyi Franciska munkájáról és a telephez kapcsolódó emberi sorsokról. Bibliográfiai rekord ↗",
+          "url": "https://hunteka.neprajz.hu/record/-/record/NM626064"
+        },
+        {
+          "label": "FÓTINFO Megjelent Balogh Dávid könyve a fóti Suum Cuique-telep történetéről A szerzővel készült beszélgetés a többéves helytörténeti kutatásról, a 12 családi interjúról, a levéltári munkáról és a könyv megszületéséről. Interjú megnyitása ↗",
+          "url": "https://fotinfo.hu/megjelent-balogh-david-konyve-a-foti-suum-cuique-telep-torteneterol/"
+        },
+        {
+          "label": "Fóti Hírnök Fótiakat a címlapra: Fóti Értéktár Bizottság Interjú és szakmai bemutatkozás a fóti kulturális és épített örökség feltárásáról, megőrzéséről és a helytörténeti gyűjtőmunkáról. Szakmai anyag megnyitása ↗",
+          "url": "https://fot.hu/wp-content/uploads/dokumentumtar/F%C3%B3ti%20H%C3%ADrn%C3%B6k/2024./Foti%20Hirnok%202024-02_febru%C3%A1r.pdf"
+        },
+        {
+          "label": "Vörösmarty Művelődési Ház „Bíborba, bársonyba, gyöngyös koszorúba” – lakodalmi szokások Fóton Balogh Dávid saját szakmai írása a kiállítás létrejöttéről, a tárgyi és fényképanyag felkutatásáról, valamint a fóti lakodalmi hagyományok dokumentálásáról. Szakmai anyag megnyitása ↗",
+          "url": "https://vmh.hu/nemeth-kalman-emlekhaz/balogh-david-biborba-barsonyba-gyongyos-koszoruba-lakodalmi-szokasok-foton-1883-1950-kiallitas/"
+        }
+      ]
+    },
+    {
+      "id": "sipos-tibor",
+      "name": "Sipos Tibor",
+      "role": "Néptáncoktató · Napraforgók",
+      "summary": "1988 óta része az életemnek a magyar néptánc. Számomra a tánc nem egyszerűen mozgás vagy hagyományőrzés: egy olyan közeg, amely egyszer már átsegített egy nehéz életszakaszon, azóta pedig közösséget, irányt és folyamatos felfedezést ad. Ma ezt az élményt szeretném továbbadni azoknak, akik most teszik meg az első lépéseiket.",
+      "profileUrl": "https://tanarok.magyariskola.at/#sipos-tibor",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "1988-ban, a katonai szolgálatom alatt találtam rá a néptáncra a Kőszeg, későbbi nevén Szökős együttesben. Életem egyik mélypontja volt ez az időszak: nagyon nehéz volt megélnem a szerelmemtől való elszakítottságot, és szükségem volt valamire, ami átsegít rajta. A tánc és a közösség végül sokkal többet adott annál, mint amit reméltem. Meggyógyított, és lassan az életem részévé vált; az együttes közössége pedig a második családom lett. Azóta is lélekemelő számomra felfedezni, mennyi emberség, tapasztalat és finom viszony van belekódolva a régi táncokba, és ugyanígy megérint a népdalok képi, letisztult világa. Amikor szükség lett rá, természetesen vállaltam a hozzánk érkezők tanítását és próbák vezetését. 2005-ben Szombathelyen, a Szökősben kezdtem kezdőket oktatni; 2014-től Bécsben, a Délibábban a kezdők tanítása mellett koreográfiákat is betanítottam; 2018-ban pedig a Napraforgókkal elindítottuk a Felzárkóztató csoportot. Az együttesi munka, valamint a sok hétvégi és nyári tábor során szinte a teljes Kárpát-medence tánchagyományával volt lehetőségem közelről találkozni."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "Különösen közel áll hozzám a felnőttek oktatása az alapoktól. A kezdő csoportban lépésről lépésre haladunk, és újra meg újra azt látom, hogy a tánc öröme nem életkor kérdése. Ugyanilyen fontos számomra a páros táncok világa. Nemcsak a lépéseket és a technikát szeretném átadni, hanem azt az egymásra figyelést is, amely két embert valóban képessé tesz a harmonikus együttmozgásra."
+          ]
+        },
+        {
+          "heading": "Oktatói szemlélet",
+          "paragraphs": [
+            "A páros tánc testi empátia: gesztusaink egymáshoz igazodnak. Amikor a férfi vezet és a nő követ, a mozdulatok párbeszéddé válnak. A figyelem körbeér, vezetés és követés – mint az évszakok – egymásba fordulnak."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Napraforgók – felnőtt néptánc",
+          "url": "https://programvalaszto.magyariskola.at/foglalkozasok.html"
+        }
+      ],
+      "publicSourceLinks": []
+    },
+    {
+      "id": "orban-dalma",
+      "name": "Orbán Dalma",
+      "role": "Néptáncoktató · Napraforgók elnökhelyettese",
+      "summary": "Gyerekkorom óta a Napraforgók közösségéhez tartozom; ma az egyesület elnökhelyettese és a kezdő csoport női táncoktatója vagyok.",
+      "profileUrl": "https://tanarok.magyariskola.at/#orban-dalma",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "2009-ben, két és fél évesen már színpadra léptem a Napraforgók jubileumi műsorában. Ma az egyesület elnökhelyettese vagyok, és Sipos Tibor munkáját rendszeresen segítve a kezdő csoport női táncoktatójaként dolgozom. Gyerekeket és felnőtt kezdőket is tanítok."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A magyar néptánc, a viseletkultúra, a táncházi közösség és a generációkon át öröklődő hagyomány áll hozzám a legközelebb."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A kezdőkkel az alapoktól dolgozom, és a saját többgenerációs táncos tapasztalatomat igyekszem érthető, követhető tanításba átfordítani. Fontos nekem, hogy a résztvevők ne csak lépéseket tanuljanak, hanem természetes kapcsolatot alakítsanak ki a zenével, a viselettel és a közösségi tánc kultúrájával is."
+          ]
+        }
+      ],
+      "programLinks": [],
+      "publicSourceLinks": [
+        {
+          "label": "Kezdő néptánc felnőtteknek",
+          "url": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport"
+        },
+        {
+          "label": "Rólunk.at Túrót ettem, nem ordát, ezért nőttem ekkorát! Riport-interjú a gyermek-néptánctábor módszertanáról, a csoporthoz igazított tanításról, ismétlésről és továbbhaladásról. Szakmai anyag megnyitása ↗",
+          "url": "https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/"
+        }
+      ]
+    },
+    {
+      "id": "egri-monika",
+      "name": "Egri Mónika",
+      "role": "Meseíró · illusztrátor · foglalkozásvezető",
+      "summary": "Több évtizedes animációs és illusztrációs tapasztalatomat olyan alkotóműhelyekbe viszem át, ahol a résztvevők a saját képi megoldásaikat kereshetik.",
+      "profileUrl": "https://tanarok.magyariskola.at/#egri-monika",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Animációs rajzfilmrajzolóként kezdtem a pályámat, és mintegy tizennégy éven át dolgoztam animációs produkciókban, többek között a Pumukli kalandjai, a Pettson és Findusz és a Mr Bean animációs sorozat projektjeiben. Dolgoztam nemzetközi filmes produkciókban kellékesként, gyermekmagazin szerkesztőségében, 2010 óta pedig szabadúszó illusztrátorként dolgozom. Több mint harmincöt kiadványban jelentek meg munkáim; 2018-ban saját mesekönyvem is megjelent Állati illemtan címmel."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A gyerekkönyv-illusztráció, az animáció, a humoros vizuális történetmesélés, az akvarell, a pop-up technika, a meseírás és a közös alkotás áll hozzám közel. A rajz és a történet számomra szorosan összetartozik."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A workshopjaimon kifejezetten arra biztatom a résztvevőket, hogy ne az én mintámat másolják, hanem saját megoldást keressenek. Nem várok magas szintű rajztudást: technikát mutatok és segítek, de az egyedi alkotást tartom fontosnak. A ReKreációban ehhez közösségi és környezettudatos szemlélet is társul."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "ReKreáció – Kreatív Közösségi Kuckó",
+          "url": "https://www.magyariskola.at/event-details/rekreacio-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Pagony „Amikor egyedül vannak a könyvvel, valójában akkor sincsenek egyedül” Gyerekkönyv-illusztráció, vizuális történetmesélés és a különböző életkorok képi világa. Interjú megnyitása ↗",
+          "url": "https://www.pagony.hu/cikkek/cirka-es-firka-egri-monika-illusztrator-interju-grafika-zseblampas-konyvek"
+        },
+        {
+          "label": "Író Cimborák Interjú Egri Mónikával Írás, illusztráció, közös alkotás és a saját vizuális-irodalmi hang kialakulása. Interjú megnyitása ↗",
+          "url": "https://irocimborak.blogspot.com/2017/04/interju-egri-monikaval.html"
+        }
+      ]
+    },
+    {
+      "id": "dapin-hajnalka-judit",
+      "name": "Mag. Dapin Hajnalka Judit",
+      "role": "Zenepedagógus · zeneterapeuta",
+      "summary": "Harminc éve dolgozom pedagógusként. A zenetanításban, a csoportos zenei foglalkozásokban és a zeneterápiában ugyanaz érdekel: hogyan lehet valakihez úgy kapcsolódni, hogy a zene valóban az ő saját útját, fejlődését és belső erőforrásait szolgálja.",
+      "profileUrl": "https://tanarok.magyariskola.at/#dapin-hajnalka-judit",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Tanítóképző szakközépiskolában érettségiztem Zilahon 1995-ben, majd Nagyváradon és a németországi Weingartenben tanultam zenepedagógiát. Bécsben 2007-ben szereztem énekpedagógusi diplomát. Később a Virginia Satir nevéhez kötődő rendszerpszichoterápiás szemlélettel is megismerkedtem, amelyet 2012 óta tanácsadói munkában használok. A zenei és terápiás területek végül a zeneterápiában értek össze számomra; 2017 óta tanultam zeneterápiát a Bécsi Zeneművészeti Egyetemen, ahol 2025-ben szereztem meg a diplomámat. Pedagógiai munkám során főként egyéni hangszeroktatással – zongorával, gitárral és furulyával – valamint csoportos zenei foglalkozásokkal, többek között baba-mama muzsikával és óvodai zeneoktatással foglalkoztam. Zeneterapeutaként a koraszülött babáktól az idősekig minden korosztállyal volt lehetőségem dolgozni."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A zenepedagógián belül az egyéni hangszeroktatás – zongora, furulya, gitár és citera – és a gyerekeknek szóló csoportos zenei munka áll hozzám különösen közel. A zeneterápiában családterápiás munkával foglalkozom koraszülött babák és szüleik mellett, egyéni folyamatokkal segítek fejlődési zavarokkal, autizmussal, mutizmussal, figyelem- vagy kötődési nehézségekkel élő gyerekeket, és önismereti csoportokat is vezetek felnőtteknek."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "Abból indulok ki, hogy a zene minden ember veleszületett joga. Minden találkozásban izgalmas feladat megtalálni azt a személyre szabott utat, amelyen az adott ember valóban előre tud lépni. A hibákra nem kudarcként tekintek; inkább kedves útjelzőknek látom őket. Zenélni szerintem akkor érdemes, ha örömöt ad, de annak is van helye, ha közben más érzéseket élünk meg vagy fejezünk ki. Tanárként és terapeutaként arra törekszem, hogy olyan tükröt tartsak a gyerekek elé, amelyben felismerhetik a saját belső értéküket."
+          ]
+        }
+      ],
+      "programLinks": [],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at Pajzán népmesék Bécsben Cikk megnyitása ↗",
+          "url": "https://rolunk.at/aktualis/pajzan-nepmesek-becsben/"
+        },
+        {
+          "label": "Rólunk.at Ahány hangszer, annyi lehetőség Cikk megnyitása ↗",
+          "url": "https://rolunk.at/magazin/ahany-hangszer-annyi-lehetoseg/"
+        }
+      ]
+    },
+    {
+      "id": "pohl-balazs",
+      "name": "Pohl Balázs",
+      "role": "Drámapedagógus · író-rendező · SVUNG művészeti vezető",
+      "summary": "Számomra a színház és a pedagógia nem két külön pálya. A színészi tapasztalatot, a Waldorf-pedagógiát és a több évtizedes színpadi munkát úgy kapcsolom össze, hogy a fiatalok ne kész válaszokat kapjanak, hanem megtanuljanak jelen lenni, reagálni, kérdezni és együtt gondolkodni.",
+      "profileUrl": "https://tanarok.magyariskola.at/#pohl-balazs",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Fiatalon színiiskolába jártam, Budapesten a Kolibri Színházban és a Pinceszínházban is dolgoztam, emellett film-, rádiójáték- és szinkronmunkákban vettem részt. Később a Waldorf-pedagógia felé fordultam: elvégeztem a Waldorf-tanárképzést, tanítottam, diákszínjátszó csoportokat vezettem, majd oktatóként is visszatértem a tanárképzésbe. 2015-ben Bécsbe költöztem, és létrehoztam a későbbi SVUNG – Bécsi Magyar Színházat. A társulatban művészeti vezetőként, szerzőként és rendezőként dolgozom; a színházi alkotás gyerekkorom óta végigkíséri az életemet."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A drámapedagógia, a darab- és jelenetírás, a rendezés, az improvizáció és a közösségi színház áll hozzám a legközelebb. A SVUNG-ban felnőtt- és gyerekelőadásokon, saját szövegeken és átdolgozásokon egyaránt dolgozom. A Gimi Svungban ehhez kapcsolom a magyar nyelvi kifejezést, a szövegértést, az önismeretet, az empátiát és a színpadi jelenlét fejlesztését."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A drámára önismereti folyamatként és olyan eszközként tekintek, amely közelebb tudja vinni a tananyagot és a kérdéseket a résztvevőkhöz. Nem egyszerűen előadást szeretnék készíteni egy csoporttal: arra ösztönzöm a fiatalokat, hogy a saját tapasztalataikból, ötleteikből és véleményükből építsünk közös színpadi anyagot, és közben merjenek felelősséget vállalni a közös munkáért."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Gimi Svung – Magyar nyelvű drámafoglalkozás",
+          "url": "https://www.magyariskola.at/event-details/gimisvung-2026"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "Rólunk.at · 2021 „Svung” – Bécsi Magyar Színkör Átfogó interjú a bécsi pályáról, a korábbi színházi tapasztalatokról, a Waldorf-tanárképzésről és a SVUNG művészeti vezetéséről. Cikk megnyitása ↗",
+          "url": "https://rolunk.at/nepcsoportunk/svung-becsi-magyar-szinkor/"
+        },
+        {
+          "label": "Rólunk.at · 2022 Eljuthatunk messzire – Interjú Pohl Balázzsal Közvetlen alkotói interjú a darabírásról, rendezésről, társulatépítésről és a SVUNG működtetésének gyakorlati oldaláról. Interjú megnyitása ↗",
+          "url": "https://rolunk.at/kultura/eljuthatunk-messzire-interju-pohl-balazzsal/"
+        },
+        {
+          "label": "Rólunk.at · 2025 A Svung Fondüjében mindenki sajt Friss portré az író-rendező és társulatvezető munkáról, a Fondü bemutatóján keresztül. Cikk megnyitása ↗",
+          "url": "https://rolunk.at/kultura/a-svung-fondujeben-mindenki-sajt/"
+        }
+      ]
+    },
+    {
+      "id": "poser-piroska-ildiko",
+      "name": "Póser-Piroska Ildikó",
+      "role": "Csapatparancsnok · ifjúsági közösségi vezető · cserkészet",
+      "summary": "A cserkészet számomra nem egy kívülről felvett vezetői szerep, hanem közösség, felelősség és életforma. Gyerekkorom óta része az életemnek, ma pedig csapatparancsnokként azon dolgozom, hogy a bécsi magyar fiatalok olyan közösséghez tartozzanak, ahol a magyar nyelv, az identitás, az önállóság és a másokért vállalt felelősség egyszerre tud erősödni.",
+      "profileUrl": "https://tanarok.magyariskola.at/#poser-piroska-ildiko",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai és közösségi háttér",
+          "paragraphs": [
+            "Gyerekkorom óta cserkész vagyok, és hosszú évek óta dolgozom a bécsi magyar cserkészközösségben. 2016 óta a 72. sz. Széchenyi István Cserkészcsapat csapatparancsnokaként felelek a közösség működéséért és a vezetői munka összehangolásáért. Számomra a cserkészet egyik legnagyobb értéke, hogy a fiatalok nem nézőként vannak jelen, hanem fokozatosan valódi feladatokat és felelősséget kapnak."
+          ]
+        },
+        {
+          "heading": "A hozzám különösen közel álló területek",
+          "paragraphs": [
+            "A közösségépítés, a jellemnevelés, a magyar nyelv és kultúra továbbadása, az ifjúsági vezetőképzés és a generációk közötti kapcsolat áll hozzám a legközelebb. Fontosnak tartom azt is, hogy a fiatalok megtapasztalják: egy közösség nem valami készen kapott dolog, hanem olyan tér, amelyért nekik is tenniük kell."
+          ]
+        },
+        {
+          "heading": "Vezetői szemlélet",
+          "paragraphs": [
+            "Abban hiszek, hogy életrevaló, önálló és segítőkész fiatalokat nem pusztán elmondott szabályokkal lehet nevelni. Valódi helyzetekre, bizalomra, feladatokra és egymásra utaltságra van szükség. Vezetőként igyekszem olyan keretet teremteni, ahol lehet hibázni, tanulni, kezdeményezni és fokozatosan felelősséget vállalni másokért is."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Cserkészet | Alliiertenstrasse",
+          "url": "https://programvalaszto.magyariskola.at/foglalkozasok.html#cserkeszet"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "ORF Magyarok · 2025 Egyszer cserkész, mindig cserkész Kifejezetten róla és vezetői útjáról szóló portré: gyermekkori cserkészélmények, csapatparancsnoki szerep, jellemnevelés és a diaszpóra magyar közössége. Portré megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/magyarok/stories/3284115/"
+        },
+        {
+          "label": "ORF Magyarok · 2024 Életrevaló fiatalokat nevel a cserkészet Riport a csapatépítésről, vezetőképzésről, felelősségvállalásról és a cserkészet három meghatározó pilléréről. Riport megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/magyarok/stories/3282451/"
+        },
+        {
+          "label": "Rólunk.at · 2025 Magyar családi nap a bécsi cserkészekkel Közösségi riport, amely csapatparancsnokként mutatja be szerepét a generációkat összekapcsoló bécsi magyar cserkészközösségben. Cikk megnyitása ↗",
+          "url": "https://rolunk.at/magazin/magyar-csaladi-nap-a-becsi-cserkeszekkel/"
+        }
+      ]
+    }
+  ]
+}
