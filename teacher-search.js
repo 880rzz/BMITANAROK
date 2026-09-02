@@ -5,29 +5,12 @@ function teacherCards(){return Array.from(document.querySelectorAll('.teacher-ca
 function icon(k){var defs=window.BMI_AREA_ICONS&&window.BMI_AREA_ICONS.definitions;var x=defs&&defs[k];if(!x)return '';return '<span class="ts-icon" aria-hidden="true"><svg viewBox="0 0 24 24">'+x[1]+'</svg></span>'}
 function cleanTeacherNames(raw){return String(raw||'').replace(/\([^)]*\)/g,' ').split(/\s+és\s+|\s*;\s*|\s*\/\s*/).map(function(x){return x.replace(/,.*$/,'').trim()}).filter(Boolean)}
 function mapsUrl(address){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(String(address||'').trim())}
-var CATEGORIES=[
- {id:'nyelv',label:'Magyar nyelv és közösség'},
- {id:'alkotas',label:'Alkotás, művészet és színpad'},
- {id:'mozgas',label:'Mozgás, tánc és zene'},
- {id:'logika',label:'Stratégia, digitális készségek és technológia'},
- {id:'jollet',label:'Fejlesztés, fókusz és jóllét'},
- {id:'hagyomany',label:'Kultúra, hagyomány és közösségi élet'}
-];
-function programCategory(p){
- var text=[p.id,p.name,(p.interests||[]).join(' '),(p.needs||[]).join(' '),p.why].map(slugText).join(' ');
- if(/minecraft|sakk|office|\bmos\b|informat|technolog|tech|digitalis|strateg/.test(text))return 'logika';
- if(/alapozo|terap|fokusz|jolet|onismer|pszich|mentalis|koncentracio/.test(text))return 'jollet';
- if(/fotoklub|foto|film|rajz|craft|alkot|musical|mamut|svung|drama|szinpad|szinhaz|vizual/.test(text))return 'alkotas';
- if(/neptanc|tanc|zene|zenebona|oromzene|dobcsapat|vilagfa|mozgas|joga|ritmus/.test(text))return 'mozgas';
- if(/cserkesz|hagyomany|kultur|identitas|kozossegepites|nepmuveszet|nephagyomany/.test(text))return 'hagyomany';
- if(/nyelv|ovoda|iskola|borsofozde|magyar nyelv|szokincs|beszed|olvas|iras/.test(text))return 'nyelv';
- if((p.interests||[]).indexOf('logika')>=0||(p.interests||[]).indexOf('tech')>=0)return 'logika';
- if((p.interests||[]).indexOf('jollet')>=0)return 'jollet';
- if((p.interests||[]).indexOf('alkotas')>=0)return 'alkotas';
- if((p.interests||[]).indexOf('mozgas')>=0)return 'mozgas';
- if((p.interests||[]).indexOf('kulturtortenet')>=0)return 'hagyomany';
- return 'nyelv';
+var CATEGORIES=[];
+function refreshCategories(){
+ var cfg=window.BMI_FINDER||{};
+ CATEGORIES=(cfg.categories6&&cfg.categories6.length?cfg.categories6:(window.BMI_PROGRAM_TAXONOMY&&window.BMI_PROGRAM_TAXONOMY.categories)||[]).slice();
 }
+function programCategory(p){return p&&p.primaryCategory6||((window.BMI_PROGRAM_TAXONOMY&&window.BMI_PROGRAM_TAXONOMY.classify)?window.BMI_PROGRAM_TAXONOMY.classify(p):'nyelv')}
 function normalizeUi(){
  var hero=document.querySelector('.hero .actions,.hero-actions,.hero .hero-actions');
  if(hero){Array.from(hero.querySelectorAll('a')).forEach(function(a){if((a.textContent||'').trim()==='magyariskola.at')a.textContent='Kezdőlap'});var historyLinks=Array.from(hero.querySelectorAll('a')).filter(function(a){return /Iskolánk története/i.test(a.textContent||'')||/hu\.wikipedia\.org\/wiki\/Bécsi_Magyar_Iskola/i.test(a.href||'')});var history=historyLinks.shift();historyLinks.forEach(function(a){a.remove()});if(!history){history=document.createElement('a');history.className='btn ghost';history.href='https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola';history.target='_blank';history.rel='noopener external';history.textContent='Iskolánk története';var finder=Array.from(hero.querySelectorAll('a')).find(function(a){return /Foglalkozást keresek/i.test(a.textContent||'')});if(finder&&finder.nextSibling)hero.insertBefore(history,finder.nextSibling);else hero.appendChild(history)}history.dataset.schoolHistory='1'}
@@ -35,7 +18,7 @@ function normalizeUi(){
 }
 function init(){
  normalizeUi();
- var cfg=window.BMI_FINDER;if(!cfg||!Array.isArray(cfg.programs))return;
+ var cfg=window.BMI_FINDER;if(!cfg||!Array.isArray(cfg.programs))return;if(window.BMI_PROGRAM_TAXONOMY&&window.BMI_PROGRAM_TAXONOMY.apply)window.BMI_PROGRAM_TAXONOMY.apply();refreshCategories();if(CATEGORIES.length!==6)return;
  var anchor=document.querySelector('.index#tanarok,.index[id="tanarok"],section.index');if(!anchor||document.getElementById('terulet-kereso'))return;
  var sec=document.createElement('section');sec.className='teacher-area-search';sec.id='terulet-kereso';
  sec.innerHTML='<div class="wrap"><div class="ts-head"><span class="eyebrow">Gyors kereső</span><h2>Milyen terület érdekel?</h2><p>A hat területet a 2026/27-es programkínálat alapján állítottuk össze. Egy tanár vagy foglalkozásvezető csak akkor jelenik meg itt, ha az adott területhez tényleges, aktuális program kapcsolódik.</p></div><div class="ts-cats" role="list"></div><div class="ts-results" aria-live="polite"></div></div>';
