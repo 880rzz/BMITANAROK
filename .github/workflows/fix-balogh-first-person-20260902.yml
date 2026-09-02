@@ -1,0 +1,41 @@
+name: Normalize Balogh profile to first person 20260902
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-balogh-first-person-20260902.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rewrite only Balogh biography blocks in first person
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          m=re.search(r'(<article class="profile" id="balogh-david">.*?</article>)',s,re.S)
+          if not m: raise SystemExit('Balogh profile missing')
+          a=m.group(1)
+          a=a.replace('Az ELTE Bölcsészettudományi Karán okleveles művészettörténészként végzett, ahol magyar és egyetemes fotótörténetet is tanult. Főállású művészettörténészként a fóti Németh Kálmán Emlékház vezetője, emellett Fót történetéhez, néprajzához és művészettörténetéhez kapcsolódó helytörténeti kutatásokat végez.','Az ELTE Bölcsészettudományi Karán végeztem okleveles művészettörténészként, ahol magyar és egyetemes fotótörténetet is tanultam. Főállású művészettörténészként a fóti Németh Kálmán Emlékház vezetőjeként dolgozom, emellett Fót történetéhez, néprajzához és művészettörténetéhez kapcsolódó helytörténeti kutatásokat végzek.')
+          a=a.replace('Az elmúlt években számos fotótörténeti, képzőművészeti és helytörténeti kiállítást rendezett, illetve nyitott meg Magyarországon és külföldön, többek között New Yorkban és Bécsben. Kovács István amatőr fotográfus életművét digitalizálta és rendszerezte, majd kutatásának eredményeit a <strong>Fót krónikása</strong> című kiállításon mutatta be. Legutóbbi szakmai feladatai között szerepelt dr. Fogarasi Klára néprajzos-fotótörténész <strong>Örök emlékül 2.</strong> című kiállításának megnyitása a budapesti Titok Galériában. Több Fóthoz kapcsolódó könyv és kiadvány szerzője, illetve szerkesztője.','Az elmúlt években számos fotótörténeti, képzőművészeti és helytörténeti kiállítást rendeztem, illetve nyitottam meg Magyarországon és külföldön, többek között New Yorkban és Bécsben. Kovács István amatőr fotográfus életművét digitalizáltam és rendszereztem, majd a kutatás eredményeit a <strong>Fót krónikása</strong> című kiállításon mutattam be. Legutóbbi szakmai feladataim között szerepelt dr. Fogarasi Klára néprajzos-fotótörténész <strong>Örök emlékül 2.</strong> című kiállításának megnyitása a budapesti Titok Galériában. Több Fóthoz kapcsolódó könyv és kiadvány szerzőjeként, illetve szerkesztőjeként is dolgozom.')
+          a=a.replace('<h3>A hozzá különösen közel álló területek</h3>','<h3>A hozzám különösen közel álló területek</h3>')
+          a=a.replace('Kutatási eredményeinek közérthető és szakmailag pontos interpretálását kiemelt feladatnak tekinti. Könyvekben, kiállításokban, várostörténeti sétákon, útibeszámolókban, hely- és művészettörténeti előadásokban, valamint cikkekben és tanulmányokban dolgozza fel és osztja meg a feltárt összefüggéseket.','A kutatási eredményeim közérthető és szakmailag pontos interpretálását kiemelt feladatomnak tekintem. Könyvekben, kiállításokban, várostörténeti sétákon, útibeszámolókban, hely- és művészettörténeti előadásokban, valamint cikkekben és tanulmányokban dolgozom fel és osztom meg a feltárt összefüggéseket.')
+          a=a.replace('Különösen közel áll hozzá a fotótörténet, a helytörténet, a vizuális kultúra, a festészet és fotográfia kapcsolata, valamint az archív fotóanyagok rendszerezése és értelmezése.','Különösen közel áll hozzám a fotótörténet, a helytörténet, a vizuális kultúra, a festészet és fotográfia kapcsolata, valamint az archív fotóanyagok rendszerezése és értelmezése.')
+          a=a.replace('Előadásain azt tartja fontosnak, hogy a hallgatók ne elszigetelt képeket vagy technikai megoldásokat lássanak, hanem összefüggésekben gondolkodjanak: felismerjék, hogy egy-egy irányzat, műfaj vagy fotográfiai szemlélet milyen történeti és művészeti közegben alakult ki, és mely alkotók milyen újításokat hoztak.','Az előadásaimon azt tartom fontosnak, hogy a hallgatók ne elszigetelt képeket vagy technikai megoldásokat lássanak, hanem összefüggésekben gondolkodjanak: felismerjék, hogy egy-egy irányzat, műfaj vagy fotográfiai szemlélet milyen történeti és művészeti közegben alakult ki, és mely alkotók milyen újításokat hoztak.')
+          a=a.replace('A fotóklubban a képelemzéshez történeti és művészettörténeti nézőpontot ad. Az előadássorozat célja, hogy a résztvevők a fotográfia sokféle megközelítésén keresztül ne csak technikailag fényképezzenek egyre tudatosabban, hanem idővel saját, következetesebb vizuális nyelvet is kialakítsanak.','A fotóklubban a képelemzéshez történeti és művészettörténeti nézőpontot adok. Az előadássorozattal azt szeretném elérni, hogy a résztvevők a fotográfia sokféle megközelítésén keresztül ne csak technikailag fényképezzenek egyre tudatosabban, hanem idővel saját, következetesebb vizuális nyelvet is kialakítsanak.')
+          s=s[:m.start()]+a+s[m.end():]
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Editorial Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Rewrite Balogh David profile consistently in first person"
+          git push
