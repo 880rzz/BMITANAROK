@@ -1,0 +1,42 @@
+name: Update Sipos and Dapin profiles from submitted bios
+on:
+  push:
+    paths:
+      - '.github/workflows/update-sipos-dapin-firstperson.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace profile articles
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          sipos='''<article class="profile" id="sipos-tibor"><div class="profile-head"><figure class="portrait"><img src="assets/sipos.webp" alt="Sipos Tibor néptáncoktató portréja" loading="lazy" decoding="async"><span class="fallback">Sipos Tibor</span></figure><div class="profile-title"><div class="eyebrow">Néptáncoktató · Napraforgók</div><h2>Sipos Tibor</h2><p class="role">1988 óta része az életemnek a magyar néptánc. Számomra a tánc nem egyszerűen mozgás vagy hagyományőrzés: egy olyan közeg, amely egyszer már átsegített egy nehéz életszakaszon, azóta pedig közösséget, irányt és folyamatos felfedezést ad. Ma ezt az élményt szeretném továbbadni azoknak, akik most teszik meg az első lépéseiket.</p><div class="program-links"><strong>Kapcsolódó program</strong><div class="program-link-list"><a href="https://programvalaszto.magyariskola.at/foglalkozasok.html" target="_blank" rel="noopener">Napraforgók – felnőtt néptánc</a></div></div></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>1988-ban, a katonai szolgálatom alatt találtam rá a néptáncra a Kőszeg, későbbi nevén Szökős együttesben. Életem egyik mélypontja volt ez az időszak: nagyon nehéz volt megélnem a szerelmemtől való elszakítottságot, és szükségem volt valamire, ami átsegít rajta. A tánc és a közösség végül sokkal többet adott annál, mint amit reméltem. Meggyógyított, és lassan az életem részévé vált; az együttes közössége pedig a második családom lett. Azóta is lélekemelő számomra felfedezni, mennyi emberség, tapasztalat és finom viszony van belekódolva a régi táncokba, és ugyanígy megérint a népdalok képi, letisztult világa. Amikor szükség lett rá, természetesen vállaltam a hozzánk érkezők tanítását és próbák vezetését. 2005-ben Szombathelyen, a Szökősben kezdtem kezdőket oktatni; 2014-től Bécsben, a Délibábban a kezdők tanítása mellett koreográfiákat is betanítottam; 2018-ban pedig a Napraforgókkal elindítottuk a Felzárkóztató csoportot. Az együttesi munka, valamint a sok hétvégi és nyári tábor során szinte a teljes Kárpát-medence tánchagyományával volt lehetőségem közelről találkozni.</p></section><section class="segment"><h3>A hozzám különösen közel álló területek</h3><p>Különösen közel áll hozzám a felnőttek oktatása az alapoktól. A kezdő csoportban lépésről lépésre haladunk, és újra meg újra azt látom, hogy a tánc öröme nem életkor kérdése. Ugyanilyen fontos számomra a páros táncok világa. Nemcsak a lépéseket és a technikát szeretném átadni, hanem azt az egymásra figyelést is, amely két embert valóban képessé tesz a harmonikus együttmozgásra.</p></section><section class="segment"><h3>Oktatói szemlélet</h3><p>A páros táncot testi empátiának érzem. A gesztusaink folyamatosan egymáshoz igazodnak. Amikor a férfi vezet és a nő követ, a mozdulatok párbeszéddé válnak, de ez a párbeszéd csak akkor él, ha mindkét fél figyel. A figyelem körbeér: vezetés és követés egymásba fordul, ahogy az évszakok is. Ezt a kölcsönös érzékenységet szeretném megtanítani a technika mellett.</p></section></div></article>'''
+
+          dapin='''<article class="profile" id="dapin-hajnalka-judit"><div class="profile-head"><figure class="portrait"><img src="dapin-hajnalka-judit-20260901.webp" alt="Mag. Dapin Hajnalka Judit zenepedagógus és zeneterapeuta portréja" loading="lazy" decoding="async"><span class="fallback">Mag. Dapin Hajnalka Judit</span></figure><div class="profile-title"><div class="eyebrow">Zenepedagógus · zeneterapeuta</div><h2>Mag. Dapin Hajnalka Judit</h2><p class="role">Harminc éve dolgozom pedagógusként. A zenetanításban, a csoportos zenei foglalkozásokban és a zeneterápiában ugyanaz érdekel: hogyan lehet valakihez úgy kapcsolódni, hogy a zene valóban az ő saját útját, fejlődését és belső erőforrásait szolgálja.</p></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>Tanítóképző szakközépiskolában érettségiztem Zilahon 1995-ben, majd Nagyváradon és a németországi Weingartenben tanultam zenepedagógiát. Bécsben 2007-ben szereztem énekpedagógusi diplomát. Később a Virginia Satir nevéhez kötődő rendszerpszichoterápiás szemlélettel is megismerkedtem, amelyet 2012 óta tanácsadói munkában használok. A zenei és terápiás területek végül a zeneterápiában értek össze számomra; ezt 2025 óta a Bécsi Zeneművészeti Egyetemen tanultam. Pedagógiai munkám során főként egyéni hangszeroktatással – zongorával, gitárral és furulyával – valamint csoportos zenei foglalkozásokkal, többek között baba-mama muzsikával és óvodai zeneoktatással foglalkoztam. Zeneterapeutaként a koraszülött babáktól az idősekig minden korosztállyal volt lehetőségem dolgozni.</p></section><section class="segment"><h3>A hozzám különösen közel álló területek</h3><p>A zenepedagógián belül az egyéni hangszeroktatás – zongora, furulya, gitár és citera – és a gyerekeknek szóló csoportos zenei munka áll hozzám különösen közel. A zeneterápiában családterápiás munkával foglalkozom koraszülött babák és szüleik mellett, egyéni folyamatokkal segítek fejlődési zavarokkal, autizmussal, mutizmussal, figyelem- vagy kötődési nehézségekkel élő gyerekeket, és önismereti csoportokat is vezetek felnőtteknek.</p></section><section class="segment"><h3>Pedagógiai szemlélet</h3><p>Abból indulok ki, hogy a zene minden ember veleszületett joga. Minden találkozásban izgalmas feladat megtalálni azt a személyre szabott utat, amelyen az adott ember valóban előre tud lépni. A hibákra nem kudarcként tekintek; inkább kedves útjelzőknek látom őket. Zenélni szerintem akkor érdemes, ha örömöt ad, de annak is van helye, ha közben más érzéseket élünk meg vagy fejezünk ki. Tanárként és terapeutaként arra törekszem, hogy olyan tükröt tartsak a gyerekek elé, amelyben felismerhetik a saját belső értéküket.</p></section></div><section class="press"><div class="press-head"><div><span class="eyebrow">Sajtó</span><h3>Válogatott sajtóanyagok és interjúk</h3></div></div><div class="press-grid"><a class="press-card" href="https://rolunk.at/aktualis/pajzan-nepmesek-becsben/" target="_blank" rel="noopener"><span class="press-medium">Rólunk.at</span><strong>Pajzán népmesék Bécsben</strong><span class="press-open">Cikk megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/magazin/ahany-hangszer-annyi-lehetoseg/" target="_blank" rel="noopener"><span class="press-medium">Rólunk.at</span><strong>Ahány hangszer, annyi lehetőség</strong><span class="press-open">Cikk megnyitása ↗</span></a></div></section></article>'''
+
+          def repl(profile_id, block, text):
+              pat=re.compile(r'<article class="profile" id="'+re.escape(profile_id)+r'">.*?</article>', re.S)
+              new,n=pat.subn(block,text,count=1)
+              if n!=1:
+                  raise SystemExit(f'Could not replace {profile_id}: {n}')
+              return new
+          s=repl('sipos-tibor',sipos,s)
+          s=repl('dapin-hajnalka-judit',dapin,s)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit generated profile updates
+        run: |
+          git config user.name 'BMI Teacher Profile Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'Rewrite Sipos and Dapin profiles from submitted biographies'
+          git push
