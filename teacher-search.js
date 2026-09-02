@@ -43,14 +43,15 @@ function init(){
  var cats=sec.querySelector('.ts-cats'),results=sec.querySelector('.ts-results');
  function matchTeachers(p){return teachers.filter(function(t){return teacherMatchesProgram(t,p)})}
  function render(area){
-  Array.from(cats.querySelectorAll('button')).forEach(function(b){b.classList.toggle('active',b.dataset.area===area)});
+  Array.from(cats.querySelectorAll('button')).forEach(function(b){var active=b.dataset.area===area;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active?'true':'false')});
   var programs=cfg.programs.filter(function(p){return programCategory(p)===area}),rows=[];
   programs.forEach(function(p){var matched=matchTeachers(p);if(!matched.length)rows.push({teacher:p.teacherContact||p.teacher||'Foglalkozásvezető',href:'',p:p});else matched.forEach(function(t){rows.push({teacher:t.name,href:t.href,p:p})})});
   rows.sort(function(a,b){var c=a.teacher.localeCompare(b.teacher,'hu');return c||String(a.p&&a.p.name||'').localeCompare(String(b.p&&b.p.name||''),'hu')});
   var cat=CATEGORIES.find(function(c){return c.id===area});if(!rows.length){results.innerHTML='<p class="ts-empty">Ehhez a területhez jelenleg nincs közzétett 2026/27-es program.</p>';return}
   results.innerHTML='<div class="ts-result-title">'+icon(area)+'<div><strong>'+esc(cat?cat.label:area)+'</strong><span>'+rows.length+' programkapcsolat</span></div></div><div class="ts-grid">'+rows.map(function(r){var p=r.p,location=p&&p.location?String(p.location).trim():'',locationHtml=location?'<a class="ts-map-link" href="'+esc(mapsUrl(location))+'" target="_blank" rel="noopener external" aria-label="'+esc(location)+' megnyitása a Google Mapsben">'+esc(location)+' ↗</a>':'Aktuális programoldal szerint';return '<article class="ts-card">'+(r.href?'<a class="ts-teacher-link" href="'+esc(r.href)+'" aria-label="'+esc(r.teacher)+' tanári profiljának megnyitása"><span class="ts-teacher-name">'+esc(r.teacher)+'</span><span class="ts-profile-cta">Tanári profil megnyitása →</span></a>':'<div class="ts-teacher-link is-static"><span class="ts-teacher-name">'+esc(r.teacher)+'</span><span class="ts-profile-cta">Foglalkozásvezető</span></div>')+'<a class="ts-program" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.name)+'</a><dl><div><dt>Időpont</dt><dd>'+esc(p.when||'Aktuális programoldal szerint')+'</dd></div><div><dt>Helyszín</dt><dd>'+locationHtml+'</dd></div></dl></article>'}).join('')+'</div>';
  }
- CATEGORIES.forEach(function(a){var b=document.createElement('button');b.type='button';b.dataset.area=a.id;b.innerHTML=icon(a.id)+'<span>'+esc(a.label)+'</span>';b.addEventListener('click',function(){render(a.id)});cats.appendChild(b)});render(CATEGORIES[0].id);
+ CATEGORIES.forEach(function(a){var b=document.createElement('button');b.type='button';b.dataset.area=a.id;b.setAttribute('aria-pressed','false');b.innerHTML=icon(a.id)+'<span>'+esc(a.label)+'</span>';b.addEventListener('click',function(){render(a.id)});cats.appendChild(b)});
+ results.innerHTML='';
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
