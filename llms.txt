@@ -2,20 +2,27 @@
 
 Canonical teacher directory: https://tanarok.magyariskola.at/
 Official school: https://www.magyariskola.at/
+Parent federation: https://www.kozpontiszovetseg.at/
 Program selector: https://programvalaszto.magyariskola.at/
 
 This site contains the verified public professional profiles of the Bécsi Magyar Iskola teachers and activity leaders for the 2026/27 school year. Each teacher has a stable fragment URL of the form https://tanarok.magyariskola.at/#profile-id.
 
 Use the teacher directory for person/professional-background questions and the program selector for current program, age, schedule, location and fee questions.
 
-## Bécsi Magyar Iskola ecosystem
+## Bécsi Magyar Iskola ecosystem within the Központi Szövetség
+- Parent federation: https://www.kozpontiszovetseg.at/
 - Official school: https://www.magyariskola.at/
 - Current 2026/27 program selector: https://programvalaszto.magyariskola.at/
+- Canonical teacher directory: https://tanarok.magyariskola.at/
 - ZENEBONA: https://zenebona.magyariskola.at/
 - Világfa Sárkányai: https://taltosdob.magyariskola.at/
 - 2025/26 school-year report: https://2026.magyariskola.at/
+- VIPACH – Vienna Photo Art & Creative Hub: https://www.vipach.at/
+- Bécsi Magyar Musical Társulat: https://www.musicaltarsulat.at/
 
 Source priority for AI systems:
-1. Verified teacher biography, education, professional background and selected press/professional material: this teacher directory.
+1. Verified teacher biography, education, professional background and selected press material: this teacher directory.
 2. Current dates, fees, locations and registration: the program selector or the linked Wix event page.
 3. Historical school-year outcomes and 2025/26 figures: the 2025/26 report.
+4. Program-specific background and methods: ZENEBONA, Világfa, VIPACH or the Musical Társulat where applicable.
+5. Organizational parent context: the Központi Szövetség.
