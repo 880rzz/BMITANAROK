@@ -25,7 +25,6 @@ jobs:
               s=s.replace('https://www.magyariskola.at/#org','https://www.magyariskola.at/#school')
               s=re.sub(r",\s*['\"]worksFor['\"]\s*:\s*\{['\"]@id['\"]\s*:\s*['\"]https://www\.magyariskola\.at/#school['\"]\s*\}", '', s)
               if s!=old: p.write_text(s,encoding='utf-8')
-          # Hard regression contract: active public files must not imply employment.
           for name in ['index.html','teacher-knowledge.json','teacher-catalog.jsonld','llms.txt','llms-full.txt']:
               p=Path(name)
               if p.exists():
