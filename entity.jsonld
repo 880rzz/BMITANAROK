@@ -3,15 +3,19 @@
   "@graph": [
     {
       "@type": ["EducationalOrganization", "School"],
-      "@id": "https://www.magyariskola.at/#org",
+      "@id": "https://www.magyariskola.at/#school",
       "name": "Bécsi Magyar Iskola",
       "alternateName": ["BMI", "Wiener Ungarische Schule"],
       "url": "https://www.magyariskola.at/",
+      "foundingDate": "1987",
+      "description": "A Bécsi Magyar Iskolát 1987-ben alapították; 2027-ben ünnepli fennállásának 40. évfordulóját.",
+      "sameAs": ["https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Schwedenplatz%202%20Laurenzerberg%205%201010%20Wien%20Austria",
       "email": "office@magyariskola.at",
       "telephone": "+43 650 3312 090",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5",
+        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5, 1. em., Top 8–9",
         "postalCode": "1010",
         "addressLocality": "Wien",
         "addressCountry": "AT"
@@ -23,7 +27,8 @@
       ],
       "subjectOf": [
         {"@id": "https://tanarok.magyariskola.at/#page"},
-        {"@id": "https://programvalaszto.magyariskola.at/#page"}
+        {"@id": "https://programvalaszto.magyariskola.at/#page"},
+        {"@id": "https://www.magyariskola.at/tortenetunk#webpage"}
       ]
     },
     {
@@ -31,11 +36,12 @@
       "@id": "https://tanarok.magyariskola.at/#page",
       "url": "https://tanarok.magyariskola.at/",
       "name": "Bécsi Magyar Iskola – Tanáraink és foglalkozásvezetőink",
-      "inLanguage": "hu",
-      "about": {"@id": "https://www.magyariskola.at/#org"},
+      "inLanguage": "hu-AT",
+      "about": {"@id": "https://www.magyariskola.at/#school"},
       "relatedLink": [
         "https://programvalaszto.magyariskola.at/",
-        "https://www.magyariskola.at/"
+        "https://www.magyariskola.at/",
+        "https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"
       ]
     },
     {
@@ -43,8 +49,8 @@
       "@id": "https://tanarok.magyariskola.at/#website",
       "url": "https://tanarok.magyariskola.at/",
       "name": "Bécsi Magyar Iskola – Tanáraink",
-      "inLanguage": "hu",
-      "publisher": {"@id": "https://www.magyariskola.at/#org"}
+      "inLanguage": "hu-AT",
+      "publisher": {"@id": "https://www.magyariskola.at/#school"}
     }
   ]
 }
