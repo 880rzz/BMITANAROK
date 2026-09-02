@@ -1,0 +1,21 @@
+name: Apply shared program taxonomy v2 20260902
+on:
+  push:
+    paths:
+      - 'tools/use_shared_program_taxonomy.py'
+      - '.github/workflows/apply-shared-program-taxonomy-v2-20260902.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/use_shared_program_taxonomy.py
+      - run: |
+          git config user.name "BMI Teacher Taxonomy Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html teacher-search.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Consume shared six-category program taxonomy"
+          git push
