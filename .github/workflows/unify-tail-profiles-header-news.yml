@@ -1,0 +1,99 @@
+name: Unify tail profiles header and news
+
+on:
+  push:
+    paths:
+      - '.github/workflows/unify-tail-profiles-header-news.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch layout navigation teacher areas and press
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          # Elegant header: add editorial link once.
+          news='<a class="nav-news" href="https://rolunk.at/tag/becsi-magyar-iskola/" target="_blank" rel="noopener">Hírek / cikkek</a>'
+          if 'https://rolunk.at/tag/becsi-magyar-iskola/' not in s:
+              m=re.search(r'(<nav class="nav"[^>]*>.*?)(</nav>)',s,re.S)
+              if not m: raise SystemExit('header nav not found')
+              s=s[:m.start()]+m.group(1)+news+m.group(2)+s[m.end():]
+
+          # Culture-history vector area on the relevant teacher cards.
+          def set_card_areas(pid, areas):
+              global s
+              pat=r'<a class="teacher-card"(?: data-areas="[^"]*")? href="#'+re.escape(pid)+r'">'
+              repl='<a class="teacher-card" data-areas="'+areas+'" href="#'+pid+'">'
+              s,n=re.subn(pat,repl,s,count=1)
+              if n!=1: raise SystemExit('teacher card not found: '+pid)
+          set_card_areas('balogh-david','kulturtortenet,alkotas,tech')
+          set_card_areas('falusi-dora','kulturtortenet,alkotas,pedagogia')
+
+          # Add a press card to an existing profile, without duplicating sources.
+          def add_press(pid,url,medium,title,desc):
+              global s
+              pat=r'(<article class="profile" id="'+re.escape(pid)+r'">.*?</article>)'
+              m=re.search(pat,s,re.S)
+              if not m: raise SystemExit('profile not found: '+pid)
+              art=m.group(1)
+              if url in art: return
+              card=f'<a class="press-card" href="{url}" target="_blank" rel="noopener"><span class="press-medium">{medium}</span><strong>{title}</strong><span class="press-desc">{desc}</span><span class="press-open">Cikk megnyitása →</span></a>'
+              gm=re.search(r'(<div class="press-grid">)(.*?)(</div>)',art,re.S)
+              if gm:
+                  art=art[:gm.start()]+gm.group(1)+gm.group(2)+card+gm.group(3)+art[gm.end():]
+              else:
+                  section=f'<section class="press" aria-label="Válogatott sajtómegjelenések"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott cikkek és riportok</h3></div><div class="press-grid">{card}</div></section>'
+                  art=art[:-len('</article>')]+section+'</article>'
+              s=s[:m.start()]+art+s[m.end():]
+
+          add_press('falusi-dora','https://rolunk.at/fiatalok/titkok-nyomaban-a-boszorkanyok-titkai-a-fecske-klubban/','Rólunk.at','Titkok nyomában – A boszorkányok titkai a Fecske Klubban','Falusi Dóra interaktív kultúrtörténeti foglalkozása történelmi, tudománytörténeti, képzőművészeti és néprajzi összefüggésekkel.')
+          add_press('kiss-agnes','https://rolunk.at/kultura/12-eve-ingazik-bezenyerol-becsbe-hogy-magyarul-tanitsa-a-gyerekeket/','Rólunk.at','12 éve ingázik Bezenyéről Bécsbe, hogy magyarul tanítsa a gyerekeket','Portré Kiss Ágnes pedagógusi pályájáról, bécsi munkájáról és a magyar nyelv átadásáról.')
+
+          # Pohl and Piroska had escaped the shared .wrap in prior mutations.
+          # Move the two complete articles into a dedicated .profiles/.wrap tail,
+          # which uses exactly the same profile CSS geometry as everybody else.
+          articles=[]
+          for pid in ('pohl-balazs','poser-piroska-ildiko'):
+              m=re.search(r'<article class="profile" id="'+re.escape(pid)+r'">.*?</article>',s,re.S)
+              if not m: raise SystemExit('tail profile not found: '+pid)
+              articles.append(m.group(0))
+              s=s[:m.start()]+s[m.end():]
+          tail='<section class="profiles profiles-tail"><div class="wrap">'+'\n'.join(articles)+'</div></section>'
+          if '</main>' not in s: raise SystemExit('main close not found')
+          s=s.replace('</main>',tail+'\n</main>',1)
+
+          p.write_text(s,encoding='utf-8')
+
+          css=Path('styles.css')
+          c=css.read_text(encoding='utf-8')
+          marker='/* unified-header-and-tail-profiles-20260902 */'
+          if marker not in c:
+              c += '''\n/* unified-header-and-tail-profiles-20260902 */
+          .profiles-tail{padding-top:0}
+          .profiles-tail .profile:first-child{border-top:1px solid var(--line);padding-top:96px}
+          .nav{gap:8px;padding:6px;border:1px solid rgba(0,0,0,.08);border-radius:999px;background:rgba(245,245,247,.78)}
+          .nav a{padding:8px 13px;border-radius:999px;transition:background .16s ease,color .16s ease}
+          .nav a:hover{background:#fff}
+          .nav .nav-news{background:#111;color:#fff}
+          .nav .nav-news:hover{background:#2b2b2d}
+          @media(max-width:640px){.profiles-tail .profile:first-child{padding-top:72px}}
+          '''
+              css.write_text(c,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher UI Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html styles.css
+          git diff --cached --quiet && exit 0
+          git commit -m "Unify Pohl and Piroska layout, header and press links"
+          git push
