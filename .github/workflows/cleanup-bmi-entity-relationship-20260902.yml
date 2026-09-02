@@ -15,9 +15,9 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           import re
-          allowed={'.html','.json','.jsonld','.js','.txt','.md','.yml','.yaml','.py'}
+          allowed={'.html','.json','.jsonld','.js','.txt','.md','.py'}
           for p in Path('.').rglob('*'):
-              if not p.is_file() or p.suffix.lower() not in allowed or '.git' in p.parts:
+              if not p.is_file() or p.suffix.lower() not in allowed or '.git' in p.parts or '.github' in p.parts:
                   continue
               try: s=p.read_text(encoding='utf-8')
               except UnicodeDecodeError: continue
@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "BMI Entity Audit Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A
+          git add -- ':!.github/workflows/**'
           git diff --cached --quiet && exit 0
           git commit -m "Normalize BMI teacher affiliation semantics"
           git push
