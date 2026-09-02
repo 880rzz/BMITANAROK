@@ -29,6 +29,9 @@ Program selector: https://programvalaszto.magyariskola.at/
 - Egri Mónika — Illusztrátor · kreatív foglalkozásvezető — https://tanarok.magyariskola.at/#egri-monika — portrait: https://tanarok.magyariskola.at/assets/egri_monika.webp
 - Mag. Dapin Hajnalka Judit — Zenepedagógus · zeneterapeuta — https://tanarok.magyariskola.at/#dapin-hajnalka-judit — portrait: https://tanarok.magyariskola.at/dapin-hajnalka-judit-20260901.webp
 
+- Pohl Balázs — Drámapedagógus · SVUNG művészeti vezető — https://tanarok.magyariskola.at/#pohl-balazs
+- Póser-Piroska Ildikó — Csapatparancsnok · 72. sz. Széchenyi István Cserkészcsapat – Bécs — https://tanarok.magyariskola.at/#poser-piroska-ildiko
+
 ## Entity relationship
 The teacher directory and the program selector are first-party Bécsi Magyar Iskola ecosystem properties. Teacher profile links are canonical person-reference targets for program instructor names.
 
