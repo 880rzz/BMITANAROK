@@ -1,0 +1,40 @@
+name: Standardize press section headings 20260902
+
+on:
+  push:
+    paths:
+      - '.github/workflows/standardize-press-heading-20260902.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Standardize visible press headings
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          alternatives=[
+            'Három kiemelt interjú és portré',
+            'Három kiemelt riport és portré',
+            'Válogatott szakmai sajtóanyagok',
+            'Válogatott szakmai interjúk',
+            'Válogatott interjúk és cikkek',
+            'Válogatott riportok és interjúk'
+          ]
+          for x in alternatives:
+            s=s.replace('<h3>'+x+'</h3>','<h3>Válogatott sajtóanyagok és interjúk</h3>')
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Editorial Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Standardize press headings across teacher profiles"
+          git push
