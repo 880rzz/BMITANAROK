@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2026-09-02-v1",
+  "schemaVersion": "2026-09-02-v2",
   "schoolYear": "2026/2027",
   "canonicalTeacherDirectory": "https://tanarok.magyariskola.at/",
   "canonicalProgramKnowledge": "https://programvalaszto.magyariskola.at/program-knowledge.json",
@@ -18,7 +18,7 @@
         "label": "Borsófőzde | Schwedenplatz",
         "url": "https://www.magyariskola.at/event-details/borsofozde-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/borsofozde-2026",
-        "primaryCategory6": "mozgas"
+        "primaryCategory6": "nyelv"
       },
       {
         "id": "fokusz",
@@ -34,7 +34,7 @@
         "label": "Bécsi Magyar Óvoda | Schwedenplatz",
         "url": "https://www.magyariskola.at/event-details/ovoda-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-2026",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "nyelv"
       },
       {
         "id": "kicsi-svung",
@@ -57,7 +57,7 @@
         "label": "Bécsi Magyar Óvoda | Schwedenplatz",
         "url": "https://www.magyariskola.at/event-details/ovoda-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-2026",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "nyelv"
       }
     ],
     "https://tanarok.magyariskola.at/#makfalvi-rita": [
@@ -66,14 +66,14 @@
         "label": "Bécsi Magyar Óvoda | Baden",
         "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "nyelv"
       },
       {
         "id": "iskola-baden",
         "label": "Magyar Iskola Badenben – „Ahol a magyar szó élménnyé válik”",
         "url": "https://www.magyariskola.at/event-details/iskolabaden-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/iskolabaden-2026",
-        "primaryCategory6": "hagyomany"
+        "primaryCategory6": "nyelv"
       }
     ],
     "https://tanarok.magyariskola.at/#telenko-eva": [
@@ -82,7 +82,7 @@
         "label": "Bécsi Magyar Óvoda | Baden",
         "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "nyelv"
       }
     ],
     "https://tanarok.magyariskola.at/#schneider-erzsebet": [
@@ -91,14 +91,14 @@
         "label": "Magyar nyelv tanítás | Aspern",
         "url": "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026",
-        "primaryCategory6": "hagyomany"
+        "primaryCategory6": "nyelv"
       },
       {
         "id": "seestadt",
         "label": "Magyar nyelv tanítás | Seestadt",
         "url": "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "nyelv"
       }
     ],
     "https://tanarok.magyariskola.at/#kiss-agnes": [
@@ -107,14 +107,14 @@
         "label": "Magyar nyelv tanítás | Schwedenplatz | 1-es csoport",
         "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1",
-        "primaryCategory6": "hagyomany"
+        "primaryCategory6": "nyelv"
       },
       {
         "id": "schweden-2",
         "label": "Magyar nyelv tanítás | Schwedenplatz | 2-es csoport",
         "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2",
-        "primaryCategory6": "hagyomany"
+        "primaryCategory6": "nyelv"
       }
     ],
     "https://tanarok.magyariskola.at/#boronkai-gabriella": [
@@ -186,7 +186,7 @@
         "label": "Fecske Klub | Schwedenplatz",
         "url": "https://www.magyariskola.at/event-details/fecskeklub-2026",
         "canonicalScheduleSource": "https://www.magyariskola.at/event-details/fecskeklub-2026",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "hagyomany"
       }
     ],
     "https://tanarok.magyariskola.at/#hupczik-andrea": [
@@ -209,7 +209,7 @@
         "label": "Világfa Sárkányai | Schwedenplatz",
         "url": "https://taltosdob.magyariskola.at",
         "canonicalScheduleSource": "https://taltosdob.magyariskola.at",
-        "primaryCategory6": "alkotas"
+        "primaryCategory6": "mozgas"
       }
     ],
     "https://tanarok.magyariskola.at/#varga-bernadette": [
