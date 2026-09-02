@@ -1,0 +1,55 @@
+name: Strict teacher integrity audit
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'teacher-search.js'
+      - 'teacher-search.css'
+      - 'teacher-knowledge.json'
+      - 'teacher-program-map.json'
+      - 'teacher-catalog.jsonld'
+      - 'entity.jsonld'
+      - 'llms.txt'
+      - 'llms-full.txt'
+      - '.github/workflows/strict-integrity-audit.yml'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate teacher source and knowledge graph
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,json
+          html=Path('index.html').read_text(encoding='utf-8')
+          cards=re.findall(r'<a class="teacher-card"[^>]*href="#([^"]+)"',html)
+          profiles=re.findall(r'<article class="profile" id="([^"]+)"',html)
+          assert len(cards)==25, f'teacher-card count {len(cards)} != 25'
+          assert len(profiles)==25, f'profile count {len(profiles)} != 25'
+          assert set(cards)==set(profiles), f'card/profile mismatch: cards-only={set(cards)-set(profiles)} profiles-only={set(profiles)-set(cards)}'
+          assert '<div class="programs">' not in html, 'legacy duplicate .programs block returned'
+          assert 'worksFor' not in html, 'forbidden worksFor returned'
+          assert 'https://www.magyariskola.at/#org' not in html, 'legacy #org returned'
+          assert 'Partnerprogramjaink egy helyen' not in html and 'BMI Partner Programok' not in html, 'obsolete partner-program visual block returned'
+          data=json.loads(Path('teacher-program-map.json').read_text(encoding='utf-8'))
+          mapping=data.get('teachers',data)
+          for url,programs in mapping.items():
+            if '#'+url.split('#')[-1] == '#': continue
+            slug=url.split('#')[-1]
+            assert slug in profiles, f'program map points to missing teacher profile: {url}'
+            for p in programs:
+              assert p.get('url'), f'missing program URL for {url}: {p}'
+              assert p.get('primaryCategory6') in {'nyelv','alkotas','mozgas','logika','jollet','hagyomany'}, f'invalid category for {url}: {p}'
+          for name in ['teacher-knowledge.json','teacher-catalog.jsonld','entity.jsonld','llms.txt','llms-full.txt']:
+            if Path(name).exists():
+              s=Path(name).read_text(encoding='utf-8')
+              assert 'worksFor' not in s, f'forbidden worksFor in {name}'
+              assert 'https://www.magyariskola.at/#org' not in s, f'legacy #org in {name}'
+          js=Path('teacher-search.js').read_text(encoding='utf-8')
+          assert 'setupProfileAccordions' in js and 'setupFinderAccordion' in js and 'setupTeacherIndexAccordion' in js, 'accordion contract missing'
+          print('STRICT TEACHER AUDIT OK: 25/25 profiles, canonical entity, no duplicate source blocks, valid program map')
+          PY
