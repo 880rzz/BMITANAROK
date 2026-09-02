@@ -4,9 +4,12 @@
 article.profile .programs{display:none!important}
 article.profile .profile-head,.teacher-area-search .ts-head{position:relative;cursor:pointer}
 article.profile .profile-head:focus-visible,.teacher-area-search .ts-head:focus-visible{outline:2px solid #0071e3;outline-offset:4px;border-radius:8px}
-.bmi-accordion-marker{position:absolute;right:4px;top:4px;width:34px;height:34px;border:1px solid var(--line,#d2d2d7);border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;background:#fff;color:var(--ink,#1d1d1f);transition:transform .18s ease}
+.bmi-accordion-marker{position:static;width:34px;height:34px;border:1px solid var(--line,#d2d2d7);border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1;background:#fff;color:var(--ink,#1d1d1f);transition:transform .18s ease;margin-top:18px;justify-self:start;align-self:start}
+article.profile .profile-head>.bmi-accordion-marker{grid-column:2;grid-row:2}
+.teacher-area-search .ts-head>.bmi-accordion-marker{display:flex;margin-top:18px}
 article.profile:not(.bmi-profile-collapsed)>.profile-head .bmi-accordion-marker,.teacher-area-search:not(.bmi-finder-collapsed) .ts-head>.bmi-accordion-marker{transform:rotate(45deg)}
 article.profile.bmi-profile-collapsed>:not(.profile-head){display:none!important}
 article.profile.bmi-profile-collapsed .profile-head .program-links{display:none!important}
 .teacher-area-search.bmi-finder-collapsed .ts-cats,.teacher-area-search.bmi-finder-collapsed .ts-results{display:none!important}
-@media(max-width:640px){.bmi-accordion-marker{right:0;top:0;width:32px;height:32px;font-size:22px}article.profile .profile-head,.teacher-area-search .ts-head{padding-right:42px}}
+.bmi-teacher-index-toggle{padding-right:0!important}.bmi-teacher-index-toggle .bmi-accordion-marker{position:static!important;display:inline-flex!important;vertical-align:middle!important;margin:0 0 0 12px!important;transform:none!important}.index:not(.bmi-teacher-index-collapsed)>.bmi-teacher-index-toggle .bmi-accordion-marker{transform:rotate(45deg)!important}
+@media(max-width:640px){.bmi-accordion-marker{width:32px;height:32px;font-size:22px;margin-top:16px}article.profile .profile-head>.bmi-accordion-marker{grid-column:1;grid-row:auto}article.profile .profile-head,.teacher-area-search .ts-head{padding-right:0}.teacher-area-search .ts-head>.bmi-accordion-marker{margin-top:16px}}
