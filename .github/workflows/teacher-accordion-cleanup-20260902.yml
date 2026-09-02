@@ -1,0 +1,117 @@
+name: Teacher accordion cleanup 20260902
+on:
+  push:
+    paths:
+      - '.github/workflows/teacher-accordion-cleanup-20260902.yml'
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove duplicate program blocks and partner section; add accordions
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          index = Path('index.html')
+          s = index.read_text(encoding='utf-8')
+
+          # Remove the legacy .programs block from every teacher profile only.
+          def clean_profile(m):
+              block = m.group(0)
+              block = re.sub(r'<div class="programs">.*?</div>', '', block, flags=re.S)
+              return block
+          s = re.sub(r'<article class="profile"\b.*?</article>', clean_profile, s, flags=re.S)
+
+          # Remove the complete visual partner-program section from source.
+          def keep_section(m):
+              block = m.group(0)
+              text = re.sub(r'<[^>]+>', ' ', block)
+              text = re.sub(r'\s+', ' ', text).lower()
+              if 'partnerprogramjaink egy helyen' in text or 'bmi partner programok' in text:
+                  return ''
+              return block
+          s = re.sub(r'<section\b[^>]*>.*?</section>', keep_section, s, flags=re.S)
+          index.write_text(s, encoding='utf-8')
+
+          js_path = Path('teacher-search.js')
+          js = js_path.read_text(encoding='utf-8')
+          addon = r'''
+;(function(){'use strict';
+function slug(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+function removeLegacyAndPartner(){
+ document.querySelectorAll('article.profile .programs').forEach(function(el){el.remove()});
+ document.querySelectorAll('section').forEach(function(sec){var t=slug(sec.textContent||'');if(t.indexOf('partnerprogramjaink egy helyen')>=0||t.indexOf('bmi partner programok')>=0)sec.remove()});
+}
+function setProfileOpen(profile,open){
+ profile.classList.toggle('bmi-profile-collapsed',!open);
+ var head=profile.querySelector('.profile-head');if(head)head.setAttribute('aria-expanded',open?'true':'false');
+}
+function setupProfiles(){
+ document.querySelectorAll('article.profile').forEach(function(profile){
+  var head=profile.querySelector('.profile-head');if(!head||head.dataset.accordionReady)return;
+  head.dataset.accordionReady='1';head.setAttribute('role','button');head.setAttribute('tabindex','0');head.setAttribute('aria-expanded','false');
+  var marker=document.createElement('span');marker.className='bmi-accordion-marker';marker.setAttribute('aria-hidden','true');marker.textContent='+';head.appendChild(marker);
+  var toggle=function(e){if(e&&e.target&&e.target.closest&&e.target.closest('a,button'))return;setProfileOpen(profile,profile.classList.contains('bmi-profile-collapsed'))};
+  head.addEventListener('click',toggle);head.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(e)}});
+  setProfileOpen(profile,false);
+ });
+ function openHash(){var id=decodeURIComponent(location.hash||'').replace(/^#/,'');if(!id)return;var p=document.getElementById(id);if(p&&p.matches('article.profile')){setProfileOpen(p,true);setTimeout(function(){p.scrollIntoView({block:'start'})},0)}}
+ openHash();window.addEventListener('hashchange',openHash);
+}
+function setupFinder(){
+ var sec=document.getElementById('terulet-kereso');if(!sec)return;
+ var head=sec.querySelector('.ts-head');if(!head||head.dataset.accordionReady)return;
+ head.dataset.accordionReady='1';head.setAttribute('role','button');head.setAttribute('tabindex','0');head.setAttribute('aria-expanded','false');
+ var marker=document.createElement('span');marker.className='bmi-accordion-marker';marker.setAttribute('aria-hidden','true');marker.textContent='+';head.appendChild(marker);
+ sec.classList.add('bmi-finder-collapsed');
+ function toggle(e){if(e&&e.target&&e.target.closest&&e.target.closest('a,button'))return;var open=sec.classList.contains('bmi-finder-collapsed');sec.classList.toggle('bmi-finder-collapsed',!open);head.setAttribute('aria-expanded',open?'true':'false')}
+ head.addEventListener('click',toggle);head.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(e)}});
+}
+function init(){removeLegacyAndPartner();setupProfiles();setupFinder()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(init,0)});else setTimeout(init,0);
+})();
+'''
+          if 'bmi-profile-collapsed' not in js:
+              js += addon
+          js_path.write_text(js, encoding='utf-8')
+
+          css_path = Path('teacher-search.css')
+          css = css_path.read_text(encoding='utf-8')
+          extra = r'''
+/* 2026-09-02: collapsed teacher profiles and finder */
+article.profile .programs{display:none!important}
+article.profile .profile-head,.teacher-area-search .ts-head{position:relative;cursor:pointer}
+article.profile .profile-head:focus-visible,.teacher-area-search .ts-head:focus-visible{outline:2px solid #0071e3;outline-offset:4px;border-radius:8px}
+.bmi-accordion-marker{position:absolute;right:4px;top:4px;width:34px;height:34px;border:1px solid var(--line,#d2d2d7);border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:400;line-height:1;background:#fff;color:var(--ink,#1d1d1f);transition:transform .18s ease}
+article.profile:not(.bmi-profile-collapsed)>.profile-head .bmi-accordion-marker,.teacher-area-search:not(.bmi-finder-collapsed) .ts-head>.bmi-accordion-marker{transform:rotate(45deg)}
+article.profile.bmi-profile-collapsed>:not(.profile-head){display:none!important}
+article.profile.bmi-profile-collapsed .profile-head .program-links{display:none!important}
+.teacher-area-search.bmi-finder-collapsed .ts-cats,.teacher-area-search.bmi-finder-collapsed .ts-results{display:none!important}
+.teacher-area-search.bmi-finder-collapsed{padding-bottom:38px}
+@media(max-width:640px){.bmi-accordion-marker{right:0;top:0;width:32px;height:32px;font-size:22px}article.profile .profile-head,.teacher-area-search .ts-head{padding-right:42px}}
+'''
+          if 'bmi-profile-collapsed' not in css:
+              css += extra
+          css_path.write_text(css, encoding='utf-8')
+
+      - name: Validate cleanup
+        shell: bash
+        run: |
+          ! grep -q 'Partnerprogramjaink egy helyen' index.html
+          ! grep -q 'BMI Partner Programok' index.html
+          ! grep -q 'class="programs"' index.html
+          grep -q 'bmi-profile-collapsed' teacher-search.js
+          grep -q 'bmi-finder-collapsed' teacher-search.js
+          grep -q 'bmi-profile-collapsed' teacher-search.css
+      - name: Commit cleanup
+        run: |
+          git config user.name "BMI Teacher UI Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html teacher-search.js teacher-search.css
+          git diff --cached --quiet && exit 0
+          git commit -m "Remove duplicate program blocks and add teacher accordions"
+          git push
