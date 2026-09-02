@@ -1,0 +1,44 @@
+name: Run first-person normalization v5
+on:
+  push:
+    paths:
+      - '.github/workflows/run-normalize-first-person-v5.yml'
+permissions:
+  contents: write
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute corrected normalization in stable order
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          token='<article class="profile" id="poser-piroska-ildiko">'
+          if token not in s:
+              # Put a seed BEFORE Pohl, so Pohl's last-profile replacement cannot consume it.
+              pohl_token='<article class="profile" id="pohl-balazs">'
+              if pohl_token not in s: raise SystemExit('Pohl profile anchor not found')
+              seed='<article class="profile" id="poser-piroska-ildiko"><div class="profile-head"><div class="profile-title"><h2>Póser-Piroska Ildikó</h2><p class="role"></p></div></div><div class="bio-segments"></div></article>\n'
+              s=s.replace(pohl_token,seed+pohl_token,1)
+              p.write_text(s,encoding='utf-8')
+
+          wf=Path('.github/workflows/normalize-first-person-and-profile-design.yml').read_text(encoding='utf-8')
+          marker='      - name: Normalize profile design and first-person voice\n        shell: python\n        run: |\n'
+          start=wf.index(marker)+len(marker)
+          end=wf.index('\n      - name: Commit',start)
+          block=wf[start:end]
+          code='\n'.join(line[10:] if line.startswith('          ') else line for line in block.splitlines())
+          # Replace Piroska first, then Pohl last; both canonical blocks remain intact.
+          code=code.replace("replace_article('pohl-balazs',pohl)\nreplace_article('poser-piroska-ildiko',poser)","replace_article('poser-piroska-ildiko',poser)\nreplace_article('pohl-balazs',pohl)",1)
+          ns={}
+          exec(compile(code,'normalize-first-person-v5','exec'),ns,ns)
+      - name: Commit normalized profiles
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Unify all profile design and first-person human voice"
+          git push
