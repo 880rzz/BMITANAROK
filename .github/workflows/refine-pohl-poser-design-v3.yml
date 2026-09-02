@@ -1,0 +1,106 @@
+name: Refine Pohl and Poser profiles and area icons
+
+on:
+  push:
+    paths:
+      - '.github/workflows/refine-pohl-poser-design-v3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild profiles in the established design system
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, json
+
+          htmlp=Path('index.html'); s=htmlp.read_text(encoding='utf-8')
+          assert Path('assets/pohl_balazs.webp').exists()
+          assert Path('assets/piroska.webp').exists()
+
+          pohl='''<article class="profile" id="pohl-balazs"><div class="profile-head"><figure class="portrait"><img src="assets/pohl_balazs.webp" alt="Pohl Balázs portréja" loading="lazy" decoding="async"><span class="fallback">Pohl Balázs portréja</span></figure><div class="profile-title"><div class="eyebrow">Drámapedagógus · író-rendező · SVUNG művészeti vezető</div><h2>Pohl Balázs</h2><p class="role">Nála a színház és a pedagógia nem két külön pálya. Színészi tapasztalatból, Waldorf-pedagógiából és több évtizednyi színpadi munkából épít olyan közösségi alkotóteret, ahol a fiatalok nem kész válaszokat kapnak, hanem megtanulnak jelen lenni, reagálni és együtt gondolkodni.</p><div class="programs"><a class="btn ghost" href="https://www.magyariskola.at/event-details/gimisvung-2026" target="_blank" rel="noopener">Gimi Svung – drámafoglalkozás</a></div></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3><p>Fiatalon színiiskolába járt, Budapesten a Kolibri Színházban és a Pinceszínházban is dolgozott, emellett film-, rádiójáték- és szinkronmunkákban vett részt. Később a Waldorf-pedagógia felé fordult: elvégezte a Waldorf-tanárképzést, tanított, diákszínjátszó csoportokat vezetett, majd oktatóként is visszatért a tanárképzésbe. 2015-ben Bécsbe költözött, és létrehozta a későbbi SVUNG – Bécsi Magyar Színházat. A társulatban művészeti vezetőként, szerzőként és rendezőként is jelen van; a színházi alkotás nála gyerekkor óta végigvonuló történet.</p></section><section class="segment"><h3>A hozzá különösen közel álló területek</h3><p>A drámapedagógia, a darab- és jelenetírás, a rendezés, az improvizáció és a közösségi színház áll hozzá közel. A SVUNG-ban felnőtt- és gyerekelőadásokon, saját szövegeken és átdolgozásokon egyaránt dolgozik. A Gimi Svungban ehhez kapcsolódik a magyar nyelvi kifejezés, a szövegértés, az önismeret, az empátia és a színpadi jelenlét fejlesztése.</p></section><section class="segment"><h3>Pedagógiai szemlélet</h3><p>A róla készült interjúkból egy rugalmas, együtt alkotó pedagógiai szemlélet rajzolódik ki. A drámát önismereti folyamatnak és olyan eszköznek tartja, amely közelebb tudja vinni a tananyagot és a kérdéseket a résztvevőkhöz. A csoporttal nem egyszerűen előadást készít: arra ösztönzi a fiatalokat, hogy saját tapasztalataikból, ötleteikből és véleményükből építsenek közös színpadi anyagot, közben pedig merjenek felelősséget vállalni a közös munkáért.</p></section></div><section class="press" aria-label="Pohl Balázs válogatott sajtómegjelenései"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott interjúk és portrék</h3></div><div class="press-grid"><a class="press-card" href="https://rolunk.at/nepcsoportunk/svung-becsi-magyar-szinkor/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2021</span><strong>„Svung” – Bécsi Magyar Színkör</strong><span class="press-desc">Pályakép a színészi kezdetektől a Waldorf-pedagógián át a bécsi magyar színház megalapításáig.</span><span class="press-open">Cikk megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/kultura/eljuthatunk-messzire-interju-pohl-balazzsal/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2022</span><strong>Eljuthatunk messzire – Interjú Pohl Balázzsal</strong><span class="press-desc">Beszélgetés az írásról, rendezésről és arról a rugalmasságról, amely egy bécsi magyar társulat életben tartásához kell.</span><span class="press-open">Interjú megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/kultura/a-svung-fondujeben-mindenki-sajt/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2025</span><strong>A Svung Fondüjében mindenki sajt</strong><span class="press-desc">A szerző-rendező és társulatvezető újabb munkája, egy 2010-ben született darab bécsi története.</span><span class="press-open">Cikk megnyitása ↗</span></a></div></section></article>'''
+
+          poser='''<article class="profile" id="poser-piroska-ildiko"><div class="profile-head"><figure class="portrait"><img src="assets/piroska.webp" alt="Póser-Piroska Ildikó portréja" loading="lazy" decoding="async"><span class="fallback">Póser-Piroska Ildikó portréja</span></figure><div class="profile-title"><div class="eyebrow">Csapatparancsnok · ifjúsági közösségépítés · cserkészet</div><h2>Póser-Piroska Ildikó</h2><p class="role">A cserkészet számára nem egy kívülről felvett vezetői szerep, hanem gyerekkora óta végigkísérő közeg. A bécsi 72. sz. Széchenyi István Cserkészcsapat csapatparancsnokaként olyan közösséget épít, ahol a magyar nyelv, a hagyomány, a szolgálat és a fokozatos felelősségvállalás a mindennapi gyakorlat része.</p><div class="programs"><a class="btn ghost" href="https://cserkesz.at/" target="_blank" rel="noopener">72. sz. Széchenyi István Cserkészcsapat – Bécs</a></div></div></div><div class="bio-segments"><section class="segment"><h3>Szakmai és közösségi háttér</h3><p>Kiscserkészként már azt figyelte, hogyan vezeti a bécsi csapatot az akkori parancsnok, Szemerédi Ilona, és korán eldöntötte, hogy egyszer ő is ezt az utat szeretné járni. 2016 óta a 72. sz. Széchenyi István Cserkészcsapat csapatparancsnoka. Az ORF 2024-es riportja 115 nyilvántartott tagról számolt be, rendszeres őrsi és csapatfoglalkozásokkal, nyári táborral és intenzív cserkészhétvégékkel.</p></section><section class="segment"><h3>A hozzá különösen közel álló területek</h3><p>A diaszpórában végzett ifjúsági közösségépítés, a magyar identitás továbbadása, a vezetőképzés, a jellemnevelés és az élményalapú gyakorlati nevelés áll a munkája középpontjában. A cserkészet három pillérét – magyarság, vallás és jellemnevelés – rendszeresen hangsúlyozza, miközben fontosnak tartja, hogy a fiatalok már kamaszkorban valódi felelősséget kapjanak.</p></section><section class="segment"><h3>Vezetői szemlélet</h3><p>Abból indul ki, hogy a közösségi nevelés akkor működik igazán, ha a gyerekeknek valódi élményük és feladatuk van. Tutajt építenek, tüzet raknak, népi játékokat játszanak, magyar dalokat énekelnek, és közben megtapasztalják, mit jelent egymásra figyelni. Nála a közösség nem háttér, hanem maga a módszer: a barátság, a szolgálat és a fokozatos felelősségvállalás együtt formál életrevaló, segítőkész fiatalokat.</p></section></div><section class="press" aria-label="Póser-Piroska Ildikó válogatott sajtómegjelenései"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Válogatott riportok és interjúk</h3></div><div class="press-grid"><a class="press-card" href="https://volksgruppen.orf.at/magyarok/stories/3284115/" target="_blank" rel="noopener external"><span class="press-medium">ORF Magyarok · 2025</span><strong>Egyszer cserkész, mindig cserkész</strong><span class="press-desc">Portré és beszélgetés a csapatparancsnoki útról, a jellemnevelésről és a bécsi magyar cserkészet jövőjéről.</span><span class="press-open">Cikk megnyitása ↗</span></a><a class="press-card" href="https://volksgruppen.orf.at/magyarok/stories/3282451/" target="_blank" rel="noopener external"><span class="press-medium">ORF Magyarok · 2024</span><strong>Életrevaló fiatalokat nevel a cserkészet</strong><span class="press-desc">Riport a csapatépítésről, a gyakorlati nevelésről és a fiatal vezetők felelősségre neveléséről.</span><span class="press-open">Cikk megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/magazin/magyar-csaladi-nap-a-becsi-cserkeszekkel/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2025</span><strong>Magyar családi nap a bécsi cserkészekkel</strong><span class="press-desc">Közösségi riport arról a cserkészetről, amelyben felelősség, figyelmesség és egymás támogatása egyszerre jelenik meg.</span><span class="press-open">Cikk megnyitása ↗</span></a></div></section></article>'''
+
+          for aid,block in [('pohl-balazs',pohl),('poser-piroska-ildiko',poser)]:
+              pat=r'<article class="profile" id="'+re.escape(aid)+r'">.*?</article>'
+              if re.search(pat,s,re.S):
+                  s=re.sub(pat,block,s,count=1,flags=re.S)
+              else:
+                  marker='</main>'
+                  s=s.replace(marker,block+'\n'+marker,1)
+
+          gm=re.search(r'(<div class="teacher-grid">)(.*?)(</div>)',s,re.S)
+          if not gm: raise SystemExit('teacher-grid missing')
+          cards=gm.group(2)
+          if 'href="#pohl-balazs"' not in cards:
+              cards+='\n<a class="teacher-card" data-areas="szinpad,pedagogia,kozosseg" href="#pohl-balazs"><b>Pohl Balázs</b><span>Drámapedagógia · írás-rendezés · közösségi színház</span></a>'
+          if 'href="#poser-piroska-ildiko"' not in cards:
+              cards+='\n<a class="teacher-card" data-areas="hagyomany,kozosseg,vezetes" href="#poser-piroska-ildiko"><b>Póser-Piroska Ildikó</b><span>Cserkészet · közösségépítés · jellemnevelés</span></a>'
+          s=s[:gm.start()]+gm.group(1)+cards+gm.group(3)+s[gm.end():]
+
+          if 'area-icons.css' not in s:
+              s=s.replace('</head>','<link rel="stylesheet" href="area-icons.css?v=20260902-1">\n<script defer src="area-icons.js?v=20260902-1"></script>\n</head>',1)
+
+          sm=re.search(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)
+          if sm:
+              data=json.loads(sm.group(1)); graph=data.get('@graph',[])
+              for obj in graph:
+                  if obj.get('@id')=='https://tanarok.magyariskola.at/#pohl-balazs':
+                      obj['jobTitle']='Drámapedagógus · író-rendező · SVUNG művészeti vezető'; obj['image']='https://tanarok.magyariskola.at/assets/pohl_balazs.webp'
+                  if obj.get('@id')=='https://tanarok.magyariskola.at/#poser-piroska-ildiko':
+                      obj['jobTitle']='Csapatparancsnok · ifjúsági közösségi vezető'; obj['image']='https://tanarok.magyariskola.at/assets/piroska.webp'
+              s=s[:sm.start(1)]+json.dumps(data,ensure_ascii=False,separators=(',',':'))+s[sm.end(1):]
+          htmlp.write_text(s,encoding='utf-8')
+
+          Path('area-icons.css').write_text('''.bmi-area-icons{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 13px}.bmi-area-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;margin:0!important;border:1px solid var(--line,#d2d2d7)!important;border-radius:999px!important;background:var(--paper,#fff)!important;color:var(--ink,#1d1d1f)!important}.bmi-area-icon svg{width:16px;height:16px;display:block;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.teacher-card .bmi-area-icons{margin-bottom:15px}.teacher-card .bmi-area-icon{width:28px!important;height:28px!important}.bmi-program-area-icons{margin-bottom:10px}@media(max-width:640px){.bmi-area-icons{gap:6px}.bmi-area-icon{width:28px!important;height:28px!important}}''',encoding='utf-8')
+
+          Path('area-icons.js').write_text(r'''(function(){'use strict';
+          var I={
+          nyelv:['Nyelv és kommunikáció','<path d="M4 5.5h16v10H9l-5 4v-4z"/><path d="M8 9h8M8 12h5"/>'],
+          pedagogia:['Pedagógia','<path d="M4 5.5c3-1 5-.7 8 1.2v12c-3-1.9-5-2.2-8-1.2z"/><path d="M20 5.5c-3-1-5-.7-8 1.2v12c3-1.9 5-2.2 8-1.2z"/>'],
+          szinpad:['Színpad és dráma','<path d="M5 4h14v12H5z"/><path d="M8 8c1-1 2-1 3 0M13 8c1-1 2-1 3 0M9 12c2 1.5 4 1.5 6 0M4 20h16"/>'],
+          alkotas:['Alkotás és vizuális művészet','<path d="M4 19l4-.8L19 7.2 16.8 5 5.8 16z"/><path d="M14.8 7l2.2 2.2M4 19h6"/>'],
+          mozgas:['Mozgás és fejlesztés','<circle cx="12" cy="5" r="2"/><path d="M12 8l-3 4 3 2 2 5M9 12l-4 2M12 10l4 2 3-2"/>'],
+          tech:['Digitális és technikai terület','<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M9 20h6M12 16v4"/>'],
+          logika:['Logika és stratégia','<rect x="5" y="5" width="14" height="14" rx="2"/><path d="M12 5v14M5 12h14"/>'],
+          jollet:['Jóllét és önismeret','<path d="M12 20s-7-4.2-7-9a4 4 0 017-2.4A4 4 0 0119 11c0 4.8-7 9-7 9z"/>'],
+          kozosseg:['Közösségépítés','<circle cx="9" cy="9" r="3"/><circle cx="16.5" cy="10" r="2.5"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5M14 15c2.8-.7 5.2.8 6 3.5"/>'],
+          hagyomany:['Hagyomány és identitás','<circle cx="12" cy="12" r="8"/><path d="M12 7l2 4-2 6-2-6z"/>'],
+          vezetes:['Vezetés és felelősség','<path d="M12 3l7 4v5c0 4.2-2.8 7.2-7 9-4.2-1.8-7-4.8-7-9V7z"/><path d="M9 12l2 2 4-4"/>']};
+          function svg(k){var x=I[k]||I.kozosseg;return '<span class="bmi-area-icon" title="'+x[0]+'" aria-label="'+x[0]+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+x[1]+'</svg></span>'}
+          function infer(t){t=(t||'').toLowerCase();var a=[];function add(k){if(a.indexOf(k)<0)a.push(k)}
+            if(/dráma|szín|musical|színház|rendez/.test(t))add('szinpad');
+            if(/pedagóg|tanár|tanító|nyelv|beszéd|waldorf|montessori/.test(t))add('pedagogia');
+            if(/rajz|vizuál|alkot|illusztr/.test(t))add('alkotas');
+            if(/mozgás|tánc|jóga|teráp/.test(t))add('mozgas');
+            if(/informat|minecraft|film|fotó|office|tech/.test(t))add('tech');
+            if(/sakk|logika|stratég/.test(t))add('logika');
+            if(/pszich|önismer|jóllét|fókusz/.test(t))add('jollet');
+            if(/közöss|cserkész|társulat/.test(t))add('kozosseg');
+            if(/néptánc|népzene|hagyomány|cserkész|magyar identit/.test(t))add('hagyomany');
+            if(/vezető|igazgató|parancsnok/.test(t))add('vezetes');
+            return a.slice(0,3)}
+          function decorate(el,areas,extra){if(!el||el.querySelector(':scope > .bmi-area-icons'))return;areas=(areas||[]).filter(function(k){return I[k]}).slice(0,3);if(!areas.length)return;var d=document.createElement('span');d.className='bmi-area-icons'+(extra?' '+extra:'');d.innerHTML=areas.map(svg).join('');el.insertBefore(d,el.firstChild)}
+          function teachers(){document.querySelectorAll('.teacher-card').forEach(function(c){var raw=(c.getAttribute('data-areas')||'').split(',').filter(Boolean);decorate(c,raw.length?raw:infer(c.textContent),'')})}
+          function programs(){var cfg=window.BMI_FINDER;if(!cfg||!Array.isArray(cfg.programs))return;var els=[].slice.call(document.querySelectorAll('.tile,.result-card,.program-card,.partner-program-card'));cfg.programs.forEach(function(p){var areas=(p.interests||[]).filter(function(k){return I[k]});els.forEach(function(el){if((el.textContent||'').indexOf(p.name)!==-1)decorate(el,areas,'bmi-program-area-icons')})})}
+          function run(){teachers();programs()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();new MutationObserver(function(){requestAnimationFrame(run)}).observe(document.documentElement,{childList:true,subtree:true});
+          window.BMI_AREA_ICONS={definitions:I,decorate:decorate,infer:infer};})();''',encoding='utf-8')
+
+          lp=Path('llms-full.txt'); l=lp.read_text(encoding='utf-8')
+          l=re.sub(r'- Pohl Balázs[^\n]*', '- Pohl Balázs — Drámapedagógus · író-rendező · SVUNG művészeti vezető — https://tanarok.magyariskola.at/#pohl-balazs — portrait: https://tanarok.magyariskola.at/assets/pohl_balazs.webp', l)
+          l=re.sub(r'- Póser-Piroska Ildikó[^\n]*', '- Póser-Piroska Ildikó — Csapatparancsnok · ifjúsági közösségi vezető — https://tanarok.magyariskola.at/#poser-piroska-ildiko — portrait: https://tanarok.magyariskola.at/assets/piroska.webp', l)
+          lp.write_text(l,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html llms-full.txt area-icons.js area-icons.css
+          git diff --cached --quiet && exit 0
+          git commit -m "Restore Pohl and Poser design with portraits and shared area icons"
+          git push
