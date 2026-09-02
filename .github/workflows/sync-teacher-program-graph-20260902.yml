@@ -1,0 +1,83 @@
+name: Sync teacher program graph
+on:
+  push:
+    paths:
+      - '.github/workflows/sync-teacher-program-graph-20260902.yml'
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync visible cache and machine teacher-program graph
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re,urllib.request
+
+          # Ensure browsers receive the new runtime that injects current program buttons.
+          ip=Path('index.html'); s=ip.read_text(encoding='utf-8')
+          s=re.sub(r'teacher-search\.js\?v=[^"\']+','teacher-search.js?v=20260902-program-sync-v1',s)
+          ip.write_text(s,encoding='utf-8')
+
+          with urllib.request.urlopen('https://programvalaszto.magyariskola.at/program-knowledge.json',timeout=30) as r:
+              pk=json.load(r)
+          programs=pk.get('programs',[])
+
+          # Canonical mapping by stable teacher profile URL.
+          by_profile={}
+          for p in programs:
+              sem=p.get('semantic') or {}
+              for profile_url in sem.get('teacherProfileUrls') or []:
+                  by_profile.setdefault(profile_url,[]).append({
+                      'id':p.get('id'),
+                      'label':p.get('name'),
+                      'url':p.get('url') or sem.get('canonicalScheduleSource'),
+                      'canonicalScheduleSource':sem.get('canonicalScheduleSource'),
+                      'primaryCategory6':p.get('primaryCategory6')
+                  })
+          for arr in by_profile.values():
+              arr.sort(key=lambda x:(x.get('label') or '').casefold())
+
+          kp=Path('teacher-knowledge.json'); kd=json.loads(kp.read_text(encoding='utf-8'))
+          for prof in kd.get('profiles',[]):
+              url=prof.get('profileUrl')
+              arr=by_profile.get(url,[])
+              prof['programLinks']=[{'label':x['label'],'url':x['url']} for x in arr if x.get('url')]
+              prof['currentProgramIds']=[x['id'] for x in arr if x.get('id')]
+              prof['programRelationshipSource']='https://programvalaszto.magyariskola.at/program-knowledge.json'
+          kp.write_text(json.dumps(kd,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          mp={
+            'schemaVersion':'2026-09-02-v1',
+            'schoolYear':'2026/2027',
+            'canonicalTeacherDirectory':'https://tanarok.magyariskola.at/',
+            'canonicalProgramKnowledge':'https://programvalaszto.magyariskola.at/program-knowledge.json',
+            'rule':'Only explicit current program relationships from canonical program knowledge are included; profile affiliation does not imply employment.',
+            'teachers':by_profile
+          }
+          Path('teacher-program-map.json').write_text(json.dumps(mp,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          for name in ['llms.txt','llms-full.txt']:
+              p=Path(name)
+              if not p.exists(): continue
+              t=p.read_text(encoding='utf-8')
+              line='Canonical teacher-program map: https://tanarok.magyariskola.at/teacher-program-map.json'
+              if line not in t: t=t.rstrip()+'\n'+line+'\n'
+              p.write_text(t,encoding='utf-8')
+
+          # Hard contracts requested by the ecosystem audit.
+          if not any(x.get('url')=='https://zenebona.magyariskola.at' for x in by_profile.get('https://tanarok.magyariskola.at/#dapin-hajnalka-judit',[])):
+              raise SystemExit('Dapin Hajnalka Judit -> Zenebona missing')
+          if len(kd.get('profiles',[])) < 25:
+              raise SystemExit('Teacher profile count unexpectedly below 25')
+          PY
+      - name: Commit synchronized graph
+        run: |
+          git config user.name "BMI Teacher Program Graph Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html teacher-knowledge.json teacher-program-map.json llms.txt llms-full.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Sync all teacher profiles with canonical current programs"
+          git push
