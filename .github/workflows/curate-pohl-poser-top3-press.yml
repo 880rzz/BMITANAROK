@@ -1,0 +1,53 @@
+name: Curate Pohl and Poser top 3 press
+
+on:
+  push:
+    paths:
+      - '.github/workflows/curate-pohl-poser-top3-press.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace Pohl and Poser press grids with strongest three
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          def replace_press(pid, html):
+              global s
+              a=s.find(f'<article class="profile" id="{pid}">')
+              if a<0: raise SystemExit(f'profile not found: {pid}')
+              b=s.find('</article>',a)
+              if b<0: raise SystemExit(f'article end not found: {pid}')
+              b += len('</article>')
+              block=s[a:b]
+              pat=r'<section class="press"[^>]*>.*?</section>'
+              if re.search(pat,block,re.S):
+                  block=re.sub(pat,html,block,count=1,flags=re.S)
+              else:
+                  block=block.replace('</article>',html+'</article>')
+              s=s[:a]+block+s[b:]
+
+          pohl='''<section class="press" aria-label="Pohl Balázs válogatott sajtómegjelenései"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Három kiemelt interjú és portré</h3></div><div class="press-grid"><a class="press-card" href="https://rolunk.at/nepcsoportunk/svung-becsi-magyar-szinkor/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2021</span><strong>„Svung” – Bécsi Magyar Színkör</strong><span class="press-desc">Átfogó interjú a bécsi pályáról, a korábbi színházi tapasztalatokról, a Waldorf-tanárképzésről és a SVUNG művészeti vezetéséről.</span><span class="press-open">Cikk megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/kultura/eljuthatunk-messzire-interju-pohl-balazzsal/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2022</span><strong>Eljuthatunk messzire – Interjú Pohl Balázzsal</strong><span class="press-desc">Közvetlen alkotói interjú a darabírásról, rendezésről, társulatépítésről és a SVUNG működtetésének gyakorlati oldaláról.</span><span class="press-open">Interjú megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/kultura/a-svung-fondujeben-mindenki-sajt/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2025</span><strong>A Svung Fondüjében mindenki sajt</strong><span class="press-desc">Friss portré az író-rendező és társulatvezető munkáról, a Fondü bemutatóján keresztül.</span><span class="press-open">Cikk megnyitása ↗</span></a></div></section>'''
+
+          poser='''<section class="press" aria-label="Póser-Piroska Ildikó válogatott sajtómegjelenései"><div class="press-head"><span class="eyebrow">Sajtómegjelenések</span><h3>Három kiemelt riport és portré</h3></div><div class="press-grid"><a class="press-card" href="https://volksgruppen.orf.at/magyarok/stories/3284115/" target="_blank" rel="noopener external"><span class="press-medium">ORF Magyarok · 2025</span><strong>Egyszer cserkész, mindig cserkész</strong><span class="press-desc">Kifejezetten róla és vezetői útjáról szóló portré: gyermekkori cserkészélmények, csapatparancsnoki szerep, jellemnevelés és a diaszpóra magyar közössége.</span><span class="press-open">Portré megnyitása ↗</span></a><a class="press-card" href="https://volksgruppen.orf.at/magyarok/stories/3282451/" target="_blank" rel="noopener external"><span class="press-medium">ORF Magyarok · 2024</span><strong>Életrevaló fiatalokat nevel a cserkészet</strong><span class="press-desc">Riport a csapatépítésről, vezetőképzésről, felelősségvállalásról és a cserkészet három meghatározó pilléréről.</span><span class="press-open">Riport megnyitása ↗</span></a><a class="press-card" href="https://rolunk.at/magazin/magyar-csaladi-nap-a-becsi-cserkeszekkel/" target="_blank" rel="noopener external"><span class="press-medium">Rólunk.at · 2025</span><strong>Magyar családi nap a bécsi cserkészekkel</strong><span class="press-desc">Közösségi riport, amely csapatparancsnokként mutatja be szerepét a generációkat összekapcsoló bécsi magyar cserkészközösségben.</span><span class="press-open">Cikk megnyitása ↗</span></a></div></section>'''
+
+          replace_press('pohl-balazs',pohl)
+          replace_press('poser-piroska-ildiko',poser)
+          p.write_text(s,encoding='utf-8')
+      - name: Commit curated press
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Curate strongest press for Pohl and Poser"
+          git push
