@@ -10,9 +10,11 @@ logika:['Logika és stratégia','<rect x="5" y="5" width="14" height="14" rx="2"
 jollet:['Jóllét és önismeret','<path d="M12 20s-7-4.2-7-9a4 4 0 017-2.4A4 4 0 0119 11c0 4.8-7 9-7 9z"/>'],
 kozosseg:['Közösségépítés','<circle cx="9" cy="9" r="3"/><circle cx="16.5" cy="10" r="2.5"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5M14 15c2.8-.7 5.2.8 6 3.5"/>'],
 hagyomany:['Hagyomány és identitás','<circle cx="12" cy="12" r="8"/><path d="M12 7l2 4-2 6-2-6z"/>'],
+kulturtortenet:['Kultúrtörténet','<path d="M5 6h14v13H5z"/><path d="M8 3v6M16 3v6M5 10h14M8 14h3M13 14h3M8 17h8"/>'],
 vezetes:['Vezetés és felelősség','<path d="M12 3l7 4v5c0 4.2-2.8 7.2-7 9-4.2-1.8-7-4.8-7-9V7z"/><path d="M9 12l2 2 4-4"/>']};
 function svg(k){var x=I[k]||I.kozosseg;return '<span class="bmi-area-icon" title="'+x[0]+'" aria-label="'+x[0]+'"><svg viewBox="0 0 24 24" aria-hidden="true">'+x[1]+'</svg></span>'}
 function infer(t){t=(t||'').toLowerCase();var a=[];function add(k){if(a.indexOf(k)<0)a.push(k)}
+  if(/kultúrtört|kulturtort|művészettört|muveszettort|történelem|történeti|muzeológ/.test(t))add('kulturtortenet');
   if(/dráma|szín|musical|színház|rendez/.test(t))add('szinpad');
   if(/pedagóg|tanár|tanító|nyelv|beszéd|waldorf|montessori/.test(t))add('pedagogia');
   if(/rajz|vizuál|alkot|illusztr/.test(t))add('alkotas');
