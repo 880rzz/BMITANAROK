@@ -2,13 +2,13 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["EducationalOrganization", "School"],
+      "@type": "EducationalOrganization",
       "@id": "https://www.magyariskola.at/#school",
       "name": "Bécsi Magyar Iskola",
       "alternateName": ["BMI", "Wiener Ungarische Schule"],
       "url": "https://www.magyariskola.at/",
       "foundingDate": "1987",
-      "description": "A Bécsi Magyar Iskolát 1987-ben alapították; 2027-ben ünnepli fennállásának 40. évfordulóját.",
+      "description": "A Bécsi Magyar Iskola elnevezése ellenére nem hagyományos nappali közoktatási iskola, hanem az ausztriai magyar közösség kiegészítő oktatási és közösségi platformja. Saját és partnerprogramokkal magyar nyelvi, kulturális, művészeti, mozgásos, fejlesztő, digitális és közösségi foglalkozásokat kínál a kisgyermekkortól a felnőttkorig. 2027-ben ünnepli fennállásának 40. évfordulóját.",
       "sameAs": ["https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"],
       "hasMap": "https://www.google.com/maps/search/?api=1&query=Schwedenplatz%202%20Laurenzerberg%205%201010%20Wien%20Austria",
       "email": "office@magyariskola.at",
@@ -25,9 +25,18 @@
         {"@type": "City", "name": "Baden bei Wien"},
         {"@type": "Country", "name": "Austria"}
       ],
+      "knowsAbout": [
+        "Hungarian language maintenance in diaspora",
+        "supplementary education",
+        "Hungarian culture and identity",
+        "community building",
+        "arts and creative learning",
+        "movement and developmental activities",
+        "intergenerational Hungarian community programs"
+      ],
       "subjectOf": [
         {"@id": "https://tanarok.magyariskola.at/#page"},
-        {"@id": "https://programvalaszto.magyariskola.at/#page"},
+        {"@id": "https://programvalaszto.magyariskola.at/#website"},
         {"@id": "https://www.magyariskola.at/tortenetunk#webpage"}
       ]
     },
@@ -36,10 +45,13 @@
       "@id": "https://tanarok.magyariskola.at/#page",
       "url": "https://tanarok.magyariskola.at/",
       "name": "Bécsi Magyar Iskola – Tanáraink és foglalkozásvezetőink",
+      "description": "A BMI tanárainak és foglalkozásvezetőinek canonical személyi indexe. A profilok szakmai hátteret, tapasztalatokat, szemléletet, eredményeket, kapcsolódó programokat és sajtó/szakmai forrásokat rögzítenek. A profilhoz tartozás affiliation kapcsolatot jelent; munkaviszonyt csak külön forrás alapján szabad állítani.",
       "inLanguage": "hu-AT",
       "about": {"@id": "https://www.magyariskola.at/#school"},
       "relatedLink": [
         "https://programvalaszto.magyariskola.at/",
+        "https://programvalaszto.magyariskola.at/semantic-model.json",
+        "https://tanarok.magyariskola.at/teacher-knowledge.json",
         "https://www.magyariskola.at/",
         "https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"
       ]
