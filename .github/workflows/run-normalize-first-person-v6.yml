@@ -1,0 +1,53 @@
+name: Run first-person normalization v6
+on:
+  push:
+    paths:
+      - '.github/workflows/run-normalize-first-person-v6.yml'
+permissions:
+  contents: write
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute robust profile normalization
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          wf=Path('.github/workflows/normalize-first-person-and-profile-design.yml').read_text(encoding='utf-8')
+          marker='      - name: Normalize profile design and first-person voice\n        shell: python\n        run: |\n'
+          start=wf.index(marker)+len(marker)
+          end=wf.index('\n      - name: Commit',start)
+          code='\n'.join(line[10:] if line.startswith('          ') else line for line in wf[start:end].splitlines())
+          old='''def replace_article(pid, article):\n    global s\n    pat=r'<article class="profile" id="'+re.escape(pid)+r'">.*?(?=<article class="profile" id=|</section>\\s*</main>)'\n    if not re.search(pat,s,re.S):\n        raise SystemExit('profile not found: '+pid)\n    s=re.sub(pat,article+'\\n',s,count=1,flags=re.S)'''
+          new='''def replace_article(pid, article):\n    global s\n    token='<article class="profile" id="'+pid+'">'\n    a=s.find(token)\n    if a < 0:\n        # If the article is truly absent, append it immediately before </main>.\n        z=s.rfind('</main>')\n        if z < 0: raise SystemExit('main closing tag not found')\n        s=s[:z]+article+'\\n'+s[z:]\n        return\n    b=s.find('</article>',a)\n    if b < 0: raise SystemExit('article closing tag not found: '+pid)\n    b += len('</article>')\n    s=s[:a]+article+s[b:]'''
+          if old not in code: raise SystemExit('replace_article source block not found')
+          code=code.replace(old,new,1)
+          ns={}
+          exec(compile(code,'normalize-first-person-v6','exec'),ns,ns)
+      - name: Verify core profile requirements
+        shell: python
+        run: |
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          checks=[
+            ('Pohl portrait','assets/pohl_balazs.webp'),
+            ('Piroska portrait','assets/piroska.webp'),
+            ('Pohl article','<article class="profile" id="pohl-balazs">'),
+            ('Piroska article','<article class="profile" id="poser-piroska-ildiko">'),
+            ('Pohl first-person','Számomra a színház és a pedagógia'),
+            ('Piroska first-person','A cserkészet számomra'),
+            ('Sipos first-person','1988 óta része az életemnek'),
+            ('Dapin first-person','Több mint harminc éve foglalkozom zenepedagógiával')]
+          missing=[name for name,text in checks if text not in s]
+          if missing: raise SystemExit('missing requirements: '+', '.join(missing))
+          print('Core profile requirements OK')
+      - name: Commit normalized profiles
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Unify profile design and first-person human introductions"
+          git push
