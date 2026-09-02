@@ -1,0 +1,40 @@
+name: Align press headings and ecosystem schema
+
+on:
+  push:
+    paths:
+      - '.github/workflows/align-press-heading-and-ecosystem-schema.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Align index
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('Három kiemelt interjú és portré','Válogatott sajtóanyagok és interjúk')
+          s=s.replace('Három kiemelt riport és portré','Válogatott sajtóanyagok és interjúk')
+          if 'https://www.kozpontiszovetseg.at/' not in s.split('</head>',1)[0]:
+              s=s.replace('<link rel="home" href="https://www.magyariskola.at/">','<link rel="home" href="https://www.magyariskola.at/">\n<link rel="related" href="https://www.kozpontiszovetseg.at/">\n<link rel="related" href="https://www.vipach.at/">\n<link rel="related" href="https://www.musicaltarsulat.at/">')
+          needle='"subjectOf":[{"@id":"https://tanarok.magyariskola.at/#page"}'
+          if needle in s and '"parentOrganization":{"@type":"Organization","name":"Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége"' not in s:
+              s=s.replace(needle,'"parentOrganization":{"@type":"Organization","name":"Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége","url":"https://www.kozpontiszovetseg.at/"},'+needle,1)
+          old='"relatedLink":["https://programvalaszto.magyariskola.at/","https://www.magyariskola.at/"]'
+          new='"relatedLink":["https://www.kozpontiszovetseg.at/","https://www.magyariskola.at/","https://programvalaszto.magyariskola.at/","https://zenebona.magyariskola.at/","https://taltosdob.magyariskola.at/","https://2026.magyariskola.at/","https://www.vipach.at/","https://www.musicaltarsulat.at/"]'
+          s=s.replace(old,new)
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "BMI Ecosystem Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Align press headings and BMI ecosystem schema"
+          git push
