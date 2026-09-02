@@ -16,18 +16,22 @@ jobs:
           from pathlib import Path
           import json,re,urllib.request
 
-          # Ensure browsers receive the new runtime that injects current program buttons.
+          # Ensure browsers receive the newly synchronized runtime.
           ip=Path('index.html'); s=ip.read_text(encoding='utf-8')
-          s=re.sub(r'teacher-search\.js\?v=[^"\']+','teacher-search.js?v=20260902-program-sync-v1',s)
+          s=re.sub(r'teacher-search\.js\?v=[^"\']+','teacher-search.js?v=20260902-program-sync-v2',s)
           ip.write_text(s,encoding='utf-8')
 
           with urllib.request.urlopen('https://programvalaszto.magyariskola.at/program-knowledge.json',timeout=30) as r:
               pk=json.load(r)
           programs=pk.get('programs',[])
+          if len(programs) != 28:
+              raise SystemExit(f'Expected 28 canonical programs, got {len(programs)}')
 
           # Canonical mapping by stable teacher profile URL.
           by_profile={}
           for p in programs:
+              if not p.get('primaryCategory6'):
+                  raise SystemExit(f"Missing primaryCategory6: {p.get('id')}")
               sem=p.get('semantic') or {}
               for profile_url in sem.get('teacherProfileUrls') or []:
                   by_profile.setdefault(profile_url,[]).append({
@@ -50,7 +54,7 @@ jobs:
           kp.write_text(json.dumps(kd,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
           mp={
-            'schemaVersion':'2026-09-02-v1',
+            'schemaVersion':'2026-09-02-v2',
             'schoolYear':'2026/2027',
             'canonicalTeacherDirectory':'https://tanarok.magyariskola.at/',
             'canonicalProgramKnowledge':'https://programvalaszto.magyariskola.at/program-knowledge.json',
@@ -67,9 +71,28 @@ jobs:
               if line not in t: t=t.rstrip()+'\n'+line+'\n'
               p.write_text(t,encoding='utf-8')
 
-          # Hard contracts requested by the ecosystem audit.
-          if not any(x.get('url')=='https://zenebona.magyariskola.at' for x in by_profile.get('https://tanarok.magyariskola.at/#dapin-hajnalka-judit',[])):
-              raise SystemExit('Dapin Hajnalka Judit -> Zenebona missing')
+          # Hard contracts for the previously discovered regressions.
+          def has(profile, pid, category=None, url=None):
+              for x in by_profile.get(profile,[]):
+                  if x.get('id') != pid: continue
+                  if category and x.get('primaryCategory6') != category: continue
+                  if url and x.get('url') != url: continue
+                  return True
+              return False
+
+          if not has('https://tanarok.magyariskola.at/#dapin-hajnalka-judit','zenebona','mozgas','https://zenebona.magyariskola.at'):
+              raise SystemExit('Dapin Hajnalka Judit -> Zenebona mapping invalid')
+          if not has('https://tanarok.magyariskola.at/#hupczik-andrea','oromzene','mozgas'):
+              raise SystemExit('Hupczik Andrea -> Oromzene mapping invalid')
+          if not has('https://tanarok.magyariskola.at/#hupczik-andrea','mos','logika','https://mos.magyariskola.at'):
+              raise SystemExit('Hupczik Andrea -> MOS mapping invalid')
+          if not has('https://tanarok.magyariskola.at/#hupczik-andrea','vilagfa','mozgas','https://taltosdob.magyariskola.at'):
+              raise SystemExit('Hupczik Andrea -> Vilagfa mapping invalid')
+
+          cats={p.get('id'):p.get('primaryCategory6') for p in programs}
+          for pid,cat in {'aspern':'nyelv','seestadt':'nyelv','vilagfa':'mozgas','fotoklub':'alkotas','mamut':'alkotas'}.items():
+              if cats.get(pid) != cat:
+                  raise SystemExit(f'Category contract failed: {pid}={cats.get(pid)} expected {cat}')
           if len(kd.get('profiles',[])) < 25:
               raise SystemExit('Teacher profile count unexpectedly below 25')
           PY
