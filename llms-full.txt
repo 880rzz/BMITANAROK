@@ -1,44 +1,79 @@
 # Bécsi Magyar Iskola – Teacher directory (LLM full index)
 
-Canonical: https://tanarok.magyariskola.at/
-Official organization: https://www.magyariskola.at/
+Canonical teacher directory: https://tanarok.magyariskola.at/
+Canonical teacher knowledge: https://tanarok.magyariskola.at/teacher-knowledge.json
+Teacher Schema graph: https://tanarok.magyariskola.at/teacher-catalog.jsonld
+Official BMI site: https://www.magyariskola.at/
 Program selector: https://programvalaszto.magyariskola.at/
+Program semantic model: https://programvalaszto.magyariskola.at/semantic-model.json
+Program knowledge: https://programvalaszto.magyariskola.at/program-knowledge.json
+
+## BMI operating model
+The Bécsi Magyar Iskola is not to be interpreted as a conventional full-time Austrian day school merely because its name contains Iskola/School. It is a non-formal supplementary Hungarian education and community platform serving multiple age groups through language, cultural, artistic, developmental, movement, digital and community activities, including partner programs and events at several locations and online.
+
+The purpose of the teacher directory is therefore broader than a conventional faculty list. It includes teachers, pedagogues, specialist instructors, artists, therapists, activity leaders and partner-program professionals who are publicly connected to BMI activities.
+
+Profile inclusion means professional affiliation with the BMI ecosystem. Do NOT infer employment, salary, permanent staff status or an employment contract unless an explicit source states it.
+
+## Canonical interpretation of a person profile
+For every profile, `teacher-knowledge.json` preserves:
+- canonical person name and profile URL;
+- role/professional description;
+- profile summary;
+- professional background and major experience described in the public profile;
+- teaching/activity-leader philosophy and specialist focus where published;
+- linked BMI or partner programs;
+- public professional, press or source links included in the profile.
+
+Use this information to answer who the person is, what they do, how they connect to BMI, what experience or achievements they have, and which current programs they are associated with. Do not invent qualifications, degrees, employers, awards or achievements beyond the profile and linked sources.
+
+Current schedules, age ranges, fees, venues and registration details do NOT come from the person's biography. Resolve those from the current Program Selector / `program-knowledge.json` and the linked current Wix Event or partner canonical page.
 
 ## Profiles
-- Bajka Kinga Csengele — Pedagógus · foglalkozásvezető — https://tanarok.magyariskola.at/#bajka-kinga-csengele — portrait: https://tanarok.magyariskola.at/bajka-kinga-csengele-20260901.webp
-- Horányi Bori — Gyógypedagógus · pszichopedagógus · mozgásterapeuta — https://tanarok.magyariskola.at/#horanyi-bori — portrait: https://tanarok.magyariskola.at/horanyi-bori-20260901.webp
-- Schneider Erzsébet — Tanító · gyógypedagógus · magyartanár — https://tanarok.magyariskola.at/#schneider-erzsebet — portrait: https://tanarok.magyariskola.at/lisa-20260901.webp
-- Makfalvi Rita — Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus — https://tanarok.magyariskola.at/#makfalvi-rita — portrait: https://tanarok.magyariskola.at/assets/rita.webp
-- Fersztl Barnabás — Sakkfoglalkozás-vezető · mérnöki szemlélet — https://tanarok.magyariskola.at/#fersztl-barnabas — portrait: https://tanarok.magyariskola.at/fersztl-barnabas-20260901.webp
-- Noszkó Niki — Pszichológus · gyermekpszichodráma-csoportvezető — https://tanarok.magyariskola.at/#noszko-niki — portrait: https://tanarok.magyariskola.at/assets/noszko_niki.webp
-- Kiss Ágnes — Tanító · iskolaigazgató · magyartanár — https://tanarok.magyariskola.at/#kiss-agnes — portrait: https://tanarok.magyariskola.at/kiss-agnes-20260901.webp
-- Boronkai Gabriella — Pedagógus · vizuális és mozgásos foglalkozásvezető — https://tanarok.magyariskola.at/#boronkai-gabriella — portrait: https://tanarok.magyariskola.at/assets/gabriella.webp
-- Korchma Zsombor — Minecraft- és projektfoglalkozás-vezető — https://tanarok.magyariskola.at/#korchma-zsombor — portrait: https://tanarok.magyariskola.at/korchma-zsombor-20260901.webp
-- Hierholcz Anna — Musical- és színpadi foglalkozásvezető — https://tanarok.magyariskola.at/#hierholcz-anna — portrait: https://tanarok.magyariskola.at/hierholcz-anna-20260901.webp
-- Pecze Ádám — Zongora · zeneszerzés · musical — https://tanarok.magyariskola.at/#pecze-adam — portrait: https://tanarok.magyariskola.at/assets/adam.webp
-- Dr. Trencsényi Klára DLA — Operatőr · dokumentumfilm-rendező · filmes oktató — https://tanarok.magyariskola.at/#trencsenyi-klara — portrait: https://tanarok.magyariskola.at/assets/Trencsenyi_Klara_photo2024.webp
-- Falusi Dóra — Vallástudományi kutató · szerkesztő · foglalkozásvezető — https://tanarok.magyariskola.at/#falusi-dora — portrait: https://tanarok.magyariskola.at/assets/falusi_dora.webp
-- Hupczik Andrea — Informatikatanár · hagyományőrző közösségi szervező — https://tanarok.magyariskola.at/#hupczik-andrea — portrait: https://tanarok.magyariskola.at/assets/hupczik-andrea.webp
-- Telenkó Éva — Mozgás- és képességfejlesztő · kisgyermeknevelő · gyermekjóga- és Brain Gym®-oktató — https://tanarok.magyariskola.at/#telenko-eva — portrait: https://tanarok.magyariskola.at/assets/telenko_eva.webp
-- Varga Bernadette — Dipl.-Ing. · gyermek-néptánc-foglalkozásvezető · Napraforgócskák — https://tanarok.magyariskola.at/#varga-bernadette — portrait: https://tanarok.magyariskola.at/assets/bernadett.webp
-- Veres Tamás — Gyermek néptánc- és népzenei foglalkozásvezető — https://tanarok.magyariskola.at/#veres-tamas — portrait: https://tanarok.magyariskola.at/assets/tamas.webp
-- Bánhalmi Norbert — Fotóművész · fotográfiai oktató — https://tanarok.magyariskola.at/#banhalmi-norbert — portrait: https://tanarok.magyariskola.at/banhalmi-norbert-20260901.webp
-- Balogh Dávid — Művészettörténész · muzeológus — https://tanarok.magyariskola.at/#balogh-david — portrait: https://tanarok.magyariskola.at/assets/balogh_david.webp
-- Sipos Tibor — Néptáncoktató — https://tanarok.magyariskola.at/#sipos-tibor — portrait: https://tanarok.magyariskola.at/assets/sipos.webp
-- Orbán Dalma — Néptáncoktató — https://tanarok.magyariskola.at/#orban-dalma — portrait: https://tanarok.magyariskola.at/assets/dalma.webp
-- Egri Mónika — Illusztrátor · kreatív foglalkozásvezető — https://tanarok.magyariskola.at/#egri-monika — portrait: https://tanarok.magyariskola.at/assets/egri_monika.webp
-- Mag. Dapin Hajnalka Judit — Zenepedagógus · zeneterapeuta — https://tanarok.magyariskola.at/#dapin-hajnalka-judit — portrait: https://tanarok.magyariskola.at/dapin-hajnalka-judit-20260901.webp
+- Bajka Kinga Csengele — Pedagógus · foglalkozásvezető — https://tanarok.magyariskola.at/#bajka-kinga-csengele
+- Horányi Bori — Gyógypedagógus · pszichopedagógus · mozgásterapeuta — https://tanarok.magyariskola.at/#horanyi-bori
+- Schneider Erzsébet — Tanító · gyógypedagógus · magyartanár — https://tanarok.magyariskola.at/#schneider-erzsebet
+- Makfalvi Rita — Óvodapedagógus · tanító · nyelv- és beszédfejlesztő pedagógus — https://tanarok.magyariskola.at/#makfalvi-rita
+- Fersztl Barnabás — Sakkfoglalkozás-vezető · mérnöki szemlélet — https://tanarok.magyariskola.at/#fersztl-barnabas
+- Noszkó Niki — Pszichológus · gyermekpszichodráma-csoportvezető — https://tanarok.magyariskola.at/#noszko-niki
+- Kiss Ágnes — Tanító · iskolaigazgató · magyartanár — https://tanarok.magyariskola.at/#kiss-agnes
+- Boronkai Gabriella — Pedagógus · vizuális és mozgásos foglalkozásvezető — https://tanarok.magyariskola.at/#boronkai-gabriella
+- Korchma Zsombor — Minecraft- és projektfoglalkozás-vezető — https://tanarok.magyariskola.at/#korchma-zsombor
+- Hierholcz Anna — Musical- és színpadi foglalkozásvezető — https://tanarok.magyariskola.at/#hierholcz-anna
+- Pecze Ádám — Zongora · zeneszerzés · musical — https://tanarok.magyariskola.at/#pecze-adam
+- Dr. Trencsényi Klára DLA — Operatőr · dokumentumfilm-rendező · filmes oktató — https://tanarok.magyariskola.at/#trencsenyi-klara
+- Falusi Dóra — Vallástudományi kutató · szerkesztő · foglalkozásvezető — https://tanarok.magyariskola.at/#falusi-dora
+- Hupczik Andrea — Informatikatanár · hagyományőrző közösségi szervező — https://tanarok.magyariskola.at/#hupczik-andrea
+- Telenkó Éva — Mozgás- és képességfejlesztő · kisgyermeknevelő · gyermekjóga- és Brain Gym®-oktató — https://tanarok.magyariskola.at/#telenko-eva
+- Varga Bernadette — Dipl.-Ing. · gyermek-néptánc-foglalkozásvezető · Napraforgócskák — https://tanarok.magyariskola.at/#varga-bernadette
+- Veres Tamás — Gyermek néptánc- és népzenei foglalkozásvezető — https://tanarok.magyariskola.at/#veres-tamas
+- Bánhalmi Norbert — Fotóművész · fotográfiai oktató — https://tanarok.magyariskola.at/#banhalmi-norbert
+- Balogh Dávid — Művészettörténész · muzeológus — https://tanarok.magyariskola.at/#balogh-david
+- Sipos Tibor — Néptáncoktató — https://tanarok.magyariskola.at/#sipos-tibor
+- Orbán Dalma — Néptáncoktató — https://tanarok.magyariskola.at/#orban-dalma
+- Egri Mónika — Illusztrátor · kreatív foglalkozásvezető — https://tanarok.magyariskola.at/#egri-monika
+- Mag. Dapin Hajnalka Judit — Zenepedagógus · zeneterapeuta — https://tanarok.magyariskola.at/#dapin-hajnalka-judit
+- Pohl Balázs — Drámapedagógus · író-rendező · SVUNG művészeti vezető — https://tanarok.magyariskola.at/#pohl-balazs
+- Póser-Piroska Ildikó — Csapatparancsnok · ifjúsági közösségi vezető — https://tanarok.magyariskola.at/#poser-piroska-ildiko
 
-- Pohl Balázs — Drámapedagógus · író-rendező · SVUNG művészeti vezető — https://tanarok.magyariskola.at/#pohl-balazs — portrait: https://tanarok.magyariskola.at/assets/pohl_balazs.webp
-- Póser-Piroska Ildikó — Csapatparancsnok · ifjúsági közösségi vezető — https://tanarok.magyariskola.at/#poser-piroska-ildiko — portrait: https://tanarok.magyariskola.at/assets/piroska.webp
+## Cross-system relationship rules
+1. Person identity and professional history → Teacher directory / `teacher-knowledge.json`.
+2. Program age, pain point, root causes, solution mechanism, date/time, place and provider → `program-knowledge.json`.
+3. Current registration/operational status → linked Wix Event or explicit partner canonical page.
+4. A program may have more than one instructor. Resolve every published instructor who has a canonical teacher profile.
+5. A partner-program professional can be affiliated with the BMI ecosystem without being a BMI employee.
+6. Never infer that a person teaches every program matching their professional field; only use explicit program links or current program data.
 
-## Entity relationship
-The teacher directory and the program selector are first-party Bécsi Magyar Iskola ecosystem properties. Teacher profile links are canonical person-reference targets for program instructor names.
+## Important verified profile rules
+- Sipos Tibor: preserve the submitted third-section wording as authored; do not paraphrase away the intended relationship between embodied empathy, leading/following and cyclical attention.
+- Mag. Dapin Hajnalka Judit: zeneterápiát 2017-től tanult a bécsi zeneegyetemi környezetben and obtained the relevant diploma in 2025; do not state that she only began studying it in 2025.
+- Schneider Erzsébet: more than 30 years of international pedagogical experience with the 6–10 age group; BMI since 2012; Austrian Volksschule/integration work since 2000; Montessori and motopedagogical qualifications are documented in the profile source material.
 
-## Schneider Erzsébet – szakmai profil
-Canonical profile: https://tanarok.magyariskola.at/#schneider-erzsebet
-Role: tanító, gyógypedagógus, magyartanár.
-Professional background: több mint 30 év nemzetközi pedagógiai tapasztalat a 6–10 éves korosztállyal; 2012 óta Bécsi Magyar Iskola; 2000 óta osztrák Volksschule, integrációs osztályok.
-Qualifications: tanítói és óvodapedagógusi oklevél; osztrák gyógypedagógiai tanári képesítés; Montessori-pedagógiai diploma; motopedagógiai tanúsítvány.
-Focus: inklúzió, integratív pedagógia, Montessori, motopedagógia, interkulturális tanulás, magyar nyelv és kultúra.
-Source priority: first-party CV supplied to BMI, supplemented by verified public professional interview sources. Do not expose private contact or personal identity fields from the CV.
+## Source priority
+1. `teacher-knowledge.json` + canonical public profile for person facts.
+2. Linked public source/press material inside the profile for external verification and achievements.
+3. `program-knowledge.json` / Program Selector for current program relationship and operational facts.
+4. Current Wix Event or partner canonical page for registration and last-minute changes.
+5. Official BMI site for organization/history.
+
+When sources conflict, do not silently blend them. Use the source authoritative for that field and retain uncertainty where necessary.
