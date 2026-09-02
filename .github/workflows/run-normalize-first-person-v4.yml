@@ -1,0 +1,41 @@
+name: Run first-person normalization v4
+on:
+  push:
+    paths:
+      - '.github/workflows/run-normalize-first-person-v4.yml'
+permissions:
+  contents: write
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Seed missing Piroska article and execute canonical normalization
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          token='<article class="profile" id="poser-piroska-ildiko">'
+          if token not in s:
+              anchor='</section>\n</main>' if '</section>\n</main>' in s else '</section></main>'
+              if anchor not in s: raise SystemExit('profiles closing anchor not found')
+              seed='<article class="profile" id="poser-piroska-ildiko"><div class="profile-head"><div class="profile-title"><h2>Póser-Piroska Ildikó</h2><p class="role"></p></div></div><div class="bio-segments"></div></article>\n'
+              s=s.replace(anchor,seed+anchor,1)
+              p.write_text(s,encoding='utf-8')
+
+          wf=Path('.github/workflows/normalize-first-person-and-profile-design.yml').read_text(encoding='utf-8')
+          marker='      - name: Normalize profile design and first-person voice\n        shell: python\n        run: |\n'
+          start=wf.index(marker)+len(marker)
+          end=wf.index('\n      - name: Commit',start)
+          block=wf[start:end]
+          code='\n'.join(line[10:] if line.startswith('          ') else line for line in block.splitlines())
+          ns={}
+          exec(compile(code,'normalize-first-person-v4','exec'),ns,ns)
+      - name: Commit normalized profiles
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Unify all profile design and first-person human voice"
+          git push
