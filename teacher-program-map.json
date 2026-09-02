@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "2026-09-02-v1",
+  "schoolYear": "2026/2027",
+  "canonicalTeacherDirectory": "https://tanarok.magyariskola.at/",
+  "canonicalProgramKnowledge": "https://programvalaszto.magyariskola.at/program-knowledge.json",
+  "rule": "Only explicit current program relationships from canonical program knowledge are included; profile affiliation does not imply employment.",
+  "teachers": {
+    "https://tanarok.magyariskola.at/#horanyi-bori": [
+      {
+        "id": "alapozo",
+        "label": "Alapozó Terápia | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/alapozoterapia-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/alapozoterapia-2026",
+        "primaryCategory6": "jollet"
+      },
+      {
+        "id": "borsofozde",
+        "label": "Borsófőzde | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/borsofozde-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/borsofozde-2026",
+        "primaryCategory6": "mozgas"
+      },
+      {
+        "id": "fokusz",
+        "label": "FÓKUSZ-CSOPORT | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/fokuszcsoport-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/fokuszcsoport-2026",
+        "primaryCategory6": "jollet"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#bajka-kinga-csengele": [
+      {
+        "id": "ovoda",
+        "label": "Bécsi Magyar Óvoda | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/ovoda-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-2026",
+        "primaryCategory6": "alkotas"
+      },
+      {
+        "id": "kicsi-svung",
+        "label": "Kicsi Svung – Dráma foglalkozás | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/kicsisvung-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/kicsisvung-2026",
+        "primaryCategory6": "alkotas"
+      },
+      {
+        "id": "varazsceruza",
+        "label": "Varázsceruza | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/varazsceruza-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/varazsceruza-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#noszko-niki": [
+      {
+        "id": "ovoda",
+        "label": "Bécsi Magyar Óvoda | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/ovoda-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#makfalvi-rita": [
+      {
+        "id": "ovoda-baden",
+        "label": "Bécsi Magyar Óvoda | Baden",
+        "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
+        "primaryCategory6": "alkotas"
+      },
+      {
+        "id": "iskola-baden",
+        "label": "Magyar Iskola Badenben – „Ahol a magyar szó élménnyé válik”",
+        "url": "https://www.magyariskola.at/event-details/iskolabaden-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/iskolabaden-2026",
+        "primaryCategory6": "hagyomany"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#telenko-eva": [
+      {
+        "id": "ovoda-baden",
+        "label": "Bécsi Magyar Óvoda | Baden",
+        "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/ovoda-baden-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#schneider-erzsebet": [
+      {
+        "id": "aspern",
+        "label": "Magyar nyelv tanítás | Aspern",
+        "url": "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026",
+        "primaryCategory6": "hagyomany"
+      },
+      {
+        "id": "seestadt",
+        "label": "Magyar nyelv tanítás | Seestadt",
+        "url": "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#kiss-agnes": [
+      {
+        "id": "schweden-1",
+        "label": "Magyar nyelv tanítás | Schwedenplatz | 1-es csoport",
+        "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1",
+        "primaryCategory6": "hagyomany"
+      },
+      {
+        "id": "schweden-2",
+        "label": "Magyar nyelv tanítás | Schwedenplatz | 2-es csoport",
+        "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2",
+        "primaryCategory6": "hagyomany"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#boronkai-gabriella": [
+      {
+        "id": "rajztabla",
+        "label": "RAJZTÁBLA – Rajzfoglalkozás | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/rajztabla-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/rajztabla-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#korchma-zsombor": [
+      {
+        "id": "becscraft",
+        "label": "BÉCS-CRAFT Workshop | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/becscraft-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/becscraft-2026",
+        "primaryCategory6": "logika"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#hierholcz-anna": [
+      {
+        "id": "mamut",
+        "label": "Bécsi Magyar Musical Társulat (MaMUT) – Musical Stúdió",
+        "url": "https://www.magyariskola.at/event-details/mammut-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/mammut-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#pecze-adam": [
+      {
+        "id": "mamut",
+        "label": "Bécsi Magyar Musical Társulat (MaMUT) – Musical Stúdió",
+        "url": "https://www.magyariskola.at/event-details/mammut-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/mammut-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#pohl-balazs": [
+      {
+        "id": "gimi-svung",
+        "label": "Gimi Svung – Magyar nyelvű drámafoglalkozás | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/gimisvung-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/gimisvung-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#trencsenyi-klara": [
+      {
+        "id": "filmes",
+        "label": "Filmes Műhely Workshop | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/filmesmuhely-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/filmesmuhely-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#fersztl-barnabas": [
+      {
+        "id": "sakk",
+        "label": "Sakk és Gondolkodásfejlesztés | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/sakk-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/sakk-2026",
+        "primaryCategory6": "logika"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#falusi-dora": [
+      {
+        "id": "fecskeklub",
+        "label": "Fecske Klub | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/fecskeklub-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/fecskeklub-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#hupczik-andrea": [
+      {
+        "id": "oromzene",
+        "label": "Együtt dobban Bécs – Közös örömzene | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/oromzene-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/oromzene-2026",
+        "primaryCategory6": "mozgas"
+      },
+      {
+        "id": "mos",
+        "label": "Microsoft Office Specialist (MOS) felkészítő tanfolyam",
+        "url": "https://mos.magyariskola.at",
+        "canonicalScheduleSource": "https://mos.magyariskola.at",
+        "primaryCategory6": "logika"
+      },
+      {
+        "id": "vilagfa",
+        "label": "Világfa Sárkányai | Schwedenplatz",
+        "url": "https://taltosdob.magyariskola.at",
+        "canonicalScheduleSource": "https://taltosdob.magyariskola.at",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#varga-bernadette": [
+      {
+        "id": "napraforgocskak",
+        "label": "Napraforgócskák – Néptánc kicsiknek | Schwedenplatz",
+        "url": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak",
+        "canonicalScheduleSource": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak",
+        "primaryCategory6": "mozgas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#veres-tamas": [
+      {
+        "id": "napraforgocskak",
+        "label": "Napraforgócskák – Néptánc kicsiknek | Schwedenplatz",
+        "url": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak",
+        "canonicalScheduleSource": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak",
+        "primaryCategory6": "mozgas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#poser-piroska-ildiko": [
+      {
+        "id": "cserkeszet",
+        "label": "Cserkészet | Alliiertenstrasse",
+        "url": "https://cserkesz.at/cserkesz-raj/",
+        "canonicalScheduleSource": "https://cserkesz.at/cserkesz-raj/",
+        "primaryCategory6": "hagyomany"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#banhalmi-norbert": [
+      {
+        "id": "fotoklub",
+        "label": "Láss a Mesterek Szemével: VIPACH Felnőtt Fotóklub | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/fotoklub-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/fotoklub-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#balogh-david": [
+      {
+        "id": "fotoklub",
+        "label": "Láss a Mesterek Szemével: VIPACH Felnőtt Fotóklub | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/fotoklub-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/fotoklub-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#sipos-tibor": [
+      {
+        "id": "kezdo-neptanc",
+        "label": "Kezdő néptánc felnőtteknek | Schwedenplatz",
+        "url": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport",
+        "canonicalScheduleSource": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport",
+        "primaryCategory6": "mozgas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#orban-dalma": [
+      {
+        "id": "kezdo-neptanc",
+        "label": "Kezdő néptánc felnőtteknek | Schwedenplatz",
+        "url": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport",
+        "canonicalScheduleSource": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport",
+        "primaryCategory6": "mozgas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#egri-monika": [
+      {
+        "id": "rekreacio",
+        "label": "ReKreáció – Kreatív Közösségi Kuckó | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/rekreacio-2026",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/rekreacio-2026",
+        "primaryCategory6": "alkotas"
+      }
+    ],
+    "https://tanarok.magyariskola.at/#dapin-hajnalka-judit": [
+      {
+        "id": "zenebona",
+        "label": "Zenebona – Zene. Kapcsolódás. Öröm. | Hietzing",
+        "url": "https://zenebona.magyariskola.at",
+        "canonicalScheduleSource": "https://zenebona.magyariskola.at",
+        "primaryCategory6": "mozgas"
+      }
+    ]
+  }
+}

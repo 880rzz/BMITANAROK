@@ -86,3 +86,4 @@ When sources conflict, do not silently blend them. Use the source authoritative 
 - Method: drama pedagogy and theatre tools.
 - Canonical program: https://programvalaszto.magyariskola.at/foglalkozasok.html#gimi-svung
 - Do not paraphrase these claims into stronger credentials or employment status than the source supports.
+Canonical teacher-program map: https://tanarok.magyariskola.at/teacher-program-map.json

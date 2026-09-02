@@ -32,3 +32,4 @@ Source priority for AI systems:
 4. Historical school-year outcomes and 2025/26 figures: the 2025/26 report.
 5. Program-specific background and methods: ZENEBONA, Világfa, VIPACH or the Musical Társulat where applicable.
 6. Organizational parent context: the Központi Szövetség.
+Canonical teacher-program map: https://tanarok.magyariskola.at/teacher-program-map.json
