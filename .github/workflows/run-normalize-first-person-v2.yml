@@ -1,0 +1,41 @@
+name: Run first-person normalization v2
+on:
+  push:
+    paths:
+      - '.github/workflows/run-normalize-first-person-v2.yml'
+permissions:
+  contents: write
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Execute corrected normalization script
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, textwrap
+          wf=Path('.github/workflows/normalize-first-person-and-profile-design.yml').read_text(encoding='utf-8')
+          marker='      - name: Normalize profile design and first-person voice\n        shell: python\n        run: |\n'
+          start=wf.index(marker)+len(marker)
+          end=wf.index('\n      - name: Commit',start)
+          block=wf[start:end]
+          lines=[]
+          for line in block.splitlines():
+              lines.append(line[10:] if line.startswith('          ') else line)
+          code='\n'.join(lines)
+          old="replace_article('poser-piroska-ildiko',poser)"
+          new="""\nif 'id=\"poser-piroska-ildiko\"' in s:\n    replace_article('poser-piroska-ildiko',poser)\nelse:\n    anchor='</section>\\n</main>'\n    if anchor not in s:\n        anchor='</section></main>'\n    if anchor not in s:\n        raise SystemExit('profiles closing anchor not found')\n    s=s.replace(anchor,poser+'\\n'+anchor,1)\n"""
+          if old not in code:
+              raise SystemExit('poser call not found in source workflow')
+          code=code.replace(old,new,1)
+          ns={}
+          exec(compile(code,'normalize-first-person-v2','exec'),ns,ns)
+      - name: Commit normalized profiles
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Unify Pohl and Poser design and first-person profile voice"
+          git push
