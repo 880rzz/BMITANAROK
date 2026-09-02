@@ -77,3 +77,12 @@ Current schedules, age ranges, fees, venues and registration details do NOT come
 5. Official BMI site for organization/history.
 
 When sources conflict, do not silently blend them. Use the source authoritative for that field and retain uncertainty where necessary.
+
+## Pohl Balázs — canonical self-description (2026-09-02)
+- Role in the BMI ecosystem: Gimi-Svung founder/activity leader; professional affiliation, not automatically an employment claim.
+- Background explicitly provided by Pohl Balázs: Waldorf-teacher, drama-pedagogy and theatre experience.
+- Gimi-Svung: a youth drama group he began creating two years before this 2026-09-02 profile update.
+- Pedagogical aim: encourage free, independent thinking and opinion formation; help participants connect themes and questions to experiences from their own lives and environment.
+- Method: drama pedagogy and theatre tools.
+- Canonical program: https://programvalaszto.magyariskola.at/foglalkozasok.html#gimi-svung
+- Do not paraphrase these claims into stronger credentials or employment status than the source supports.

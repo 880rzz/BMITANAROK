@@ -1104,8 +1104,8 @@
     {
       "id": "pohl-balazs",
       "name": "Pohl Balázs",
-      "role": "Drámapedagógus · író-rendező · SVUNG művészeti vezető",
-      "summary": "Számomra a színház és a pedagógia nem két külön pálya. A színészi tapasztalatot, a Waldorf-pedagógiát és a több évtizedes színpadi munkát úgy kapcsolom össze, hogy a fiatalok ne kész válaszokat kapjanak, hanem megtanuljanak jelen lenni, reagálni, kérdezni és együtt gondolkodni.",
+      "role": "Waldorf-tanár · drámapedagógus · színházi alkotó",
+      "summary": "A Gimi-Svung létrehozója és foglalkozásvezetője; a SVUNG – Bécsi Magyar Színház művészeti vezetője.",
       "profileUrl": "https://tanarok.magyariskola.at/#pohl-balazs",
       "relationshipToBMI": {
         "type": "affiliation",
@@ -1114,28 +1114,28 @@
       },
       "professionalSections": [
         {
-          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "heading": "Saját bemutatkozás",
           "paragraphs": [
-            "Fiatalon színiiskolába jártam, Budapesten a Kolibri Színházban és a Pinceszínházban is dolgoztam, emellett film-, rádiójáték- és szinkronmunkákban vettem részt. Később a Waldorf-pedagógia felé fordultam: elvégeztem a Waldorf-tanárképzést, tanítottam, diákszínjátszó csoportokat vezettem, majd oktatóként is visszatértem a tanárképzésbe. 2015-ben Bécsbe költöztem, és létrehoztam a későbbi SVUNG – Bécsi Magyar Színházat. A társulatban művészeti vezetőként, szerzőként és rendezőként dolgozom; a színházi alkotás gyerekkorom óta végigkíséri az életemet."
+            "Waldorf-tanári, drámapedagógusi és színházi tapasztalatokkal felvértezve vágtam bele két éve a Gimi-Svung nevű, fiataloknak szóló dráma-csoport létrehozásába."
           ]
         },
         {
-          "heading": "A hozzám különösen közel álló területek",
+          "heading": "Pedagógiai cél",
           "paragraphs": [
-            "A drámapedagógia, a darab- és jelenetírás, a rendezés, az improvizáció és a közösségi színház áll hozzám a legközelebb. A SVUNG-ban felnőtt- és gyerekelőadásokon, saját szövegeken és átdolgozásokon egyaránt dolgozom. A Gimi Svungban ehhez kapcsolom a magyar nyelvi kifejezést, a szövegértést, az önismeretet, az empátiát és a színpadi jelenlét fejlesztését."
+            "Feladatomnak tartom a résztvevők szabad, önálló gondolkodásra, véleményformálásra ösztönzését, valamint, hogy a felvetett témákat, kérdéseket a saját életükből, környezetükből vett tapasztalatokkal össze tudják kapcsolni."
           ]
         },
         {
-          "heading": "Pedagógiai szemlélet",
+          "heading": "Módszer",
           "paragraphs": [
-            "A drámára önismereti folyamatként és olyan eszközként tekintek, amely közelebb tudja vinni a tananyagot és a kérdéseket a résztvevőkhöz. Nem egyszerűen előadást szeretnék készíteni egy csoporttal: arra ösztönzöm a fiatalokat, hogy a saját tapasztalataikból, ötleteikből és véleményükből építsünk közös színpadi anyagot, és közben merjenek felelősséget vállalni a közös munkáért."
+            "Mindezt a drámapedagógia és a színház eszközeivel kívánjuk elérni."
           ]
         }
       ],
       "programLinks": [
         {
-          "label": "Gimi Svung – Magyar nyelvű drámafoglalkozás",
-          "url": "https://www.magyariskola.at/event-details/gimisvung-2026"
+          "label": "Gimi-Svung",
+          "url": "https://programvalaszto.magyariskola.at/foglalkozasok.html#gimi-svung"
         }
       ],
       "publicSourceLinks": [

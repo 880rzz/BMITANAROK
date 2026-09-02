@@ -514,14 +514,14 @@
       "@type": "Person",
       "@id": "https://tanarok.magyariskola.at/#pohl-balazs",
       "name": "Pohl Balázs",
-      "jobTitle": "Drámapedagógus · író-rendező · SVUNG művészeti vezető",
-      "description": "Számomra a színház és a pedagógia nem két külön pálya. A színészi tapasztalatot, a Waldorf-pedagógiát és a több évtizedes színpadi munkát úgy kapcsolom össze, hogy a fiatalok ne kész válaszokat kapjanak, hanem megtanuljanak jelen lenni, reagálni, kérdezni és együtt gondolkodni.",
+      "jobTitle": "Waldorf-tanár · drámapedagógus · színházi alkotó",
+      "description": "A Gimi-Svung létrehozója és foglalkozásvezetője; a SVUNG – Bécsi Magyar Színház művészeti vezetője.",
       "url": "https://tanarok.magyariskola.at/#pohl-balazs",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
       },
       "subjectOf": [
-        "https://www.magyariskola.at/event-details/gimisvung-2026"
+        "https://programvalaszto.magyariskola.at/foglalkozasok.html#gimi-svung"
       ]
     },
     {
