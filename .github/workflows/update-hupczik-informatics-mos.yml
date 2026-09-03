@@ -1,4 +1,4 @@
-name: Update Hupczik Andrea profile and MOS program
+name: Update Hupczik Andrea profile text
 
 on:
   push:
@@ -13,73 +13,49 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update Hupczik Andrea profile
+
+      - name: Remove informatics references from profile narrative
         shell: python
         run: |
           from pathlib import Path
-          import re, json
 
-          p = Path('index.html')
-          s = p.read_text(encoding='utf-8')
-          m = re.search(r'(<article class="profile" id="hupczik-andrea">.*?</article>)', s, re.S)
-          if not m:
-              raise SystemExit('Hupczik profile missing')
-          a = m.group(1)
+          replacements = {
+              "Informatikatanár, hagyományőrző közösségi szervező és két fiúgyermek édesanyja vagyok. A magyar hagyományokat közösségi élménnyé szeretném tenni, miközben digitális és informatikai tudást is átadok.":
+              "Informatikatanár, hagyományőrző közösségi szervező és két fiúgyermek édesanyja vagyok. A magyar hagyományokat közösségi élménnyé szeretném tenni.",
 
-          a = re.sub(
-              r'<div class="eyebrow">.*?</div>',
-              '<div class="eyebrow">Informatikatanár · hagyományőrző közösségi szervező · bécsi kapcsolattartó</div>',
-              a, count=1, flags=re.S
-          )
+              "A közösségi dobolás, az ének, a magyar mondavilág és hagyományőrzés, a generációk közötti kapcsolódás, valamint az informatika és digitális készségfejlesztés áll hozzám közel.":
+              "A közösségi dobolás, az ének, a magyar mondavilág és hagyományőrzés, valamint a generációk közötti kapcsolódás áll hozzám közel.",
+          }
 
-          role = ('<p class="role">Informatikatanár, hagyományőrző közösségi szervező és két fiúgyermek édesanyja. '
-                  'A magyar hagyományokat közösségi élménnyé teszi, miközben digitális és informatikai tudását is átadja a résztvevőknek.</p>')
-          a = re.sub(r'<p class="role">.*?</p>', role, a, count=1, flags=re.S)
+          files = [Path("index.html"), Path("teacher-knowledge.json"), Path("teacher-catalog.jsonld")]
+          changed = []
 
-          mos = '<a href="https://mos.magyariskola.at" target="_blank" rel="noopener">Microsoft Office Specialist képzés</a>'
-          pm = re.search(r'<div class="programs">(.*?)</div>', a, re.S)
-          if pm:
-              inner = pm.group(1)
-              if 'mos.magyariskola.at' not in inner:
-                  inner += mos
-              a = a[:pm.start()] + '<div class="programs">' + inner + '</div>' + a[pm.end():]
-          else:
-              insert_at = a.find('</div></div><div class="bio-segments">')
-              if insert_at < 0:
-                  raise SystemExit('profile-head insertion point missing')
-              a = a[:insert_at] + '<div class="programs">' + mos + '</div>' + a[insert_at:]
+          for path in files:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding="utf-8")
+              original = text
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
 
-          s = s[:m.start()] + a + s[m.end():]
+              # Defensive partial replacements for machine-readable copies or minor formatting variants.
+              text = text.replace(", miközben digitális és informatikai tudást is átadok.", ".")
+              text = text.replace(", valamint az informatika és digitális készségfejlesztés áll hozzám közel.", " áll hozzám közel.")
 
-          # Schema job title
-          sm = re.search(r'<script type="application/ld\+json">(.*?)</script>', s, re.S)
-          if sm:
-              data = json.loads(sm.group(1))
-              for node in data.get('@graph', []):
-                  if node.get('@id') == 'https://tanarok.magyariskola.at/#hupczik-andrea':
-                      node['jobTitle'] = 'Informatikatanár · hagyományőrző közösségi szervező'
-                      break
-              js = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
-              s = s[:sm.start(1)] + js + s[sm.end(1):]
+              if text != original:
+                  path.write_text(text, encoding="utf-8")
+                  changed.append(str(path))
 
-          p.write_text(s, encoding='utf-8')
+          if not changed:
+              raise SystemExit("No matching Hupczik Andrea text found to update")
 
-          # LLM summary alignment
-          lf = Path('llms-full.txt')
-          if lf.exists():
-              t = lf.read_text(encoding='utf-8')
-              t = re.sub(
-                  r'- Hupczik Andrea — .*? — https://tanarok\.magyariskola\.at/#hupczik-andrea',
-                  '- Hupczik Andrea — Informatikatanár · hagyományőrző közösségi szervező — https://tanarok.magyariskola.at/#hupczik-andrea',
-                  t
-              )
-              lf.write_text(t, encoding='utf-8')
+          print("Updated:", ", ".join(changed))
 
       - name: Commit
         run: |
           git config user.name "BMI Teacher Profile Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add index.html llms-full.txt
+          git add index.html teacher-knowledge.json teacher-catalog.jsonld
           git diff --cached --quiet && exit 0
-          git commit -m "Update Hupczik Andrea as informatics teacher and add MOS"
+          git commit -m "Refine Hupczik Andrea profile narrative"
           git push
