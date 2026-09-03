@@ -302,14 +302,15 @@
       "@id": "https://tanarok.magyariskola.at/#boronkai-gabriella",
       "name": "Boronkai Gabriella",
       "jobTitle": "Pedagógus · vizuális nevelés · sport- és aerobic oktató",
-      "description": "A vizuális alkotást, a mozgást és a játékos készségfejlesztést természetesen kapcsolom össze a gyerekekkel végzett munkámban.",
+      "description": "Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa. Jelenleg bécsi Montessori óvodában dolgozik; vizuális neveléssel, iskola-előkészítéssel, zenés tornával és a 10 év felettiek Rajztábla kurzusával foglalkozik.",
       "url": "https://tanarok.magyariskola.at/#boronkai-gabriella",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
       },
       "subjectOf": [
         "https://www.magyariskola.at/event-details/rajztabla-2026"
-      ]
+      ],
+      "image": "https://tanarok.magyariskola.at/gabi.webp"
     },
     {
       "@type": "Person",

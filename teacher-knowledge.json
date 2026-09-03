@@ -383,7 +383,7 @@
       "id": "boronkai-gabriella",
       "name": "Boronkai Gabriella",
       "role": "Pedagógus · vizuális nevelés · sport- és aerobic oktató",
-      "summary": "A vizuális alkotást, a mozgást és a játékos készségfejlesztést természetesen kapcsolom össze a gyerekekkel végzett munkámban.",
+      "summary": "Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa; jelenleg bécsi Montessori óvodában dolgozik. A vizuális alkotást, a mozgást és a játékos készségfejlesztést kapcsolja össze.",
       "profileUrl": "https://tanarok.magyariskola.at/#boronkai-gabriella",
       "relationshipToBMI": {
         "type": "affiliation",
@@ -394,7 +394,7 @@
         {
           "heading": "Szakmai háttér és legfontosabb tapasztalatok",
           "paragraphs": [
-            "Pedagógus vagyok, emellett okleveles sport- és aerobic oktató. A Bécsi Magyar Iskolában évek óta vezetek gyermekfoglalkozásokat és nyári táborokat; a Mesés Világ Tábor egyik visszatérő vezetője vagyok, korábban pedig zenés, mozgásos Ovistornát is tartottam."
+            "Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa. Jelenleg egy bécsi Montessori óvodában dolgozik. Rajztudását fiatal kora óta folyamatosan fejleszti: éveken át művészeti szakkörökre és egy festőművész magánóráira járt. Az alkotás és a kreativitás mellett a mozgás is meghatározó része a szakmai hátterének; sok év tánc- és aerobic-tapasztalat után okleveles aerobic edzői végzettséget szerzett. A Bécsi Magyar Iskolában az óvodás és kisiskolás korosztállyal foglalkozik, iskola-előkészítő és zenés torna foglalkozások is kapcsolódnak hozzá, a Rajztábla kurzuson pedig a 10 éven felüli gyerekek sajátíthatják el a rajzolás alapjait és fortélyait. Emellett évek óta vezet gyermekfoglalkozásokat és nyári táborokat; a Mesés Világ Tábor egyik visszatérő vezetője."
           ]
         },
         {
@@ -429,7 +429,8 @@
       "currentProgramIds": [
         "rajztabla"
       ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json",
+      "image": "https://tanarok.magyariskola.at/gabi.webp"
     },
     {
       "id": "korchma-zsombor",
