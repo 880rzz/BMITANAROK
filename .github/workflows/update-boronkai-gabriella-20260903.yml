@@ -1,0 +1,100 @@
+name: Update Boronkai Gabriella profile
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-boronkai-gabriella-20260903.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Update visible and machine-readable profile
+        shell: python
+        run: |
+          import json, re
+          from pathlib import Path
+
+          assert Path('gabi.webp').exists(), 'gabi.webp missing'
+
+          new_background = (
+              'Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa. '
+              'Jelenleg egy bécsi Montessori óvodában dolgozik. Rajztudását fiatal kora óta folyamatosan '
+              'fejleszti: éveken át művészeti szakkörökre és egy festőművész magánóráira járt. '
+              'Az alkotás és a kreativitás mellett a mozgás is meghatározó része a szakmai hátterének; '
+              'sok év tánc- és aerobic-tapasztalat után okleveles aerobic edzői végzettséget szerzett. '
+              'A Bécsi Magyar Iskolában az óvodás és kisiskolás korosztállyal foglalkozik, iskola-előkészítő '
+              'és zenés torna foglalkozások is kapcsolódnak hozzá, a Rajztábla kurzuson pedig a 10 éven '
+              'felüli gyerekek sajátíthatják el a rajzolás alapjait és fortélyait. Emellett évek óta vezet '
+              'gyermekfoglalkozásokat és nyári táborokat; a Mesés Világ Tábor egyik visszatérő vezetője.'
+          )
+
+          # index.html: image + first professional-background section + embedded JSON-LD image
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('assets/gabriella.webp', 'gabi.webp')
+          article_re = re.compile(r'(<article class="profile" id="boronkai-gabriella">.*?</article>)', re.S)
+          m = article_re.search(s)
+          assert m, 'Boronkai article missing'
+          article = m.group(1)
+          # force requested portrait in visible card
+          article = re.sub(
+              r'<figure class="portrait">.*?</figure>',
+              '<figure class="portrait"><img src="gabi.webp" alt="Boronkai Gabriella portréja" loading="lazy" decoding="async"><span class="fallback">Boronkai Gabriella</span></figure>',
+              article, count=1, flags=re.S
+          )
+          section_re = re.compile(r'(<section class="segment"><h3>Szakmai háttér és legfontosabb tapasztalatok</h3>)<p>.*?</p>(</section>)', re.S)
+          article, n = section_re.subn(r'\1<p>' + new_background + r'</p>\2', article, count=1)
+          assert n == 1, 'professional background section not replaced'
+          s = s[:m.start()] + article + s[m.end():]
+          p.write_text(s, encoding='utf-8')
+
+          # teacher-knowledge.json: keep machine knowledge aligned
+          kp = Path('teacher-knowledge.json')
+          data = json.loads(kp.read_text(encoding='utf-8'))
+          teachers = data.get('teachers', data if isinstance(data, list) else [])
+          target = next((t for t in teachers if t.get('id') == 'boronkai-gabriella'), None)
+          assert target, 'Boronkai teacher-knowledge entry missing'
+          target['image'] = 'https://tanarok.magyariskola.at/gabi.webp'
+          target['summary'] = ('Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa; '
+                               'jelenleg bécsi Montessori óvodában dolgozik. A vizuális alkotást, a mozgást és '
+                               'a játékos készségfejlesztést kapcsolja össze.')
+          for sec in target.get('sections', []):
+              if sec.get('heading') == 'Szakmai háttér és legfontosabb tapasztalatok':
+                  sec['paragraphs'] = [new_background]
+                  break
+          kp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          # teacher-catalog.jsonld: image + concise description
+          cp = Path('teacher-catalog.jsonld')
+          cat = json.loads(cp.read_text(encoding='utf-8'))
+          graph = cat.get('@graph', [])
+          person = next((x for x in graph if x.get('@id') == 'https://tanarok.magyariskola.at/#boronkai-gabriella'), None)
+          assert person, 'Boronkai catalog entry missing'
+          person['image'] = 'https://tanarok.magyariskola.at/gabi.webp'
+          person['description'] = ('Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa. '
+                                   'Jelenleg bécsi Montessori óvodában dolgozik; vizuális neveléssel, iskola-előkészítéssel, '
+                                   'zenés tornával és a 10 év felettiek Rajztábla kurzusával foglalkozik.')
+          cp.write_text(json.dumps(cat, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          # Explicit assertions against stale portrait reference
+          for f in ['index.html','teacher-knowledge.json','teacher-catalog.jsonld']:
+              txt = Path(f).read_text(encoding='utf-8')
+              assert 'assets/gabriella.webp' not in txt, f'stale Gabriella image in {f}'
+          assert 'src="gabi.webp" alt="Boronkai Gabriella portréja"' in Path('index.html').read_text(encoding='utf-8')
+          assert '12 éve a Bécsi Magyar Iskola pedagógusa' in Path('index.html').read_text(encoding='utf-8')
+
+      - name: Commit profile update
+        run: |
+          git config user.name "BMI Teacher Profile Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html teacher-knowledge.json teacher-catalog.jsonld
+          git diff --cached --quiet && exit 0
+          git commit -m "Update Boronkai Gabriella portrait and profile"
+          git push
