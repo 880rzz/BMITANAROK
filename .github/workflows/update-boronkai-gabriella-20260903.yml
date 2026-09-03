@@ -35,7 +35,6 @@ jobs:
               'gyermekfoglalkozásokat és nyári táborokat; a Mesés Világ Tábor egyik visszatérő vezetője.'
           )
 
-          # index.html: image + first professional-background section + embedded JSON-LD image
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
           s = s.replace('assets/gabriella.webp', 'gabi.webp')
@@ -43,7 +42,6 @@ jobs:
           m = article_re.search(s)
           assert m, 'Boronkai article missing'
           article = m.group(1)
-          # force requested portrait in visible card
           article = re.sub(
               r'<figure class="portrait">.*?</figure>',
               '<figure class="portrait"><img src="gabi.webp" alt="Boronkai Gabriella portréja" loading="lazy" decoding="async"><span class="fallback">Boronkai Gabriella</span></figure>',
@@ -55,23 +53,24 @@ jobs:
           s = s[:m.start()] + article + s[m.end():]
           p.write_text(s, encoding='utf-8')
 
-          # teacher-knowledge.json: keep machine knowledge aligned
           kp = Path('teacher-knowledge.json')
           data = json.loads(kp.read_text(encoding='utf-8'))
-          teachers = data.get('teachers', data if isinstance(data, list) else [])
-          target = next((t for t in teachers if t.get('id') == 'boronkai-gabriella'), None)
+          profiles = data.get('profiles', [])
+          target = next((t for t in profiles if t.get('id') == 'boronkai-gabriella'), None)
           assert target, 'Boronkai teacher-knowledge entry missing'
           target['image'] = 'https://tanarok.magyariskola.at/gabi.webp'
           target['summary'] = ('Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa; '
                                'jelenleg bécsi Montessori óvodában dolgozik. A vizuális alkotást, a mozgást és '
                                'a játékos készségfejlesztést kapcsolja össze.')
-          for sec in target.get('sections', []):
+          found_section = False
+          for sec in target.get('professionalSections', []):
               if sec.get('heading') == 'Szakmai háttér és legfontosabb tapasztalatok':
                   sec['paragraphs'] = [new_background]
+                  found_section = True
                   break
+          assert found_section, 'Boronkai professional section missing'
           kp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-          # teacher-catalog.jsonld: image + concise description
           cp = Path('teacher-catalog.jsonld')
           cat = json.loads(cp.read_text(encoding='utf-8'))
           graph = cat.get('@graph', [])
@@ -83,7 +82,6 @@ jobs:
                                    'zenés tornával és a 10 év felettiek Rajztábla kurzusával foglalkozik.')
           cp.write_text(json.dumps(cat, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-          # Explicit assertions against stale portrait reference
           for f in ['index.html','teacher-knowledge.json','teacher-catalog.jsonld']:
               txt = Path(f).read_text(encoding='utf-8')
               assert 'assets/gabriella.webp' not in txt, f'stale Gabriella image in {f}'
