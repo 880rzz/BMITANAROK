@@ -1,0 +1,41 @@
+name: Add Search Console verification
+on:
+  push:
+    paths:
+      - '.github/workflows/add-search-console-verification-20260903.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add Google site verification meta
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          tag='<meta name="google-site-verification" content="GLEJaRDpWmedVe42TtTSglzgk9Med4gsX2mjSRhfOqk" />'
+          # remove any previous Google verification tag to keep exactly one
+          import re
+          s=re.sub(r'\s*<meta\s+name=["\']google-site-verification["\'][^>]*>\s*','\n',s,flags=re.I)
+          if tag not in s:
+              marker='<meta name="description"'
+              i=s.find(marker)
+              if i==-1:
+                  raise SystemExit('description meta not found')
+              line_end=s.find('\n',i)
+              s=s[:line_end+1]+tag+'\n'+s[line_end+1:]
+          if s.count('name="google-site-verification"') != 1:
+              raise SystemExit('verification tag count is not 1')
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit change
+        run: |
+          git config user.name "BMI SEO Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add Google Search Console verification"
+          git push
