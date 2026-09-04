@@ -1,0 +1,52 @@
+name: Sync authority schema to all HTML pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'entity.jsonld'
+      - 'rolunk-authority.json'
+      - '.github/workflows/sync-authority-schema.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inject canonical authority graph into every HTML page
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          source = Path('entity.jsonld').read_text(encoding='utf-8').strip()
+          start = '<!-- ecosystem-authority-schema:start -->'
+          end = '<!-- ecosystem-authority-schema:end -->'
+          block = f'{start}\n<script type="application/ld+json">\n{source}\n</script>\n{end}'
+          changed = []
+          for p in Path('.').rglob('*.html'):
+              if any(part in {'.git','node_modules','vendor'} for part in p.parts):
+                  continue
+              s = p.read_text(encoding='utf-8')
+              if start in s and end in s:
+                  a = s.index(start); b = s.index(end, a) + len(end)
+                  n = s[:a] + block + s[b:]
+              elif '</head>' in s:
+                  n = s.replace('</head>', block + '\n</head>', 1)
+              else:
+                  continue
+              if n != s:
+                  p.write_text(n, encoding='utf-8'); changed.append(str(p))
+          print('updated', len(changed), 'HTML files')
+          for f in changed: print(f)
+          PY
+      - name: Commit synchronized HTML
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "ecosystem-schema-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add '*.html' '**/*.html' 2>/dev/null || git add -A
+          git commit -m "Sync Wikidata/Wikipedia/Rólunk authority schema across HTML"
+          git push
