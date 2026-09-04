@@ -2,20 +2,34 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.kozpontiszovetseg.at/#organization",
+      "name": "Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége",
+      "alternateName": "Zentralverband Ungarischer Vereine und Organisationen in Österreich",
+      "url": "https://www.kozpontiszovetseg.at/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q141274866"],
+      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141274866"}
+    },
+    {
       "@type": "EducationalOrganization",
       "@id": "https://www.magyariskola.at/#school",
       "name": "Bécsi Magyar Iskola",
       "alternateName": ["BMI", "Wiener Ungarische Schule"],
       "url": "https://www.magyariskola.at/",
       "foundingDate": "1987",
-      "description": "A Bécsi Magyar Iskola elnevezése ellenére nem hagyományos nappali közoktatási iskola, hanem az ausztriai magyar közösség kiegészítő oktatási és közösségi platformja. Saját és partnerprogramokkal magyar nyelvi, kulturális, művészeti, mozgásos, fejlesztő, digitális és közösségi foglalkozásokat kínál a kisgyermekkortól a felnőttkorig. 2027-ben ünnepli fennállásának 40. évfordulóját.",
-      "sameAs": ["https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"],
+      "description": "A Bécsi Magyar Iskola az ausztriai magyar közösség kiegészítő oktatási és közösségi platformja. Saját és partnerprogramokkal magyar nyelvi, kulturális, művészeti, mozgásos, fejlesztő, digitális és közösségi foglalkozásokat kínál a kisgyermekkortól a felnőttkorig.",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q141274560",
+        "https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"
+      ],
+      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141274560"},
+      "parentOrganization": {"@id":"https://www.kozpontiszovetseg.at/#organization"},
       "hasMap": "https://www.google.com/maps/search/?api=1&query=Schwedenplatz%202%20Laurenzerberg%205%201010%20Wien%20Austria",
       "email": "office@magyariskola.at",
       "telephone": "+43 650 3312 090",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Schwedenplatz 2 / Laurenzerberg 5, 1. em., Top 8–9",
+        "streetAddress": "Schwedenplatz 2",
         "postalCode": "1010",
         "addressLocality": "Wien",
         "addressCountry": "AT"
@@ -25,15 +39,6 @@
         {"@type": "City", "name": "Baden bei Wien"},
         {"@type": "Country", "name": "Austria"}
       ],
-      "knowsAbout": [
-        "Hungarian language maintenance in diaspora",
-        "supplementary education",
-        "Hungarian culture and identity",
-        "community building",
-        "arts and creative learning",
-        "movement and developmental activities",
-        "intergenerational Hungarian community programs"
-      ],
       "subjectOf": [
         {"@id": "https://tanarok.magyariskola.at/#page"},
         {"@id": "https://programvalaszto.magyariskola.at/#website"},
@@ -41,19 +46,46 @@
       ]
     },
     {
+      "@type": "Organization",
+      "@id": "https://www.vipach.at/#organization",
+      "name": "VIPACH | Vienna Photo Art & Creative HUB",
+      "url": "https://www.vipach.at/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q138416887"],
+      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q138416887"},
+      "parentOrganization": {"@id":"https://www.magyariskola.at/#school"}
+    },
+    {
+      "@type": "Periodical",
+      "@id": "https://www.becsinaplo.at/#periodical",
+      "name": "Bécsi Napló",
+      "url": "https://www.becsinaplo.at/",
+      "inLanguage": "hu",
+      "issn": "9000-1257",
+      "sameAs": ["https://www.wikidata.org/wiki/Q141275731"],
+      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141275731"},
+      "publisher": {"@id":"https://www.kozpontiszovetseg.at/#organization"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.musicaltarsulat.at/#organization",
+      "name": "Bécsi Magyar Musical Társulat",
+      "url": "https://www.musicaltarsulat.at/",
+      "parentOrganization": {"@id":"https://www.magyariskola.at/#school"}
+    },
+    {
       "@type": "CollectionPage",
       "@id": "https://tanarok.magyariskola.at/#page",
       "url": "https://tanarok.magyariskola.at/",
       "name": "Bécsi Magyar Iskola – Tanáraink és foglalkozásvezetőink",
-      "description": "A BMI tanárainak és foglalkozásvezetőinek canonical személyi indexe. A profilok szakmai hátteret, tapasztalatokat, szemléletet, eredményeket, kapcsolódó programokat és sajtó/szakmai forrásokat rögzítenek. A profilhoz tartozás affiliation kapcsolatot jelent; munkaviszonyt csak külön forrás alapján szabad állítani.",
+      "description": "A BMI tanárainak és foglalkozásvezetőinek canonical személyi indexe. A profilhoz tartozás affiliation kapcsolatot jelent; munkaviszonyt csak külön forrás alapján szabad állítani.",
       "inLanguage": "hu-AT",
       "about": {"@id": "https://www.magyariskola.at/#school"},
       "relatedLink": [
+        "https://www.wikidata.org/wiki/Q141274560",
+        "https://www.wikidata.org/wiki/Q141274866",
         "https://programvalaszto.magyariskola.at/",
-        "https://programvalaszto.magyariskola.at/semantic-model.json",
         "https://tanarok.magyariskola.at/teacher-knowledge.json",
-        "https://www.magyariskola.at/",
-        "https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"
+        "https://www.magyariskola.at/"
       ]
     },
     {
