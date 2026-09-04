@@ -80,6 +80,27 @@
     },
     {
       "@type": "Person",
+      "@id": "https://www.wikidata.org/wiki/Q112411009",
+      "name": "Seidler Andrea",
+      "alternateName": "Andrea Seidler",
+      "description": "A Központi Szövetség elnöke és a Bécsi Magyar Iskola intézményvezetője.",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q112411009",
+        "https://hu.wikipedia.org/wiki/Seidler_Andrea"
+      ],
+      "identifier": [
+        {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q112411009"},
+        {"@type":"PropertyValue","propertyID":"GND","value":"1179216911"},
+        {"@type":"PropertyValue","propertyID":"VIAF","value":"69055277"},
+        {"@type":"PropertyValue","propertyID":"ISNI","value":"0000000109125422"}
+      ],
+      "affiliation": [
+        {"@id":"https://www.kozpontiszovetseg.at/#organization"},
+        {"@id":"https://www.magyariskola.at/#school"}
+      ]
+    },
+    {
+      "@type": "Person",
       "@id": "https://www.wikidata.org/wiki/Q137127822",
       "name": "Deák Ernő",
       "sameAs": [
@@ -87,6 +108,7 @@
         "https://hu.wikipedia.org/wiki/De%C3%A1k_Ern%C5%91"
       ],
       "identifier": [
+        {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q137127822"},
         {"@type":"PropertyValue","propertyID":"GND","value":"136315747"},
         {"@type":"PropertyValue","propertyID":"VIAF","value":"36940092"},
         {"@type":"PropertyValue","propertyID":"ISNI","value":"0000000110549513"}
@@ -97,11 +119,14 @@
       "@id": "https://www.wikidata.org/wiki/Q56391118",
       "name": "Bánhalmi Norbert",
       "alternateName": "BANHALMI",
+      "description": "Fotóművész, kurátor és oktató. A Központi Szövetség marketing- és kommunikációs feladataiban önkéntes alapon vesz részt; ebből munkaviszony vagy fizetett foglalkoztatás nem következik.",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q56391118",
         "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
       ],
+      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q56391118"},
       "affiliation": [
+        {"@id":"https://www.kozpontiszovetseg.at/#organization"},
         {"@id":"https://www.magyariskola.at/#school"},
         {"@id":"https://www.vipach.at/#organization"}
       ]
@@ -126,6 +151,10 @@
         "https://hu.wikipedia.org/wiki/B%C3%A9csi_Magyar_Iskola",
         "https://www.wikidata.org/wiki/Q141274866",
         "https://hu.wikipedia.org/wiki/Ausztriai_Magyar_Egyes%C3%BCletek_%C3%A9s_Szervezetek_K%C3%B6zponti_Sz%C3%B6vets%C3%A9ge",
+        "https://www.wikidata.org/wiki/Q112411009",
+        "https://hu.wikipedia.org/wiki/Seidler_Andrea",
+        "https://www.wikidata.org/wiki/Q137127822",
+        "https://hu.wikipedia.org/wiki/De%C3%A1k_Ern%C5%91",
         "https://www.wikidata.org/wiki/Q56391118",
         "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
         "https://programvalaszto.magyariskola.at/",
