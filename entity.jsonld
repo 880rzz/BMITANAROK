@@ -7,8 +7,12 @@
       "name": "Ausztriai Magyar Egyesületek és Szervezetek Központi Szövetsége",
       "alternateName": "Zentralverband Ungarischer Vereine und Organisationen in Österreich",
       "url": "https://www.kozpontiszovetseg.at/",
-      "sameAs": ["https://www.wikidata.org/wiki/Q141274866"],
-      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141274866"}
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q141274866",
+        "https://hu.wikipedia.org/wiki/Ausztriai_Magyar_Egyes%C3%BCletek_%C3%A9s_Szervezetek_K%C3%B6zponti_Sz%C3%B6vets%C3%A9ge"
+      ],
+      "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141274866"},
+      "owns": {"@id":"https://www.becsinaplo.at/#periodical"}
     },
     {
       "@type": "EducationalOrganization",
@@ -20,7 +24,7 @@
       "description": "A Bécsi Magyar Iskola az ausztriai magyar közösség kiegészítő oktatási és közösségi platformja. Saját és partnerprogramokkal magyar nyelvi, kulturális, művészeti, mozgásos, fejlesztő, digitális és közösségi foglalkozásokat kínál a kisgyermekkortól a felnőttkorig.",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q141274560",
-        "https://hu.wikipedia.org/wiki/Bécsi_Magyar_Iskola"
+        "https://hu.wikipedia.org/wiki/B%C3%A9csi_Magyar_Iskola"
       ],
       "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141274560"},
       "parentOrganization": {"@id":"https://www.kozpontiszovetseg.at/#organization"},
@@ -43,16 +47,21 @@
         {"@id": "https://tanarok.magyariskola.at/#page"},
         {"@id": "https://programvalaszto.magyariskola.at/#website"},
         {"@id": "https://www.magyariskola.at/tortenetunk#webpage"}
-      ]
+      ],
+      "hasPart": {"@id":"https://www.vipach.at/#organization"}
     },
     {
       "@type": "Organization",
       "@id": "https://www.vipach.at/#organization",
       "name": "VIPACH | Vienna Photo Art & Creative HUB",
       "url": "https://www.vipach.at/",
-      "sameAs": ["https://www.wikidata.org/wiki/Q138416887"],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138416887",
+        "https://hu.wikipedia.org/wiki/VIPACH"
+      ],
       "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q138416887"},
-      "parentOrganization": {"@id":"https://www.magyariskola.at/#school"}
+      "parentOrganization": {"@id":"https://www.magyariskola.at/#school"},
+      "founder": {"@id":"https://www.wikidata.org/wiki/Q56391118"}
     },
     {
       "@type": "Periodical",
@@ -61,9 +70,41 @@
       "url": "https://www.becsinaplo.at/",
       "inLanguage": "hu",
       "issn": "9000-1257",
-      "sameAs": ["https://www.wikidata.org/wiki/Q141275731"],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q141275731",
+        "https://hu.wikipedia.org/wiki/B%C3%A9csi_Napl%C3%B3"
+      ],
       "identifier": {"@type":"PropertyValue","propertyID":"Wikidata","value":"Q141275731"},
-      "publisher": {"@id":"https://www.kozpontiszovetseg.at/#organization"}
+      "publisher": {"@id":"https://www.kozpontiszovetseg.at/#organization"},
+      "editor": {"@id":"https://www.wikidata.org/wiki/Q137127822"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.wikidata.org/wiki/Q137127822",
+      "name": "Deák Ernő",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q137127822",
+        "https://hu.wikipedia.org/wiki/De%C3%A1k_Ern%C5%91"
+      ],
+      "identifier": [
+        {"@type":"PropertyValue","propertyID":"GND","value":"136315747"},
+        {"@type":"PropertyValue","propertyID":"VIAF","value":"36940092"},
+        {"@type":"PropertyValue","propertyID":"ISNI","value":"0000000110549513"}
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.wikidata.org/wiki/Q56391118",
+      "name": "Bánhalmi Norbert",
+      "alternateName": "BANHALMI",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q56391118",
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
+      ],
+      "affiliation": [
+        {"@id":"https://www.magyariskola.at/#school"},
+        {"@id":"https://www.vipach.at/#organization"}
+      ]
     },
     {
       "@type": "Organization",
@@ -82,7 +123,11 @@
       "about": {"@id": "https://www.magyariskola.at/#school"},
       "relatedLink": [
         "https://www.wikidata.org/wiki/Q141274560",
+        "https://hu.wikipedia.org/wiki/B%C3%A9csi_Magyar_Iskola",
         "https://www.wikidata.org/wiki/Q141274866",
+        "https://hu.wikipedia.org/wiki/Ausztriai_Magyar_Egyes%C3%BCletek_%C3%A9s_Szervezetek_K%C3%B6zponti_Sz%C3%B6vets%C3%A9ge",
+        "https://www.wikidata.org/wiki/Q56391118",
+        "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert",
         "https://programvalaszto.magyariskola.at/",
         "https://tanarok.magyariskola.at/teacher-knowledge.json",
         "https://www.magyariskola.at/"
