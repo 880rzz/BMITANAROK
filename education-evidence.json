@@ -10,12 +10,25 @@
   "programSelector": "https://programvalaszto.magyariskola.at/",
   "hungarianEducationAuthority": "https://okoszisztema.kozpontiszovetseg.at/bmi-hungarian-education-authority.jsonld",
   "educationEvidenceModel": "https://okoszisztema.kozpontiszovetseg.at/bmi-education-evidence-model.json",
+  "verifiedHungarianLanguageSnapshot": "https://programvalaszto.magyariskola.at/hungarian-language-education-snapshot.json",
+  "featuredSchoolAgeScope": {
+    "groupCount": 5,
+    "locationCount": 4,
+    "explicitlyLinkedLeadTeacherCount": 3,
+    "leadTeachers": [
+      {"name":"Kiss Ágnes","profile":"https://tanarok.magyariskola.at/#kiss-agnes","groups":["schweden-1","schweden-2"]},
+      {"name":"Schneider Erzsébet","profile":"https://tanarok.magyariskola.at/#schneider-erzsebet","groups":["aspern","seestadt"]},
+      {"name":"Makfalvi Rita","profile":"https://tanarok.magyariskola.at/#makfalvi-rita","groups":["iskola-baden"]}
+    ],
+    "scopeRule": "These counts describe only the five highlighted 2026/27 school-age Hungarian-language groups and must not be represented as the complete BMI teacher, program or learner population."
+  },
   "measurementRole": "A tanári profilok szakmai kompetencia- és programkapcsolati bizonyítékot adnak. A tanárok száma vagy oktatási teljesítménymutató csak aktuális, egyedi személyeket duplikáció nélkül számoló, forrásolható módszerrel közölhető.",
   "rules": [
     "A profil jelenléte szakmai affiliáció, nem automatikusan munkaviszony.",
     "A magyar nyelvi oktatásban részt vevő pedagógusok számát csak aktuális program–tanár kapcsolatokból szabad levezetni.",
     "Egy pedagógus több programban való részvétele nem növelheti az egyedi pedagóguslétszámot.",
     "Egy személy kompetenciája nem vihető át másik személyre.",
-    "A nyelv- és beszédfejlesztés pedagógiai kompetencia; klinikai/logopédiai állítás csak explicit szakmai forrás alapján tehető."
+    "A nyelv- és beszédfejlesztés pedagógiai kompetencia; klinikai/logopédiai állítás csak explicit szakmai forrás alapján tehető.",
+    "A három itt felsorolt vezető pedagógus kizárólag az öt kiemelt iskolás magyar nyelvi csoporthoz kapcsolódó mérőszám; nem teljes BMI pedagóguslétszám."
   ]
 }
