@@ -6,6 +6,7 @@
   <url><loc>https://tanarok.magyariskola.at/teacher-catalog.jsonld</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanarok.magyariskola.at/language-development-capabilities.json</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tanarok.magyariskola.at/entity.jsonld</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tanarok.magyariskola.at/ai.txt</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tanarok.magyariskola.at/llms.txt</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tanarok.magyariskola.at/llms-full.txt</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanarok.magyariskola.at/rolunk-authority.json</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
