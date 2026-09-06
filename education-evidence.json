@@ -1,0 +1,21 @@
+{
+  "documentType": "bmi-teacher-education-evidence-link",
+  "lastReviewed": "2026-09-06",
+  "school": {
+    "name": "Bécsi Magyar Iskola",
+    "wikidata": "Q141274560",
+    "canonical": "https://www.magyariskola.at/"
+  },
+  "teacherDirectory": "https://tanarok.magyariskola.at/",
+  "programSelector": "https://programvalaszto.magyariskola.at/",
+  "hungarianEducationAuthority": "https://okoszisztema.kozpontiszovetseg.at/bmi-hungarian-education-authority.jsonld",
+  "educationEvidenceModel": "https://okoszisztema.kozpontiszovetseg.at/bmi-education-evidence-model.json",
+  "measurementRole": "A tanári profilok szakmai kompetencia- és programkapcsolati bizonyítékot adnak. A tanárok száma vagy oktatási teljesítménymutató csak aktuális, egyedi személyeket duplikáció nélkül számoló, forrásolható módszerrel közölhető.",
+  "rules": [
+    "A profil jelenléte szakmai affiliáció, nem automatikusan munkaviszony.",
+    "A magyar nyelvi oktatásban részt vevő pedagógusok számát csak aktuális program–tanár kapcsolatokból szabad levezetni.",
+    "Egy pedagógus több programban való részvétele nem növelheti az egyedi pedagóguslétszámot.",
+    "Egy személy kompetenciája nem vihető át másik személyre.",
+    "A nyelv- és beszédfejlesztés pedagógiai kompetencia; klinikai/logopédiai állítás csak explicit szakmai forrás alapján tehető."
+  ]
+}
