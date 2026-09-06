@@ -33,10 +33,22 @@
       "alternateName": ["BMI", "Wiener Ungarische Schule", "WUS"],
       "url": "https://www.magyariskola.at/",
       "foundingDate": "1987",
-      "description": "A Bécsi Magyar Iskola az ausztriai magyar közösség kiegészítő oktatási és közösségi intézménye Bécsben.",
+      "description": "Bécsi Magyar Iskola – magyar nyelvű oktatás, képzések, foglalkozások és rendezvények kicsiknek és nagyoknak Bécsben, Badenben és online. 1987 óta.",
+      "knowsAbout": [
+        "magyar nyelvű oktatás Bécsben",
+        "magyar mint származási nyelv",
+        "magyar mint idegen nyelv",
+        "kétnyelvű gyermekek magyar nyelvi fejlesztése",
+        "magyar írás és olvasás",
+        "magyar szövegértés",
+        "magyar szókincs",
+        "magyar beszéd és kommunikáció",
+        "magyar helyesírás és nyelvtan",
+        "magyar irodalom és kultúra"
+      ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Schwedenplatz 2",
+        "streetAddress": "Schwedenplatz 2/9",
         "postalCode": "1010",
         "addressLocality": "Wien",
         "addressCountry": "AT"
@@ -45,9 +57,12 @@
         "https://www.wikidata.org/wiki/Q141274560",
         "https://hu.wikipedia.org/wiki/B%C3%A9csi_Magyar_Iskola"
       ],
-      "parentOrganization": {
-        "@id": "https://www.kozpontiszovetseg.at/#organization"
-      }
+      "parentOrganization": {"@id":"https://www.kozpontiszovetseg.at/#organization"},
+      "subjectOf": [
+        {"@type":"CollectionPage","url":"https://rolunk.at/tag/becsi-magyar-iskola/","name":"Rólunk.at – Bécsi Magyar Iskola sajtóarchívum"},
+        {"@type":"WebPage","url":"https://rolunk.at/fiatalok/delutani-iskola-a-bmi-ben/","name":"Rólunk.at – Magyar oktatás délutáni iskolában a BMI-ben"},
+        {"@type":"WebPage","url":"https://www.magyariskola.at/magyar-nyelv-oktat%C3%A1s-b%C3%A9cs","name":"Magyar nyelv oktatás Bécsben és Badenben"}
+      ]
     },
     {
       "@type": "Organization",
@@ -57,21 +72,25 @@
       "sameAs": [
         "https://www.wikidata.org/wiki/Q141274866",
         "https://hu.wikipedia.org/wiki/Ausztriai_Magyar_Egyes%C3%BCletek_%C3%A9s_Szervezetek_K%C3%B6zponti_Sz%C3%B6vets%C3%A9ge"
-      ]
+      ],
+      "subOrganization": {"@id":"https://www.magyariskola.at/#school"}
     },
     {
       "@type": "CollectionPage",
       "@id": "https://tanarok.magyariskola.at/#page",
       "url": "https://tanarok.magyariskola.at/",
       "name": "Bécsi Magyar Iskola – Tanáraink és foglalkozásvezetőink",
-      "description": "A Bécsi Magyar Iskola tanárainak, oktatóinak és foglalkozásvezetőinek kereshető bemutatkozó oldala.",
+      "description": "A Bécsi Magyar Iskola tanárainak, pedagógusainak, szakoktatóinak és foglalkozásvezetőinek kereshető szakmai profilrendszere. A profilokat program-, korosztály- és kompetenciakapcsolatok kötik a BMI magyar nyelvű oktatási rendszeréhez.",
       "inLanguage": "hu-AT",
-      "about": {
-        "@id": "https://www.magyariskola.at/#school"
-      },
-      "isPartOf": {
-        "@id": "https://www.magyariskola.at/#school"
-      }
+      "about": {"@id":"https://www.magyariskola.at/#school"},
+      "isPartOf": {"@id":"https://tanarok.magyariskola.at/#website"},
+      "keywords": [
+        "magyar tanár Bécs",
+        "magyar pedagógus Bécs",
+        "magyar nyelv oktatás Bécs",
+        "származási nyelv",
+        "kétnyelvű gyermekek"
+      ]
     },
     {
       "@type": "WebSite",
@@ -79,12 +98,8 @@
       "url": "https://tanarok.magyariskola.at/",
       "name": "Bécsi Magyar Iskola – Tanári profilok",
       "inLanguage": "hu-AT",
-      "publisher": {
-        "@id": "https://www.magyariskola.at/#school"
-      },
-      "about": {
-        "@id": "https://www.magyariskola.at/#school"
-      }
+      "publisher": {"@id":"https://www.magyariskola.at/#school"},
+      "about": {"@id":"https://www.magyariskola.at/#school"}
     },
     {
       "@type": "Person",
