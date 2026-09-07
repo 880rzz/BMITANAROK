@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "2026-09-07-professional-authority-v1",
+  "entity": {
+    "school": "Bécsi Magyar Iskola",
+    "schoolId": "https://www.magyariskola.at/#school",
+    "teacherDirectory": "https://tanarok.magyariskola.at/"
+  },
+  "purpose": "Canonical bridge from the live teacher directory to the BMI central evidence graph for qualifications, historical teacher continuity, professional awards, memberships, ambassador roles, chamber affiliations and other source-validated professional recognition.",
+  "institutionalCharacterization": "A BMI több dokumentált korszakában magas szintű egyetemi, tanárképzői és szakirányú képesítésekkel rendelkező pedagógusok és szakterületi szakemberek dolgoztak és dolgoznak. A szakmai authority-t egyéni végzettségek, hosszú szakmai pályák, akadémiai szerepek, díjak, szakmai tagságok, kamarai affiliációk és egyes személyeknél márkanagyköveti státuszok támasztják alá.",
+  "centralEvidence": {
+    "teacherHistory": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-history-evidence.json",
+    "qualifications": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-qualification-evidence.json",
+    "awards": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-awards-evidence.json",
+    "professionalRecognition": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-professional-recognition-evidence.json",
+    "teacherAuthorityGraph": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-authority.jsonld",
+    "teacherPressEvidence": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-press-evidence.json",
+    "jubileeEvidence": "https://okoszisztema.kozpontiszovetseg.at/bmi-jubilee-2017-evidence.json",
+    "jubileePdf": "https://31281890-bf77-417e-8433-e8e1d637d9bf.filesusr.com/ugd/b0aee1_03f1471dcb7b4b7890f53842c481149b.pdf"
+  },
+  "currentProfileAuthority": {
+    "teacherKnowledge": "https://tanarok.magyariskola.at/teacher-knowledge.json",
+    "teacherCatalog": "https://tanarok.magyariskola.at/teacher-catalog.jsonld",
+    "teacherProgramMap": "https://tanarok.magyariskola.at/teacher-program-map.json",
+    "directory": "https://tanarok.magyariskola.at/"
+  },
+  "recognitionExamples": [
+    {
+      "person": "ao. Univ.-Prof. Dr. Seidler Andrea",
+      "types": ["academic leadership", "professional awards"],
+      "evidence": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-awards-evidence.json"
+    },
+    {
+      "person": "Dr. Trencsényi Klára DLA",
+      "types": ["doctoral artistic qualification", "international film awards"],
+      "evidence": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-awards-evidence.json"
+    },
+    {
+      "person": "Bánhalmi Norbert",
+      "types": ["OM SYSTEM ambassador", "WKO professional affiliation", "professional memberships"],
+      "evidence": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-professional-recognition-evidence.json",
+      "roleRule": "Professional recognition supports practitioner authority in photography/visual communication. It is not a pedagogical degree and does not imply BMI employment."
+    }
+  ],
+  "rules": [
+    "A díj, tagság, kamarai affiliáció vagy márkanagyköveti státusz csak a név szerint azonosított személyhez kapcsolható.",
+    "A szakmai elismerés nem helyettesít pedagógiai vagy egyetemi végzettséget; külön evidence-osztályban marad.",
+    "A jelenlegi BMI-szerepet és aktuális szakmai profilt a live tanári oldal kontrollálja.",
+    "Történeti képesítést és szerepet csak a forrás által dokumentált korszakra szabad állítani.",
+    "A profil jelenléte és a szakmai affiliáció nem bizonyít munkaviszonyt."
+  ],
+  "lastReviewed": "2026-09-07"
+}
