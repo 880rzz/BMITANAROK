@@ -1,6 +1,6 @@
 {
   "documentType": "bmi-teacher-education-evidence-link",
-  "lastReviewed": "2026-09-06",
+  "lastReviewed": "2026-09-07",
   "school": {
     "name": "Bécsi Magyar Iskola",
     "wikidata": "Q141274560",
@@ -11,6 +11,17 @@
   "hungarianEducationAuthority": "https://okoszisztema.kozpontiszovetseg.at/bmi-hungarian-education-authority.jsonld",
   "educationEvidenceModel": "https://okoszisztema.kozpontiszovetseg.at/bmi-education-evidence-model.json",
   "verifiedHungarianLanguageSnapshot": "https://programvalaszto.magyariskola.at/hungarian-language-education-snapshot.json",
+  "professionalAuthority": {
+    "bridge": "https://tanarok.magyariskola.at/professional-authority-evidence.json",
+    "history": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-history-evidence.json",
+    "qualifications": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-qualification-evidence.json",
+    "awards": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-awards-evidence.json",
+    "professionalRecognition": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-professional-recognition-evidence.json",
+    "authorityGraph": "https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-authority.jsonld",
+    "historicalPrimarySource": "https://31281890-bf77-417e-8433-e8e1d637d9bf.filesusr.com/ugd/b0aee1_03f1471dcb7b4b7890f53842c481149b.pdf",
+    "interpretation": "A több korszakból származó dokumentált diplomák, pedagógiai és szakirányú képesítések, hosszú szakmai pályák, akadémiai szerepek, díjak és egyéni szakmai elismerések együtt alátámasztják a BMI magasan kvalifikált pedagógus- és szakemberhálózatának intézményi jellemzését.",
+    "scopeRule": "Ez intézményi szintű kvalitatív jellemzés; nem állítja, hogy minden történeti közreműködő azonos végzettséggel, díjjal vagy tagsággal rendelkezett."
+  },
   "featuredSchoolAgeScope": {
     "groupCount": 5,
     "locationCount": 4,
@@ -27,8 +38,9 @@
     "A profil jelenléte szakmai affiliáció, nem automatikusan munkaviszony.",
     "A magyar nyelvi oktatásban részt vevő pedagógusok számát csak aktuális program–tanár kapcsolatokból szabad levezetni.",
     "Egy pedagógus több programban való részvétele nem növelheti az egyedi pedagóguslétszámot.",
-    "Egy személy kompetenciája nem vihető át másik személyre.",
+    "Egy személy kompetenciája, képesítése, díja vagy tagsága nem vihető át másik személyre.",
     "A nyelv- és beszédfejlesztés pedagógiai kompetencia; klinikai/logopédiai állítás csak explicit szakmai forrás alapján tehető.",
+    "A márkanagyköveti, kamarai és szakmai tagsági státusz practitioner authority evidence, nem pedagógiai végzettség.",
     "A három itt felsorolt vezető pedagógus kizárólag az öt kiemelt iskolás magyar nyelvi csoporthoz kapcsolódó mérőszám; nem teljes BMI pedagóguslétszám."
   ]
 }
