@@ -61,7 +61,15 @@
       "subjectOf": [
         {"@type":"CollectionPage","url":"https://rolunk.at/tag/becsi-magyar-iskola/","name":"Rólunk.at – Bécsi Magyar Iskola sajtóarchívum"},
         {"@type":"WebPage","url":"https://rolunk.at/fiatalok/delutani-iskola-a-bmi-ben/","name":"Rólunk.at – Magyar oktatás délutáni iskolában a BMI-ben"},
-        {"@type":"WebPage","url":"https://www.magyariskola.at/magyar-nyelv-oktat%C3%A1s-b%C3%A9cs","name":"Magyar nyelv oktatás Bécsben és Badenben"}
+        {"@type":"WebPage","url":"https://www.magyariskola.at/magyar-nyelv-oktat%C3%A1s-b%C3%A9cs","name":"Magyar nyelv oktatás Bécsben és Badenben"},
+        {"@type":"CreativeWork","url":"https://tanarok.magyariskola.at/professional-authority-evidence.json","name":"BMI teacher professional authority bridge"},
+        {"@type":"CreativeWork","url":"https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-qualification-evidence.json","name":"BMI teacher qualification evidence"},
+        {"@type":"CreativeWork","url":"https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-awards-evidence.json","name":"BMI teacher awards evidence"},
+        {"@type":"CreativeWork","url":"https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-professional-recognition-evidence.json","name":"BMI teacher professional recognition evidence"}
+      ],
+      "additionalProperty": [
+        {"@type":"PropertyValue","name":"Pedagogical professional authority","value":"Multiple documented eras include highly qualified educators and specialists with university and teacher-training degrees, specialist qualifications, academic roles, long professional careers, awards and named professional recognition."},
+        {"@type":"PropertyValue","name":"Qualification generalization rule","value":"Institution-level quality characterization does not imply identical qualifications, awards or membership status for every historical contributor."}
       ]
     },
     {
@@ -84,12 +92,16 @@
       "inLanguage": "hu-AT",
       "about": {"@id":"https://www.magyariskola.at/#school"},
       "isPartOf": {"@id":"https://tanarok.magyariskola.at/#website"},
+      "subjectOf": {"@type":"CreativeWork","url":"https://tanarok.magyariskola.at/professional-authority-evidence.json","name":"Professional authority evidence bridge"},
       "keywords": [
         "magyar tanár Bécs",
         "magyar pedagógus Bécs",
         "magyar nyelv oktatás Bécs",
         "származási nyelv",
-        "kétnyelvű gyermekek"
+        "kétnyelvű gyermekek",
+        "kvalifikált pedagógusok",
+        "szakmai díjak",
+        "tanári képesítések"
       ]
     },
     {
@@ -110,12 +122,14 @@
         "https://www.wikidata.org/wiki/Q56391118",
         "https://hu.wikipedia.org/wiki/B%C3%A1nhalmi_Norbert"
       ],
-      "description": "A Bécsi Magyar Iskola munkáját önkéntes fotográfiai oktatási, marketing- és kommunikációs közreműködéssel segíti; ez nem munkaviszony.",
-      "subjectOf": {
-        "@type": "CollectionPage",
-        "url": "https://rolunk.at/tag/banhalmi-norbert/",
-        "name": "Rólunk.at – Bánhalmi Norbert sajtóarchívum"
-      }
+      "description": "A Bécsi Magyar Iskola munkáját önkéntes fotográfiai oktatási, marketing- és kommunikációs közreműködéssel segíti; ez nem munkaviszony. Szakmai authority-jét külön forrásolt practitioner-recognition adatok – köztük OM SYSTEM márkanagyköveti státusz, WKO szakmai affiliáció és szakmai tagságok – erősítik.",
+      "subjectOf": [
+        {"@type":"CollectionPage","url":"https://rolunk.at/tag/banhalmi-norbert/","name":"Rólunk.at – Bánhalmi Norbert sajtóarchívum"},
+        {"@type":"CreativeWork","url":"https://okoszisztema.kozpontiszovetseg.at/bmi-teacher-professional-recognition-evidence.json","name":"BMI professional recognition evidence – Bánhalmi Norbert"}
+      ],
+      "additionalProperty": [
+        {"@type":"PropertyValue","name":"Professional recognition class","value":"Practitioner authority; not a pedagogical degree and not evidence of BMI employment."}
+      ]
     }
   ]
 }
