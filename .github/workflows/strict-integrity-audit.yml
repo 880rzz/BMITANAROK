@@ -28,8 +28,8 @@ jobs:
           html=Path('index.html').read_text(encoding='utf-8')
           cards=re.findall(r'<a class="teacher-card"[^>]*href="#([^"]+)"',html)
           profiles=re.findall(r'<article class="profile" id="([^"]+)"',html)
-          assert len(cards)==25, f'teacher-card count {len(cards)} != 25'
-          assert len(profiles)==25, f'profile count {len(profiles)} != 25'
+          assert len(cards)==26, f'teacher-card count {len(cards)} != 26'
+          assert len(profiles)==26, f'profile count {len(profiles)} != 26'
           assert set(cards)==set(profiles), f'card/profile mismatch: cards-only={set(cards)-set(profiles)} profiles-only={set(profiles)-set(cards)}'
           assert '<div class="programs">' not in html, 'legacy duplicate .programs block returned'
           assert 'worksFor' not in html, 'forbidden worksFor returned'
@@ -51,5 +51,5 @@ jobs:
               assert 'https://www.magyariskola.at/#org' not in s, f'legacy #org in {name}'
           js=Path('teacher-search.js').read_text(encoding='utf-8')
           assert 'setupProfileAccordions' in js and 'setupFinderAccordion' in js and 'setupTeacherIndexAccordion' in js, 'accordion contract missing'
-          print('STRICT TEACHER AUDIT OK: 25/25 profiles, canonical entity, no duplicate source blocks, valid program map')
+          print('STRICT TEACHER AUDIT OK: 26/26 profiles, canonical entity, no duplicate source blocks, valid program map')
           PY
