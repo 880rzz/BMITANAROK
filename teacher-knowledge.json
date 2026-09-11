@@ -41,20 +41,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Bécsi Magyar Óvoda | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/ovoda-2026"
-        },
-        {
-          "label": "Kicsi Svung – Dráma foglalkozás | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/kicsisvung-2026"
-        },
-        {
-          "label": "Varázsceruza | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/varazsceruza-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at Fabula bábtábor – Interjú Bajka Kinga Csengelével Dráma, bábszínház, közös alkotás és a gyerekekkel való kapcsolódás. Interjú megnyitása ↗",
@@ -68,13 +55,7 @@
           "label": "Rólunk.at Állat/barát kétnyelvű tábor a Bécsi Magyar Iskolában Riport a Bajka Kinga Csengele által vezetett kétnyelvű, kreatív és közösségépítő nyári táborról. Cikk megnyitása →",
           "url": "https://rolunk.at/fiatalok/allat-barat-ketnyelvu-tabor-a-becsi-magyar-iskolaban/"
         }
-      ],
-      "currentProgramIds": [
-        "ovoda",
-        "kicsi-svung",
-        "varazsceruza"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "horanyi-bori",
@@ -107,27 +88,8 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Alapozó Terápia | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/alapozoterapia-2026"
-        },
-        {
-          "label": "Borsófőzde | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/borsofozde-2026"
-        },
-        {
-          "label": "FÓKUSZ-CSOPORT | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/fokuszcsoport-2026"
-        }
-      ],
-      "publicSourceLinks": [],
-      "currentProgramIds": [
-        "alapozo",
-        "borsofozde",
-        "fokusz"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programLinks": [],
+      "publicSourceLinks": []
     },
     {
       "id": "schneider-erzsebet",
@@ -160,27 +122,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Magyar nyelv tanítás | Aspern",
-          "url": "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026"
-        },
-        {
-          "label": "Magyar nyelv tanítás | Seestadt",
-          "url": "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at A kétnyelvűség ajándék Kétnyelvűség, fejlesztőpedagógia, differenciált magyaroktatás és több évtizedes pedagógiai tapasztalat. Interjú megnyitása ↗",
           "url": "https://rolunk.at/magazin/a-ketnyelvuseg-ajandek/"
         }
-      ],
-      "currentProgramIds": [
-        "aspern",
-        "seestadt"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "makfalvi-rita",
@@ -213,22 +161,8 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Bécsi Magyar Óvoda | Baden",
-          "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026"
-        },
-        {
-          "label": "Magyar Iskola Badenben – „Ahol a magyar szó élménnyé válik”",
-          "url": "https://www.magyariskola.at/event-details/iskolabaden-2026"
-        }
-      ],
-      "publicSourceLinks": [],
-      "currentProgramIds": [
-        "ovoda-baden",
-        "iskola-baden"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programLinks": [],
+      "publicSourceLinks": []
     },
     {
       "id": "fersztl-barnabas",
@@ -261,22 +195,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Sakk és Gondolkodásfejlesztés | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/sakk-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "AutóPro Ismét a versenypályára készül a SZEnergy Team Interjú a versenyautó mérnöki fejlesztéséről, mérési rendszerekről, gördülési ellenállásról és saját tervezésű műszaki megoldásokról. Interjú megnyitása ↗",
           "url": "https://hungexpo.hu/wp-content/uploads/autopro-majus-compressed.pdf"
         }
-      ],
-      "currentProgramIds": [
-        "sakk"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "noszko-niki",
@@ -309,22 +234,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Bécsi Magyar Óvoda | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/ovoda-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at Valóban ijesztő a pszichodráma vagy csak úgy hangzik? Gyermekpszichodráma, kiscsoportos módszer, játék és biztonságos érzelmi feldolgozás. Interjú megnyitása ↗",
           "url": "https://rolunk.at/magazin/valoban-ijeszto-a-pszichodrama-vagy-csak-ugy-hangzik/"
         }
-      ],
-      "currentProgramIds": [
-        "ovoda"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "kiss-agnes",
@@ -357,33 +273,19 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Magyar nyelv tanítás | Schwedenplatz | 1-es csoport",
-          "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1"
-        },
-        {
-          "label": "Magyar nyelv tanítás | Schwedenplatz | 2-es csoport",
-          "url": "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at 12 éve ingázik Bezenyéről Bécsbe, hogy magyarul tanítsa a gyerekeket Nagy portrébeszélgetés pedagógusi pályájáról, magyar nyelvoktatásról, kétnyelvű gyerekekről és a bécsi tanítás tapasztalatairól. Interjú megnyitása ↗",
           "url": "https://rolunk.at/kultura/12-eve-ingazik-bezenyerol-becsbe-hogy-magyarul-tanitsa-a-gyerekeket/"
         }
-      ],
-      "currentProgramIds": [
-        "schweden-1",
-        "schweden-2"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "boronkai-gabriella",
       "name": "Boronkai Gabriella",
       "role": "Pedagógus · vizuális nevelés · sport- és aerobic oktató",
-      "summary": "Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa; jelenleg bécsi Montessori óvodában dolgozik. A vizuális alkotást, a mozgást és a játékos készségfejlesztést kapcsolja össze.",
+      "summary": "A vizuális alkotást, a mozgást és a játékos készségfejlesztést természetesen kapcsolom össze a gyerekekkel végzett munkámban.",
       "profileUrl": "https://tanarok.magyariskola.at/#boronkai-gabriella",
       "relationshipToBMI": {
         "type": "affiliation",
@@ -410,12 +312,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "RAJZTÁBLA – Rajzfoglalkozás | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/rajztabla-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "ORF Magyarok Ovistorna a Bécsi Magyar Iskolában Boronkai Gabriella az óvodáskori mozgásfejlesztés fizikai és mentális céljairól, koordinációról, egyensúlyról és együttműködésről beszél. Szakmai anyag megnyitása ↗",
@@ -425,12 +322,7 @@
           "label": "Rólunk.at Mesés Világ – kétnyelvű tábor és élménypedagógia Szakmai riport a kétnyelvű gyerekekkel végzett kreatív pedagógiai munkáról és a figyelem fenntartásának módszereiről. Szakmai anyag megnyitása ↗",
           "url": "https://rolunk.at/fiatalok/nyari-taborok-meses-vilag/"
         }
-      ],
-      "currentProgramIds": [
-        "rajztabla"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json",
-      "image": "https://tanarok.magyariskola.at/gabi.webp"
+      ]
     },
     {
       "id": "korchma-zsombor",
@@ -463,22 +355,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "BÉCS-CRAFT Workshop | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/becscraft-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at Kreatív Minecraft tábor Bécsben Minecraft, történelem, építészet, tervezés és csapatmunka összekapcsolása a gyerekekkel. Interjú megnyitása ↗",
           "url": "https://rolunk.at/magazin/kreativ-minecraft-tabor-becsben/"
         }
-      ],
-      "currentProgramIds": [
-        "becscraft"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "hierholcz-anna",
@@ -511,22 +394,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Bécsi Magyar Musical Társulat (MaMUT) – Musical Stúdió",
-          "url": "https://www.magyariskola.at/event-details/mammut-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "ORF Magyarok Humoros musicallel készülnek a BMI diákjai Hierholcz Anna a saját musical készítéséről, a gyerekek bevonásáról, a kreativitásról és a színpadi készségek fejlesztéséről beszél. Interjú megnyitása ↗",
           "url": "https://volksgruppen.orf.at/magyarok/stories/3325447/"
         }
-      ],
-      "currentProgramIds": [
-        "mamut"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "pecze-adam",
@@ -559,22 +433,8 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Bécsi Magyar Musical Társulat (MaMUT) – Musical Stúdió",
-          "url": "https://www.magyariskola.at/event-details/mammut-2026"
-        }
-      ],
-      "publicSourceLinks": [
-        {
-          "label": "Bécsi Magyar Musical Társulat",
-          "url": "https://www.musicaltarsulat.at/"
-        }
-      ],
-      "currentProgramIds": [
-        "mamut"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programLinks": [],
+      "publicSourceLinks": []
     },
     {
       "id": "trencsenyi-klara",
@@ -607,12 +467,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Filmes Műhely Workshop | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/filmesmuhely-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Filmhu Reményvasút: „A történetek mennek tovább” Személyes szakmai interjú dokumentumfilmes módszerről, gyereksorsokról, filmezési etikáról és történetépítésről. Interjú megnyitása ↗",
@@ -622,11 +477,7 @@
           "label": "24.hu Reményvasút: egy film arról, hogy veszett nehéz ma gyereknek lenni Rendezői interjú a dokumentumfilm készítéséről, a szereplő gyerekekkel való munkáról és a felnőtté válás filmes megközelítéséről. Interjú megnyitása ↗",
           "url": "https://24.hu/kultura/2016/05/08/remenyvasut-egy-film-arrol-hogy-veszett-nehez-ma-gyereknek-lenni/"
         }
-      ],
-      "currentProgramIds": [
-        "filmes"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "falusi-dora",
@@ -659,12 +510,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Fecske Klub | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/fecskeklub-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at „Nem tudom elképzelni, hogy a gyerekem ne tudja, ki volt József Attila” Magyar kultúra, történelmi és művészeti ismeretterjesztés gyerekeknek, a Fecske Klub szemlélete. Interjú megnyitása ↗",
@@ -674,11 +520,7 @@
           "label": "Rólunk.at Titkok nyomában – A boszorkányok titkai a Fecske Klubban Falusi Dóra interaktív kultúrtörténeti foglalkozása történelmi, tudománytörténeti, képzőművészeti és néprajzi összefüggésekkel. Cikk megnyitása →",
           "url": "https://rolunk.at/fiatalok/titkok-nyomaban-a-boszorkanyok-titkai-a-fecske-klubban/"
         }
-      ],
-      "currentProgramIds": [
-        "fecskeklub"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "hupczik-andrea",
@@ -711,32 +553,8 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Együtt dobban Bécs – Közös örömzene | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/oromzene-2026"
-        },
-        {
-          "label": "Microsoft Office Specialist (MOS) felkészítő tanfolyam",
-          "url": "https://mos.magyariskola.at"
-        },
-        {
-          "label": "Világfa Sárkányai | Schwedenplatz",
-          "url": "https://taltosdob.magyariskola.at"
-        }
-      ],
-      "publicSourceLinks": [
-        {
-          "label": "Microsoft Office Specialist képzés",
-          "url": "https://mos.magyariskola.at"
-        }
-      ],
-      "currentProgramIds": [
-        "oromzene",
-        "mos",
-        "vilagfa"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programLinks": [],
+      "publicSourceLinks": []
     },
     {
       "id": "telenko-eva",
@@ -769,12 +587,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Bécsi Magyar Óvoda | Baden",
-          "url": "https://www.magyariskola.at/event-details/ovoda-baden-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "ORF Magyarok Lelemények táborában a magyar gyerekek Szerkesztőségi riport a BMI gyermekprogramjáról, amely Telenkó Évát táborvezető pedagógusként és a gyermekek jógás-mozgásos foglalkozásainak vezetőjeként mutatja be. Sajtóanyag megnyitása ↗",
@@ -784,11 +597,7 @@
           "label": "Rólunk.at Fabula bábtábor – Interjú Bajka Kinga Csengelével A Fabula Bábtábor szakmai hátterét bemutató szerkesztőségi interjú, amely Telenkó Évát Bajka Kinga Csengele társfoglalkozásvezetőjeként nevezi meg. Sajtóanyag megnyitása ↗",
           "url": "https://rolunk.at/kultura/fabula-babtabor-interju-bajka-kinga-csengelevel/"
         }
-      ],
-      "currentProgramIds": [
-        "ovoda-baden"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "varga-bernadette",
@@ -821,17 +630,8 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Napraforgócskák – Néptánc kicsiknek | Schwedenplatz",
-          "url": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak"
-        }
-      ],
-      "publicSourceLinks": [],
-      "currentProgramIds": [
-        "napraforgocskak"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programLinks": [],
+      "publicSourceLinks": []
     },
     {
       "id": "veres-tamas",
@@ -864,26 +664,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Napraforgócskák – Néptánc kicsiknek | Schwedenplatz",
-          "url": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
-        {
-          "label": "Napraforgócskák",
-          "url": "https://napraforgok.at/r%C3%B3lunk#napraforgocskak"
-        },
         {
           "label": "Rólunk.at Túrót ettem, nem ordát, ezért nőttem ekkorát! Szakmai riport a gyermek-néptánctáborról és a foglalkozásvezetők közös pedagógiai munkájáról. Szakmai anyag megnyitása ↗",
           "url": "https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/"
         }
-      ],
-      "currentProgramIds": [
-        "napraforgocskak"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "banhalmi-norbert",
@@ -916,12 +703,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Láss a Mesterek Szemével: VIPACH Felnőtt Fotóklub | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/fotoklub-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Könyv · 2017 Ébredés — az Új kezdet! Dr. Dank Magdolnával, Elek Erikával és Dr. Csernus Imrével létrehozott fotográfiai kötet tizenkét nő újrakezdéséről nőgyógyászati daganatos betegség után. ISBN 978-963-12-8663-2. Könyv megnyitása ↗",
@@ -947,11 +729,7 @@
           "label": "Petőfi TV Digitális fotókiállítás Tihanyban Televíziós sajtóanyag a Rege Galéria digitális kiállítási modelljéről, a jubileumi fotókiállításról és Bánhalmi Norbert kiállítási szemléletéről. Sajtóanyag megnyitása ↗",
           "url": "https://www.youtube.com/watch?v=cv4ylqkvNo4"
         }
-      ],
-      "currentProgramIds": [
-        "fotoklub"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "balogh-david",
@@ -987,12 +765,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Láss a Mesterek Szemével: VIPACH Felnőtt Fotóklub | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/fotoklub-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Könyv · művészettörténet A fóti templom festészeti értéke A fóti Szeplőtelen Fogantatás-templom falképeinek és oltárainak ikonográfiáját feldolgozó, a szerző művészettörténeti szakdolgozatából továbbfejlesztett önálló kötet. Könyv és interjú ↗",
@@ -1018,11 +791,7 @@
           "label": "Vörösmarty Művelődési Ház „Bíborba, bársonyba, gyöngyös koszorúba” – lakodalmi szokások Fóton Balogh Dávid saját szakmai írása a kiállítás létrejöttéről, a tárgyi és fényképanyag felkutatásáról, valamint a fóti lakodalmi hagyományok dokumentálásáról. Szakmai anyag megnyitása ↗",
           "url": "https://vmh.hu/nemeth-kalman-emlekhaz/balogh-david-biborba-barsonyba-gyongyos-koszoruba-lakodalmi-szokasok-foton-1883-1950-kiallitas/"
         }
-      ],
-      "currentProgramIds": [
-        "fotoklub"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "sipos-tibor",
@@ -1057,15 +826,11 @@
       ],
       "programLinks": [
         {
-          "label": "Kezdő néptánc felnőtteknek | Schwedenplatz",
-          "url": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport"
+          "label": "Napraforgók – felnőtt néptánc",
+          "url": "https://programvalaszto.magyariskola.at/foglalkozasok.html"
         }
       ],
-      "publicSourceLinks": [],
-      "currentProgramIds": [
-        "kezdo-neptanc"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "publicSourceLinks": []
     },
     {
       "id": "orban-dalma",
@@ -1098,26 +863,13 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Kezdő néptánc felnőtteknek | Schwedenplatz",
-          "url": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
-        {
-          "label": "Kezdő néptánc felnőtteknek",
-          "url": "https://napraforgok.at/r%C3%B3lunk#kezdocsoport"
-        },
         {
           "label": "Rólunk.at Túrót ettem, nem ordát, ezért nőttem ekkorát! Riport-interjú a gyermek-néptánctábor módszertanáról, a csoporthoz igazított tanításról, ismétlésről és továbbhaladásról. Szakmai anyag megnyitása ↗",
           "url": "https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/"
         }
-      ],
-      "currentProgramIds": [
-        "kezdo-neptanc"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "egri-monika",
@@ -1150,12 +902,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "ReKreáció – Kreatív Közösségi Kuckó | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/rekreacio-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Pagony „Amikor egyedül vannak a könyvvel, valójában akkor sincsenek egyedül” Gyerekkönyv-illusztráció, vizuális történetmesélés és a különböző életkorok képi világa. Interjú megnyitása ↗",
@@ -1165,11 +912,7 @@
           "label": "Író Cimborák Interjú Egri Mónikával Írás, illusztráció, közös alkotás és a saját vizuális-irodalmi hang kialakulása. Interjú megnyitása ↗",
           "url": "https://irocimborak.blogspot.com/2017/04/interju-egri-monikaval.html"
         }
-      ],
-      "currentProgramIds": [
-        "rekreacio"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "dapin-hajnalka-judit",
@@ -1202,12 +945,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Zenebona – Zene. Kapcsolódás. Öröm. | Hietzing",
-          "url": "https://zenebona.magyariskola.at"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at Pajzán népmesék Bécsben Cikk megnyitása ↗",
@@ -1217,11 +955,7 @@
           "label": "Rólunk.at Ahány hangszer, annyi lehetőség Cikk megnyitása ↗",
           "url": "https://rolunk.at/magazin/ahany-hangszer-annyi-lehetoseg/"
         }
-      ],
-      "currentProgramIds": [
-        "zenebona"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "pohl-balazs",
@@ -1254,12 +988,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Gimi Svung – Magyar nyelvű drámafoglalkozás | Schwedenplatz",
-          "url": "https://www.magyariskola.at/event-details/gimisvung-2026"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "Rólunk.at · 2021 „Svung” – Bécsi Magyar Színkör Átfogó interjú a bécsi pályáról, a korábbi színházi tapasztalatokról, a Waldorf-tanárképzésről és a SVUNG művészeti vezetéséről. Cikk megnyitása ↗",
@@ -1273,11 +1002,7 @@
           "label": "Rólunk.at · 2025 A Svung Fondüjében mindenki sajt Friss portré az író-rendező és társulatvezető munkáról, a Fondü bemutatóján keresztül. Cikk megnyitása ↗",
           "url": "https://rolunk.at/kultura/a-svung-fondujeben-mindenki-sajt/"
         }
-      ],
-      "currentProgramIds": [
-        "gimi-svung"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      ]
     },
     {
       "id": "poser-piroska-ildiko",
@@ -1310,12 +1035,7 @@
           ]
         }
       ],
-      "programLinks": [
-        {
-          "label": "Cserkészet | Alliiertenstrasse",
-          "url": "https://cserkesz.at/cserkesz-raj/"
-        }
-      ],
+      "programLinks": [],
       "publicSourceLinks": [
         {
           "label": "ORF Magyarok · 2025 Egyszer cserkész, mindig cserkész Kifejezetten róla és vezetői útjáról szóló portré: gyermekkori cserkészélmények, csapatparancsnoki szerep, jellemnevelés és a diaszpóra magyar közössége. Portré megnyitása ↗",
@@ -1329,11 +1049,54 @@
           "label": "Rólunk.at · 2025 Magyar családi nap a bécsi cserkészekkel Közösségi riport, amely csapatparancsnokként mutatja be szerepét a generációkat összekapcsoló bécsi magyar cserkészközösségben. Cikk megnyitása ↗",
           "url": "https://rolunk.at/magazin/magyar-csaladi-nap-a-becsi-cserkeszekkel/"
         }
+      ]
+    },
+    {
+      "id": "deakne-juhasz-eva",
+      "name": "Deákné Juhász Éva",
+      "role": "Ének-zene tanár · tanító · hangszeres pedagógus",
+      "summary": "A magyar nyelv és a zene kapcsolatára építi foglalkozásait: dalokon, meséken, verseken és hangszeres élményeken keresztül fejleszti a 6–14 éves gyermekek szókincsét, beszédét és kifejezőkészségét.",
+      "profileUrl": "https://tanarok.magyariskola.at/#deakne-juhasz-eva",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és legfontosabb tapasztalatok",
+          "paragraphs": [
+            "Negyven éve tanít 6–14 éves gyermekeket. Zongora-, tambura-, gitár-, ukulele- és furulyajátékot, magyar irodalmat és nyelvtant, valamint éneket tanít. A Magyar Nemzeti Levéltárban megőrzött rajkai helyi lap pályaképe ének-zene-, zongora- és szolfézstanárként, valamint zenei munkaközösség-vezetőként is bemutatja korábbi rajkai munkáját."
+          ]
+        },
+        {
+          "heading": "Nyelv és zene együtt",
+          "paragraphs": [
+            "A gyermekdalokat nyelvtanulási lehetőségként is használja: a dallam, a szófordulatok, a természeti képek, a mesék, versek és történetek egymást erősítve segítik a magyar szókincs, a beszéd és az árnyalt önkifejezés fejlődését. Pedagógiai szemléletében fontos a pozitív megerősítés és az, hogy a gyermek biztonságban hibázhasson, kérdezhessen és próbálkozhasson."
+          ]
+        },
+        {
+          "heading": "Közösségi zene és helytörténet",
+          "paragraphs": [
+            "Rajkai közösségi munkájáról több nyilvános forrás is beszámol. A Kisalföld 2014-ben a Rajkai Kulturális Egyesület zenés adventi kalendáriumának ötletgazdájaként és szervezőjeként mutatta be; a programban gyermek- és felnőttkórusok, zenekar és meghívott előadók működtek együtt. 2018-ban a Hőnel Béla Kerékpáros Emléktúra egyik vezetőjeként szerepelt, a Magyar Nemzeti Levéltár pedig rajkai helytörténeti kalauzolását is dokumentálja. Helytörténeti szerzőként az Iskolák Rajkán 1948-ig című, Régmúlt Rajka sorozatban megjelent kötet bibliográfiai rekordjában is szerepel."
+          ]
+        }
       ],
-      "currentProgramIds": [
-        "cserkeszet"
-      ],
-      "programRelationshipSource": "https://programvalaszto.magyariskola.at/program-knowledge.json"
+      "programLinks": [],
+      "publicSourceLinks": [
+        {
+          "label": "Kisalföld · 2014 Rajkaiak zenés adventje Portréértékű riport a zenés adventi kalendáriumról, a közösségi zenei szervezésről és saját Adventi gyertyák című szerzeményéről. Cikk megnyitása ↗",
+          "url": "https://www.kisalfold.hu/mosonmagyarovar-es-kornyeke/2014/12/rajkaiak-zenes-adventje"
+        },
+        {
+          "label": "Kisalföld · 2018 Hőnel Béla Kerékpáros Emléktúra A Rajkára vezető helytörténeti emléktúra egyik vezetőjeként szerepel a megyei programajánlóban. Cikk megnyitása ↗",
+          "url": "https://www.kisalfold.hu/gyor-es-kornyeke/2018/09/gyori-nep-es-vilagzenei-fesztival-nyarbucsuztatok-regisegvasar-megyei-programajanlo-a-hetvegere"
+        },
+        {
+          "label": "Rajkai Hírmondó / Magyar Nemzeti Levéltár · 2019 Több évtizedes zenei-pedagógiai pálya Rajkán A helyi lap ének-zene-, zongora- és szolfézstanárként, valamint zenei munkaközösség-vezetőként foglalja össze korábbi munkáját. Forrás megnyitása ↗",
+          "url": "https://mnl.gov.hu/download/file/fid/573356"
+        }
+      ]
     }
   ]
 }

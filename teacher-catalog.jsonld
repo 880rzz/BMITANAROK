@@ -12,7 +12,7 @@
       "@type": "ItemList",
       "@id": "https://tanarok.magyariskola.at/#teachers",
       "name": "BMI tanárok és foglalkozásvezetők",
-      "numberOfItems": 25,
+      "numberOfItems": 26,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -188,6 +188,13 @@
           "item": {
             "@id": "https://tanarok.magyariskola.at/#poser-piroska-ildiko"
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "item": {
+            "@id": "https://tanarok.magyariskola.at/#deakne-juhasz-eva"
+          }
         }
       ]
     },
@@ -200,12 +207,7 @@
       "url": "https://tanarok.magyariskola.at/#bajka-kinga-csengele",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/ovoda-2026",
-        "https://www.magyariskola.at/event-details/varazsceruza-2026",
-        "https://www.magyariskola.at/event-details/kicsisvung-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -216,12 +218,7 @@
       "url": "https://tanarok.magyariskola.at/#horanyi-bori",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/borsofozde-2026",
-        "https://www.magyariskola.at/event-details/alapozoterapia-2026",
-        "https://www.magyariskola.at/event-details/fokuszcsoport-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -232,11 +229,7 @@
       "url": "https://tanarok.magyariskola.at/#schneider-erzsebet",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/magyaroktatas-kedd-2026",
-        "https://www.magyariskola.at/event-details/magyarnyelv-szerda-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -247,11 +240,7 @@
       "url": "https://tanarok.magyariskola.at/#makfalvi-rita",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/ovoda-baden-2026",
-        "https://www.magyariskola.at/event-details/iskolabaden-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -262,10 +251,7 @@
       "url": "https://tanarok.magyariskola.at/#fersztl-barnabas",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/sakk-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -276,11 +262,7 @@
       "url": "https://tanarok.magyariskola.at/#noszko-niki",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/ovoda-2026",
-        "https://www.magyariskola.at/event-details/sztoricsoport"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -291,26 +273,18 @@
       "url": "https://tanarok.magyariskola.at/#kiss-agnes",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-1",
-        "https://www.magyariskola.at/event-details/magyarnyelv-schwedenplatz-2"
-      ]
+      }
     },
     {
       "@type": "Person",
       "@id": "https://tanarok.magyariskola.at/#boronkai-gabriella",
       "name": "Boronkai Gabriella",
       "jobTitle": "Pedagógus · vizuális nevelés · sport- és aerobic oktató",
-      "description": "Vizuális nevelés tagozaton végzett tanító, 12 éve a Bécsi Magyar Iskola pedagógusa. Jelenleg bécsi Montessori óvodában dolgozik; vizuális neveléssel, iskola-előkészítéssel, zenés tornával és a 10 év felettiek Rajztábla kurzusával foglalkozik.",
+      "description": "A vizuális alkotást, a mozgást és a játékos készségfejlesztést természetesen kapcsolom össze a gyerekekkel végzett munkámban.",
       "url": "https://tanarok.magyariskola.at/#boronkai-gabriella",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/rajztabla-2026"
-      ],
-      "image": "https://tanarok.magyariskola.at/gabi.webp"
+      }
     },
     {
       "@type": "Person",
@@ -321,10 +295,7 @@
       "url": "https://tanarok.magyariskola.at/#korchma-zsombor",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/becscraft-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -335,10 +306,7 @@
       "url": "https://tanarok.magyariskola.at/#hierholcz-anna",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/mammut-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -349,10 +317,7 @@
       "url": "https://tanarok.magyariskola.at/#pecze-adam",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/mammut-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -363,10 +328,7 @@
       "url": "https://tanarok.magyariskola.at/#trencsenyi-klara",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/filmesmuhely-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -377,10 +339,7 @@
       "url": "https://tanarok.magyariskola.at/#falusi-dora",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/fecskeklub-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -391,11 +350,7 @@
       "url": "https://tanarok.magyariskola.at/#hupczik-andrea",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://taltosdob.magyariskola.at",
-        "https://www.magyariskola.at/event-details/oromzene-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -406,10 +361,7 @@
       "url": "https://tanarok.magyariskola.at/#telenko-eva",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/ovoda-baden-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -420,10 +372,7 @@
       "url": "https://tanarok.magyariskola.at/#varga-bernadette",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/napraforgocskak-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -445,10 +394,7 @@
       "url": "https://tanarok.magyariskola.at/#banhalmi-norbert",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/fotoklub-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -495,10 +441,7 @@
       "url": "https://tanarok.magyariskola.at/#egri-monika",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://www.magyariskola.at/event-details/rekreacio-2026"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -520,10 +463,7 @@
       "url": "https://tanarok.magyariskola.at/#pohl-balazs",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://programvalaszto.magyariskola.at/foglalkozasok.html#gimi-svung"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -534,10 +474,18 @@
       "url": "https://tanarok.magyariskola.at/#poser-piroska-ildiko",
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
-      },
-      "subjectOf": [
-        "https://programvalaszto.magyariskola.at/foglalkozasok.html#cserkeszet"
-      ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#deakne-juhasz-eva",
+      "name": "Deákné Juhász Éva",
+      "jobTitle": "Ének-zene tanár · tanító · hangszeres pedagógus",
+      "description": "A magyar nyelv és a zene kapcsolatára építi foglalkozásait: dalokon, meséken, verseken és hangszeres élményeken keresztül fejleszti a 6–14 éves gyermekek szókincsét, beszédét és kifejezőkészségét.",
+      "url": "https://tanarok.magyariskola.at/#deakne-juhasz-eva",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      }
     }
   ]
 }

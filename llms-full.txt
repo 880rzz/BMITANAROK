@@ -83,6 +83,7 @@ Current schedules, age ranges, fees, venues and registration details do NOT come
 - Mag. Dapin Hajnalka Judit — Zenepedagógus · zeneterapeuta — https://tanarok.magyariskola.at/#dapin-hajnalka-judit
 - Pohl Balázs — Drámapedagógus · író-rendező · SVUNG művészeti vezető — https://tanarok.magyariskola.at/#pohl-balazs
 - Póser-Piroska Ildikó — Csapatparancsnok · ifjúsági közösségi vezető — https://tanarok.magyariskola.at/#poser-piroska-ildiko
+- Deákné Juhász Éva — Ének-zene tanár · tanító · hangszeres pedagógus — https://tanarok.magyariskola.at/#deakne-juhasz-eva
 
 ## Cross-system relationship rules
 1. Person identity and professional history → Teacher directory / `teacher-knowledge.json`.
