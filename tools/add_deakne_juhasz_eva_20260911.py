@@ -13,8 +13,11 @@ pat = r'<article class="profile" id="' + re.escape(pid) + r'">.*?</article>'
 if re.search(pat, s, re.S):
     s = re.sub(pat, profile, s, count=1, flags=re.S)
 else:
-    assert '</main>' in s, 'main close marker missing'
-    s = s.replace('</main>', profile + '\n</main>', 1)
+    main_close = s.rfind('</main>')
+    tail_start = s.rfind('<section class="profiles profiles-tail">', 0, main_close)
+    wrap_close = s.rfind('</div></section>', tail_start, main_close)
+    assert main_close != -1 and tail_start != -1 and wrap_close != -1, 'tail profile wrapper missing'
+    s = s[:wrap_close] + profile + '\n' + s[wrap_close:]
 
 gm = re.search(r'(<div class="teacher-grid">)(.*?)(</div>)', s, re.S)
 assert gm, 'teacher-grid missing'
