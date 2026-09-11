@@ -1,0 +1,49 @@
+name: Publish Deakne Juhasz Eva profile
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-deakne-juhasz-eva-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply profile update
+        run: python tools/add_deakne_juhasz_eva_20260911.py
+      - name: Rebuild machine-readable teacher knowledge
+        run: python tools/build_teacher_knowledge.py
+      - name: Validate profile and graph
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, json
+          s=Path('index.html').read_text(encoding='utf-8')
+          assert Path('deakne.webp').exists()
+          assert s.count('id="deakne-juhasz-eva"') == 1
+          assert 'href="#deakne-juhasz-eva"' in s
+          assert 'https://tanarok.magyariskola.at/deakne.webp' in s
+          cards=re.findall(r'<a class="teacher-card"[^>]*href="#([^"]+)"',s)
+          profiles=re.findall(r'<article class="profile" id="([^"]+)"',s)
+          assert len(cards)==26 and len(profiles)==26 and set(cards)==set(profiles)
+          knowledge=json.loads(Path('teacher-knowledge.json').read_text(encoding='utf-8'))
+          match=[x for x in knowledge.get('profiles',[]) if x.get('id')=='deakne-juhasz-eva']
+          assert len(match)==1 and len(match[0].get('publicSourceLinks',[]))>=3
+          catalog=json.loads(Path('teacher-catalog.jsonld').read_text(encoding='utf-8'))
+          assert any(x.get('@id')=='https://tanarok.magyariskola.at/#deakne-juhasz-eva' for x in catalog.get('@graph',[]))
+          print('DEAKNE PROFILE OK: 26/26 profiles')
+      - name: Commit and push
+        run: |
+          git config user.name "BMI Teacher Research Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html teacher-knowledge.json teacher-catalog.jsonld llms-full.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Add Deakne Juhasz Eva teacher profile and public-source evidence"
+          git push
