@@ -14,4 +14,6 @@
   <url><loc>https://tanarok.magyariskola.at/education-evidence.json</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tanarok.magyariskola.at/adatvedelem.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://tanarok.magyariskola.at/impresszum.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://tanarok.magyariskola.at/de/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>\n  <url><loc>https://tanarok.magyariskola.at/en/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>\n</urlset>
+  <url><loc>https://tanarok.magyariskola.at/de/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tanarok.magyariskola.at/en/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>
