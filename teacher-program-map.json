@@ -292,6 +292,16 @@
         "canonicalScheduleSource": "https://zenebona.magyariskola.at",
         "primaryCategory6": "mozgas"
       }
+    ],
+    "https://tanarok.magyariskola.at/#kapolcsi-szabo-levente": [
+      {
+        "id": "zongoraoktatas",
+        "label": "Zongoraoktatás Kapolcsi-Szabó Leventével | Schwedenplatz",
+        "url": "https://www.magyariskola.at/event-details/zongoraoktatas-schwedenplatz",
+        "canonicalScheduleSource": "https://www.magyariskola.at/event-details/zongoraoktatas-schwedenplatz",
+        "programSelectorUrl": "https://programvalaszto.magyariskola.at/foglalkozasok.html#zongoraoktatas",
+        "primaryCategory6": "alkotas"
+      }
     ]
   }
 }
