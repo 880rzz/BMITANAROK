@@ -399,6 +399,10 @@
         {
           "label": "ORF Magyarok Humoros musicallel készülnek a BMI diákjai Hierholcz Anna a saját musical készítéséről, a gyerekek bevonásáról, a kreativitásról és a színpadi készségek fejlesztéséről beszél. Interjú megnyitása ↗",
           "url": "https://volksgruppen.orf.at/magyarok/stories/3325447/"
+        },
+        {
+          "label": "Rólunk.at · 2026 A papírtól a színpadig – egy gyerekmusical margójára Saját musicalalkotói és közösségi színpadi munkáját bemutató szakmai anyag. Cikk megnyitása ↗",
+          "url": "https://rolunk.at/kultura/a-papirtol-a-szinpadig-egy-gyerekmusical-margojara/"
         }
       ]
     },
@@ -868,6 +872,10 @@
         {
           "label": "Rólunk.at Túrót ettem, nem ordát, ezért nőttem ekkorát! Riport-interjú a gyermek-néptánctábor módszertanáról, a csoporthoz igazított tanításról, ismétlésről és továbbhaladásról. Szakmai anyag megnyitása ↗",
           "url": "https://rolunk.at/kultura/turot-ettem-nem-ordat-ezert-nottem-ekkorat/"
+        },
+        {
+          "label": "ORF Magyarok · 2022 Új csoportokat indítanak a Napraforgók Orbán Dalmát gyermek-néptánc oktatóként bemutató nyilvános forrás. Cikk megnyitása ↗",
+          "url": "https://volksgruppen.orf.at/magyarok/stories/3178478/"
         }
       ]
     },
@@ -1095,6 +1103,66 @@
         {
           "label": "Rajkai Hírmondó / Magyar Nemzeti Levéltár · 2019 Több évtizedes zenei-pedagógiai pálya Rajkán A helyi lap ének-zene-, zongora- és szolfézstanárként, valamint zenei munkaközösség-vezetőként foglalja össze korábbi munkáját. Forrás megnyitása ↗",
           "url": "https://mnl.gov.hu/download/file/fid/573356"
+        }
+      ]
+    },
+    {
+      "id": "kapolcsi-szabo-levente",
+      "name": "Kapolcsi-Szabó Levente",
+      "role": "Jazz-zongorista · zongoratanár",
+      "summary": "Jazz-zongorista és zongoratanár, aki személyre szabott egyéni zongoraoktatást tart gyerekeknek és felnőtteknek, kezdőtől haladó szintig klasszikus, jazz, pop és rock repertoárral.",
+      "profileUrl": "https://tanarok.magyariskola.at/#kapolcsi-szabo-levente",
+      "relationshipToBMI": {
+        "type": "affiliation",
+        "organization": "https://www.magyariskola.at/#school",
+        "rule": "Profile inclusion means teaching/activity-leader/professional affiliation in the BMI ecosystem. Do not infer employment unless an explicit source states it."
+      },
+      "professionalSections": [
+        {
+          "heading": "Szakmai háttér és tanítási tapasztalat",
+          "paragraphs": [
+            "Öt oktatási intézményben tanított zongorázni gyerekeket és felnőtteket. Klasszikus zongoratanítással kezdett, majd az ImPulzus Alapítványi Zeneiskolában, a Patrona Hungariae-ban és a Budapesti Piaristáknál is dolgozott; jelenleg a Bartók Konzervatóriumban tanít középfokon. A Müpa 2023-as szakmai bemutatkozása szerint 2021 óta klasszikus és jazz-zongorát is tanít."
+          ]
+        },
+        {
+          "heading": "Pedagógiai szemlélet",
+          "paragraphs": [
+            "A növendék céljaihoz, zenei ízléséhez és előzetes tudásához igazítja az oktatást. Oldott, humoros és biztonságos légkörre törekszik, türelemmel és játékos szakmai vezetéssel. Elsősorban 7 éves kortól vállal gyerekeket, továbbá felnőtteket, teljesen kezdőket, újrakezdőket és haladókat is."
+          ]
+        },
+        {
+          "heading": "Aktív előadóművészi háttér",
+          "paragraphs": [
+            "A Symbiosis 5 zongoristája és zeneszerzője; emellett a Németh Bendegúz Quartet, a Pocket Pick, a Koncz Kriszta Group és a Tilia formációkban is aktív. Előadói munkáját Müpa- és jazz-szakmai források is dokumentálják."
+          ]
+        }
+      ],
+      "programLinks": [
+        {
+          "label": "Zongoraoktatás | BMI Programválasztó",
+          "url": "https://programvalaszto.magyariskola.at/foglalkozasok.html#zongoraoktatas"
+        },
+        {
+          "label": "Zongoraoktatás Kapolcsi-Szabó Leventével | hivatalos esemény",
+          "url": "https://www.magyariskola.at/event-details/zongoraoktatas-schwedenplatz"
+        }
+      ],
+      "publicSourceLinks": [
+        {
+          "label": "JazzMa · 2026 JazzUp – Kapolcsi-Szabó Levente Portréinterjú szakmai útról, zenei tanulmányokról, alkotói és előadói munkáról. Interjú megnyitása ↗",
+          "url": "https://www.jazzma.hu/interju/2013/2026/04/02/jazzup-kapolcsi-szabo-levente"
+        },
+        {
+          "label": "Müpa · 2023 Jazz-tehetségbörze: Symbiosis 5 A Müpa szakmai profilja Leventét zongoristaként és zongoratanárként mutatja be; dokumentálja a Symbiosis 5 nemzetközi és hazai eredményeit. Program megnyitása ↗",
+          "url": "https://mupa.hu/program/vilagzene-jazz-konnyuzene/jazz-tehetsegborze-symbiosis-5-2023-01-28_16-30-fesztivalszinhaz"
+        },
+        {
+          "label": "Müpa · 2026 Jazz-tehetségbörze: Pocket Pick Levente e-zongorán és szintetizátoron szerepel a 2026-os Jazz Showcase programjában. Program megnyitása ↗",
+          "url": "https://mupa.hu/program/vilagzene-jazz-konnyuzene/jazz-tehetsegborze-pocket-pick-2026-01-31_16-30-fesztivalszinhaz"
+        },
+        {
+          "label": "JazzMa · 2026 Magyar Jazz ABC – Kapolcsi-Szabó Levente Pályakép a tanulmányokról, a Symbiosis 5-ról és további aktív zenei formációiról. Cikk megnyitása ↗",
+          "url": "https://www.jazzma.hu/hirek/2026/09/09/magyar-jazz-abc-546-resz-kapolcsi-szabo-levente"
         }
       ]
     }
