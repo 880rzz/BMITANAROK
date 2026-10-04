@@ -486,6 +486,38 @@
       "affiliation": {
         "@id": "https://www.magyariskola.at/#school"
       }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tanarok.magyariskola.at/#kapolcsi-szabo-levente",
+      "name": "Kapolcsi-Szabó Levente",
+      "jobTitle": "Jazz-zongorista · zongoratanár",
+      "description": "Személyre szabott egyéni zongoraoktatás gyerekeknek és felnőtteknek, kezdőtől haladó szintig; klasszikus, jazz, pop és rock repertoárral.",
+      "url": "https://tanarok.magyariskola.at/#kapolcsi-szabo-levente",
+      "image": "https://tanarok.magyariskola.at/assets/levente.webp",
+      "affiliation": {
+        "@id": "https://www.magyariskola.at/#school"
+      },
+      "knowsAbout": [
+        "zongoraoktatás",
+        "jazz-zongora",
+        "klasszikus zongora",
+        "pop",
+        "rock",
+        "improvizáció"
+      ],
+      "subjectOf": [
+        {
+          "@type": "Course",
+          "@id": "https://programvalaszto.magyariskola.at/foglalkozasok.html#zongoraoktatas",
+          "url": "https://programvalaszto.magyariskola.at/foglalkozasok.html#zongoraoktatas"
+        },
+        {
+          "@type": "Event",
+          "@id": "https://www.magyariskola.at/event-details/zongoraoktatas-schwedenplatz",
+          "url": "https://www.magyariskola.at/event-details/zongoraoktatas-schwedenplatz"
+        }
+      ]
     }
   ]
 }
