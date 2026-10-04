@@ -98,7 +98,7 @@ Current schedules, age ranges, fees, venues and registration details do NOT come
 - Póser-Piroska Ildikó — Csapatparancsnok · ifjúsági közösségi vezető — https://tanarok.magyariskola.at/#poser-piroska-ildiko
 - Deákné Juhász Éva — Ének-zene tanár · tanító · hangszeres pedagógus — https://tanarok.magyariskola.at/#deakne-juhasz-eva
 
-Current canonical profile count: 26.
+Current canonical profile count: 27.
 
 ## Cross-system relationship rules
 1. Person identity and professional history → Teacher directory / `teacher-knowledge.json`.
@@ -135,3 +135,13 @@ When sources conflict, do not silently blend them. Use the source authoritative 
 
 Canonical teacher-program map: https://tanarok.magyariskola.at/teacher-program-map.json
 Last verified: 2026-09-11
+
+## Kapolcsi-Szabó Levente
+- Role: jazz-zongorista, zongoratanár.
+- Canonical profile: https://tanarok.magyariskola.at/#kapolcsi-szabo-levente
+- Current piano programme: https://programvalaszto.magyariskola.at/foglalkozasok.html#zongoraoktatas
+- Official Wix event / registration authority: https://www.magyariskola.at/event-details/zongoraoktatas-schwedenplatz
+- Teaching scope: individual piano lessons for children (primarily from age 7) and adults; beginner, returning and advanced levels; classical, jazz, pop and rock.
+- Languages: primarily Hungarian; English also available.
+- Evidence: JazzMa 2026 profile/interview and Müpa programme profiles document his professional and performing background.
+- Do not infer employment status from profile inclusion; current schedule, fee, registration and availability must resolve from the Program Selector or linked Wix event.
